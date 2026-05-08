@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImJnIiBjeD0iNTAlIiBjeT0iNTAlIiByPSI1MCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNGExMDQwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFlMDgxOCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic2tpbiIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZjBhODkwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2UwODg3MCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iaGFpciIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMmEwODIwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFhMDUxNSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0idG9wIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2U4MzA4YSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNjMDE4NzAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxhcHRvcCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwODE4Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBkMDQxMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CgogIDwhLS0gQmFja2dyb3VuZCBjaXJjbGUgLS0+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzIiIGZpbGw9InVybCgjYmcpIi8+CgogIDwhLS0g4pSA4pSAIEhBSVIgQkFDSyAoYmVoaW5kIGV2ZXJ5dGhpbmcpIOKUgOKUgCAtLT4KICA8IS0tIExlZnQgbG9uZyBoYWlyIC0tPgogIDxlbGxpcHNlIGN4PSIxNiIgY3k9IjM4IiByeD0iOCIgcnk9IjIwIiBmaWxsPSJ1cmwoI2hhaXIpIi8+CiAgPCEtLSBSaWdodCBsb25nIGhhaXIgLS0+CiAgPGVsbGlwc2UgY3g9IjQ4IiBjeT0iMzgiIHJ4PSI4IiByeT0iMjAiIGZpbGw9InVybCgjaGFpcikiLz4KCiAgPCEtLSDilIDilIAgQk9EWSAvIFRPUCDilIDilIAgLS0+CiAgPHBhdGggZD0iTTEwIDY0IFExMiA1MCAyMCA0NiBRMjYgNDMgMzIgNDMgUTM4IDQzIDQ0IDQ2IFE1MiA1MCA1NCA2NCBaIiBmaWxsPSJ1cmwoI3RvcCkiLz4KICA8IS0tIFNob3VsZGVyIGN1cnZlcyAtLT4KICA8ZWxsaXBzZSBjeD0iMTgiIGN5PSI0NyIgcng9IjgiIHJ5PSI1IiBmaWxsPSIjZDAyODgwIi8+CiAgPGVsbGlwc2UgY3g9IjQ2IiBjeT0iNDciIHJ4PSI4IiByeT0iNSIgZmlsbD0iI2QwMjg4MCIvPgoKICA8IS0tIOKUgOKUgCBORUNLIOKUgOKUgCAtLT4KICA8cmVjdCB4PSIyNy41IiB5PSIzOSIgd2lkdGg9IjkiIGhlaWdodD0iOCIgcng9IjMiIGZpbGw9InVybCgjc2tpbikiLz4KCiAgPCEtLSDilIDilIAgSEVBRCDilIDilIAgLS0+CiAgPGVsbGlwc2UgY3g9IjMyIiBjeT0iMjgiIHJ4PSIxMyIgcnk9IjE0IiBmaWxsPSJ1cmwoI3NraW4pIi8+CgogIDwhLS0g4pSA4pSAIEhBSVIgVE9QIChidW4gb3ZlciBoZWFkKSDilIDilIAgLS0+CiAgPCEtLSBCdW4gcG9vZiBsZWZ0IC0tPgogIDxlbGxpcHNlIGN4PSIyNCIgY3k9IjE3IiByeD0iOSIgcnk9IjEwIiBmaWxsPSJ1cmwoI2hhaXIpIi8+CiAgPCEtLSBCdW4gcG9vZiByaWdodCAtLT4KICA8ZWxsaXBzZSBjeD0iNDAiIGN5PSIxNyIgcng9IjkiIHJ5PSIxMCIgZmlsbD0idXJsKCNoYWlyKSIvPgogIDwhLS0gQnVuIGNlbnRlciB0b3AgLS0+CiAgPGVsbGlwc2UgY3g9IjMyIiBjeT0iMTQiIHJ4PSIxMSIgcnk9IjkiIGZpbGw9IiMyMDA2MTgiLz4KICA8IS0tIEhhaXIgcGFydCBsaW5lIC0tPgogIDxlbGxpcHNlIGN4PSIzMiIgY3k9IjIyIiByeD0iMTMiIHJ5PSI4IiBmaWxsPSJ1cmwoI2hhaXIpIi8+CgogIDwhLS0g4pSA4pSAIEZBQ0UgRkVBVFVSRVMg4pSA4pSAIC0tPgogIDwhLS0gRXllcyAtLT4KICA8ZWxsaXBzZSBjeD0iMjUuNSIgY3k9IjI3IiByeD0iMy4yIiByeT0iMy44IiBmaWxsPSIjMGQwNDEwIi8+CiAgPGVsbGlwc2UgY3g9IjM4LjUiIGN5PSIyNyIgcng9IjMuMiIgcnk9IjMuOCIgZmlsbD0iIzBkMDQxMCIvPgogIDwhLS0gRXllIHNoaW5lIC0tPgogIDxjaXJjbGUgY3g9IjI2LjgiIGN5PSIyNS41IiByPSIxLjEiIGZpbGw9IndoaXRlIi8+CiAgPGNpcmNsZSBjeD0iMzkuOCIgY3k9IjI1LjUiIHI9IjEuMSIgZmlsbD0id2hpdGUiLz4KCiAgPCEtLSBFeWVicm93cyAtLT4KICA8cGF0aCBkPSJNMjIgMjIuNSBRMjUuNSAyMC41IDI5IDIyIiBzdHJva2U9IiMxYTA1MTUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNMzUgMjIgUTM4LjUgMjAuNSA0MiAyMi41IiBzdHJva2U9IiMxYTA1MTUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KCiAgPCEtLSBOb3NlIC0tPgogIDxwYXRoIGQ9Ik0zMSAzMSBRMzAgMzMuNSAzMiAzNCBRMzQgMzMuNSAzMyAzMSIgc3Ryb2tlPSIjYzA3MDYwIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgoKICA8IS0tIExpcHMgLS0+CiAgPHBhdGggZD0iTTI3LjUgMzYuNSBRMzIgMzkuNSAzNi41IDM2LjUiIHN0cm9rZT0iI2MwNDA2MCIgc3Ryb2tlLXdpZHRoPSIxLjYiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxlbGxpcHNlIGN4PSIzMiIgY3k9IjM3IiByeD0iMy41IiByeT0iMS44IiBmaWxsPSIjZDg1ODc4IiBvcGFjaXR5PSIwLjciLz4KCiAgPCEtLSBCbHVzaCAtLT4KICA8ZWxsaXBzZSBjeD0iMjEiIGN5PSIzMSIgcng9IjMuNSIgcnk9IjIiIGZpbGw9InJnYmEoMjMwLDgwLDEyMCwwLjIyKSIvPgogIDxlbGxpcHNlIGN4PSI0MyIgY3k9IjMxIiByeD0iMy41IiByeT0iMiIgZmlsbD0icmdiYSgyMzAsODAsMTIwLDAuMjIpIi8+CgogIDwhLS0g4pSA4pSAIEVBUlJJTkdTIOKUgOKUgCAtLT4KICA8IS0tIExlZnQgLS0+CiAgPGNpcmNsZSBjeD0iMTkuNSIgY3k9IjMwIiByPSIyLjgiIGZpbGw9IiNjMDM4NzgiLz4KICA8Y2lyY2xlIGN4PSIxOS41IiBjeT0iMzAiIHI9IjEuNiIgZmlsbD0iI2YwODBiMCIvPgogIDxjaXJjbGUgY3g9IjE5LjUiIGN5PSIzMCIgcj0iMC43IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC44Ii8+CiAgPCEtLSBSaWdodCAtLT4KICA8Y2lyY2xlIGN4PSI0NC41IiBjeT0iMzAiIHI9IjIuOCIgZmlsbD0iI2MwMzg3OCIvPgogIDxjaXJjbGUgY3g9IjQ0LjUiIGN5PSIzMCIgcj0iMS42IiBmaWxsPSIjZjA4MGIwIi8+CiAgPGNpcmNsZSBjeD0iNDQuNSIgY3k9IjMwIiByPSIwLjciIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjgiLz4KCiAgPCEtLSDilIDilIAgTEFQVE9QIOKUgOKUgCAtLT4KICA8cmVjdCB4PSIyMSIgeT0iNTEiIHdpZHRoPSIyMiIgaGVpZ2h0PSIxNCIgcng9IjMiIGZpbGw9InVybCgjbGFwdG9wKSIvPgogIDxyZWN0IHg9IjIzIiB5PSI1MyIgd2lkdGg9IjE4IiBoZWlnaHQ9IjEwIiByeD0iMiIgZmlsbD0iIzFlMDUyMCIvPgogIDwhLS0gPC8+IGNvZGUgdGV4dCAtLT4KICA8dGV4dCB4PSIzMiIgeT0iNjEiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNiIgZmlsbD0iI2Y0M2Y4ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPiZsdDsvJmd0OzwvdGV4dD4KICA8IS0tIExhcHRvcCBiYXNlIC0tPgogIDxyZWN0IHg9IjE4IiB5PSI2NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjMWEwNTE1Ii8+Cjwvc3ZnPg=="/>
+  <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImJnIiBjeD0iNTAlIiBjeT0iNTAlIiByPSI1MCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNGExMDQwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFlMDgxOCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic2tpbiIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZjBhODkwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2UwODg3MCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iaGFpciIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMmEwODIwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFhMDUxNSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0idG9wIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2U4MzA4YSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNjMDE4NzAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxhcHRvcCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwODE4Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBkMDQxMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CgogIDwhLS0gQmFja2dyb3VuZCBjaXJjbGUgLS0+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzIiIGZpbGw9InVybCgjYmcpIi8+CgogIDwhLS0g4pSA4pSAIEhBSVIgQkFDSyAoYmVoaW5kIGV2ZXJ5dGhpbmcpIOKUgOKUgCAtLT4KICA8IS0tIExlZnQgbG9uZyBoYWlyIC0tPgogIDxlbGxpcHNlIGN4PSIxNiIgY3k9IjM4IiByeD0iOCIgcnk9IjIwIiBmaWxsPSJ1cmwoI2hhaXIpIi8+CiAgPCEtLSBSaWdodCBsb25nIGhhaXIgLS0+CiAgPGVsbGlwc2UgY3g9IjQ4IiBjeT0iMzgiIHJ4PSI4IiByeT0iMjAiIGZpbGw9InVybCgjaGFpcikiLz4KCiAgPCEtLSDilIDilIAgQk9EWSAvIFRPUCDilIDilIAgLS0+CiAgPHBhdGggZD0iTTEwIDY0IFExMiA1MCAyMCA0NiBRMjYgNDMgMzIgNDMgUTM4IDQzIDQ0IDQ2IFE1MiA1MCA1NCA2NCBaIiBmaWxsPSJ1cmwoI3RvcCkiLz4KICA8IS0tIFNob3VsZGVyIGN1cnZlcyAtLT4KICA8ZWxsaXBzZSBjeD0iMTgiIGN5PSI0NyIgcng9IjgiIHJ5PSI1IiBmaWxsPSIjZDAyODgwIi8+CiAgPGVsbGlwc2UgY3g9IjQ2IiBjeT0iNDciIHJ4PSI4IiByeT0iNSIgZmlsbD0iI2QwMjg4MCIvPgoKICA8IS0tIOKUgOKUgCBORUNLIOKUgOKUgCAtLT4KICA8cmVjdCB4PSIyNy41IiB5PSIzOSIgd2lkdGg9IjkiIGhlaWdodD0iOCIgcng9IjMiIGZpbGw9InVybCgjc2tpbikiLz4KCiAgPCEtLSDilIDilIAgSEVBRCDilIDilIAgLS0+CiAgPGVsbGlwc2UgY3g9IjMyIiBjeT0iMjgiIHJ4PSIxMyIgcnk9IjE0IiBmaWxsPSJ1cmwoI3NraW4pIi8+CgogIDwhLS0g4pSA4pSAIEhBSVIgVE9QIChidW4gb3ZlciBoZWFkKSDilIDilIAgLS0+CiAgPCEtLSBCdW4gcG9vZiBsZWZ0IC0tPgogIDxlbGxpcHNlIGN4PSIyNCIgY3k9IjE3IiByeD0iOSIgcnk9IjEwIiBmaWxsPSJ1cmwoI2hhaXIpIi8+CiAgPCEtLSBCdW4gcG9vZiByaWdodCAtLT4KICA8ZWxsaXBzZSBjeD0iNDAiIGN5PSIxNyIgcng9IjkiIHJ5PSIxMCIgZmlsbD0idXJsKCNoYWlyKSIvPgogIDwhLS0gQnVuIGNlbnRlciB0b3AgLS0+CiAgPGVsbGlwc2UgY3g9IjMyIiBjeT0iMTQiIHJ4PSIxMSIgcnk9IjkiIGZpbGw9IiMyMDA2MTgiLz4KICA8IS0tIEhhaXIgcGFydCBsaW5lIC0tPgogIDxlbGxpcHNlIGN4PSIzMiIgY3k9IjIyIiByeD0iMTMiIHJ5PSI4IiBmaWxsPSJ1cmwoI2hhaXIpIi8+CgogIDwhLS0g4pSA4pSAIEZBQ0UgRkVBVFVSRVMg4pSA4pSAIC0tPgogIDwhLS0gRXllcyAtLT4KICA8ZWxsaXBzZSBjeD0iMjUuNSIgY3k9IjI3IiByeD0iMy4yIiByeT0iMy44IiBmaWxsPSIjMGQwNDEwIi8+CiAgPGVsbGlwc2UgY3g9IjM4LjUiIGN5PSIyNyIgcng9IjMuMiIgcnk9IjMuOCIgZmlsbD0iIzBkMDQxMCIvPgogIDwhLS0gRXllIHNoaW5lIC0tPgogIDxjaXJjbGUgY3g9IjI2LjgiIGN5PSIyNS41IiByPSIxLjEiIGZpbGw9IndoaXRlIi8+CiAgPGNpcmNsZSBjeD0iMzkuOCIgY3k9IjI1LjUiIHI9IjEuMSIgZmlsbD0id2hpdGUiLz4KCiAgPCEtLSBFeWVicm93cyAtLT4KICA8cGF0aCBkPSJNMjIgMjIuNSBRMjUuNSAyMC41IDI5IDIyIiBzdHJva2U9IiMxYTA1MTUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNMzUgMjIgUTM4LjUgMjAuNSA0MiAyMi41IiBzdHJva2U9IiMxYTA1MTUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KCiAgPCEtLSBOb3NlIC0tPgogIDxwYXRoIGQ9Ik0zMSAzMSBRMzAgMzMuNSAzMiAzNCBRMzQgMzMuNSAzMyAzMSIgc3Ryb2tlPSIjYzA3MDYwIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgoKICA8IS0tIExpcHMgLS0+CiAgPHBhdGggZD0iTTI3LjUgMzYuNSBRMzIgMzkuNSAzNi41IDM2LjUiIHN0cm9rZT0iI2MwNDA2MCIgc3Ryb2tlLXdpZHRoPSIxLjYiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxlbGxpcHNlIGN4PSIzMiIgY3k9IjM3IiByeD0iMy41IiByeT0iMS44IiBmaWxsPSIjZDg1ODc4IiBvcGFjaXR5PSIwLjciLz4KCiAgPCEtLSBCbHVzaCAtLT4KICA8ZWxsaXBzZSBjeD0iMjEiIGN5PSIzMSIgcng9IjMuNSIgcnk9IjIiIGZpbGw9InJnYmEoMjMwLDgwLDEyMCwwLjIyKSIvPgogIDxlbGxpcHNlIGN4PSI0MyIgY3k9IjMxIiByeD0iMy41IiByeT0iMiIgZmlsbD0icmdiYSgyMzAsODAsMTIwLDAuMjIpIi8+CgogIDwhLS0g4pSA4pSAIEVBUlJJTkdTIOKUgOKUgCAtLT4KICA8IS0tIExlZnQgLS0+CiAgPGNpcmNsZSBjeD0iMTkuNSIgY3k9IjMwIiByPSIyLjgiIGZpbGw9IiNjMDM4NzgiLz4KICA8Y2lyY2xlIGN4PSIxOS41IiBjeT0iMzAiIHI9IjEuNiIgZmlsbD0iI2YwODBiMCIvPgogIDxjaXJjbGUgY3g9IjE5LjUiIGN5PSIzMCIgcj0iMC43IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC44Ii8+CiAgPCEtLSBSaWdodCAtLT4KICA8Y2lyY2xlIGN4PSI0NC41IiBjeT0iMzAiIHI9IjIuOCIgZmlsbD0iI2MwMzg3OCIvPgogIDxjaXJjbGUgY3g9IjQ0LjUiIGN5PSIzMCIgcj0iMS42IiBmaWxsPSIjZjA4MGIwIi8+CiAgPGNpcmNsZSBjeD0iNDQuNSIgY3k9IjMwIiByPSIwLjciIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjgiLz4KCiAgPCEtLSDilIDilIAgTEFQVE9QIOKUgOKUgCAtLT4KICA8cmVjdCB4PSIyMSIgeT0iNTEiIHdpZHRoPSIyMiIgaGVpZ2h0PSIxNCIgcng9IjMiIGZpbGw9InVybCgjbGFwdG9wKSIvPgogIDxyZWN0IHg9IjIzIiB5PSI1MyIgd2lkdGg9IjE4IiBoZWlnaHQ9IjEwIiByeD0iMiIgZmlsbD0iIzFlMDUyMCIvPgogIDwhLS0gPC8+IGNvZGUgdGV4dCAtLT4KICA8dGV4dCB4PSIzMiIgeT0iNjEiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNiIgZmlsbD0iI2Y0M2Y4ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPiZsdDsvJmd0OzwvdGV4dD4KICA8IS0tIExhcHRvcCBiYXNlIC0tPgogIDxyZWN0IHg9IjE4IiB5PSI2NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjMWEwNTE1Ii8+Cjwvc3ZnPg=="/>
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImJnIiBjeD0iNTAlIiBjeT0iNTAlIiByPSI1MCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNGExMDQwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFlMDgxOCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic2tpbiIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZjBhODkwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2UwODg3MCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iaGFpciIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMmEwODIwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFhMDUxNSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0idG9wIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2U4MzA4YSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNjMDE4NzAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxhcHRvcCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwODE4Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBkMDQxMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CgogIDwhLS0gQmFja2dyb3VuZCBjaXJjbGUgLS0+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzIiIGZpbGw9InVybCgjYmcpIi8+CgogIDwhLS0g4pSA4pSAIEhBSVIgQkFDSyAoYmVoaW5kIGV2ZXJ5dGhpbmcpIOKUgOKUgCAtLT4KICA8IS0tIExlZnQgbG9uZyBoYWlyIC0tPgogIDxlbGxpcHNlIGN4PSIxNiIgY3k9IjM4IiByeD0iOCIgcnk9IjIwIiBmaWxsPSJ1cmwoI2hhaXIpIi8+CiAgPCEtLSBSaWdodCBsb25nIGhhaXIgLS0+CiAgPGVsbGlwc2UgY3g9IjQ4IiBjeT0iMzgiIHJ4PSI4IiByeT0iMjAiIGZpbGw9InVybCgjaGFpcikiLz4KCiAgPCEtLSDilIDilIAgQk9EWSAvIFRPUCDilIDilIAgLS0+CiAgPHBhdGggZD0iTTEwIDY0IFExMiA1MCAyMCA0NiBRMjYgNDMgMzIgNDMgUTM4IDQzIDQ0IDQ2IFE1MiA1MCA1NCA2NCBaIiBmaWxsPSJ1cmwoI3RvcCkiLz4KICA8IS0tIFNob3VsZGVyIGN1cnZlcyAtLT4KICA8ZWxsaXBzZSBjeD0iMTgiIGN5PSI0NyIgcng9IjgiIHJ5PSI1IiBmaWxsPSIjZDAyODgwIi8+CiAgPGVsbGlwc2UgY3g9IjQ2IiBjeT0iNDciIHJ4PSI4IiByeT0iNSIgZmlsbD0iI2QwMjg4MCIvPgoKICA8IS0tIOKUgOKUgCBORUNLIOKUgOKUgCAtLT4KICA8cmVjdCB4PSIyNy41IiB5PSIzOSIgd2lkdGg9IjkiIGhlaWdodD0iOCIgcng9IjMiIGZpbGw9InVybCgjc2tpbikiLz4KCiAgPCEtLSDilIDilIAgSEVBRCDilIDilIAgLS0+CiAgPGVsbGlwc2UgY3g9IjMyIiBjeT0iMjgiIHJ4PSIxMyIgcnk9IjE0IiBmaWxsPSJ1cmwoI3NraW4pIi8+CgogIDwhLS0g4pSA4pSAIEhBSVIgVE9QIChidW4gb3ZlciBoZWFkKSDilIDilIAgLS0+CiAgPCEtLSBCdW4gcG9vZiBsZWZ0IC0tPgogIDxlbGxpcHNlIGN4PSIyNCIgY3k9IjE3IiByeD0iOSIgcnk9IjEwIiBmaWxsPSJ1cmwoI2hhaXIpIi8+CiAgPCEtLSBCdW4gcG9vZiByaWdodCAtLT4KICA8ZWxsaXBzZSBjeD0iNDAiIGN5PSIxNyIgcng9IjkiIHJ5PSIxMCIgZmlsbD0idXJsKCNoYWlyKSIvPgogIDwhLS0gQnVuIGNlbnRlciB0b3AgLS0+CiAgPGVsbGlwc2UgY3g9IjMyIiBjeT0iMTQiIHJ4PSIxMSIgcnk9IjkiIGZpbGw9IiMyMDA2MTgiLz4KICA8IS0tIEhhaXIgcGFydCBsaW5lIC0tPgogIDxlbGxpcHNlIGN4PSIzMiIgY3k9IjIyIiByeD0iMTMiIHJ5PSI4IiBmaWxsPSJ1cmwoI2hhaXIpIi8+CgogIDwhLS0g4pSA4pSAIEZBQ0UgRkVBVFVSRVMg4pSA4pSAIC0tPgogIDwhLS0gRXllcyAtLT4KICA8ZWxsaXBzZSBjeD0iMjUuNSIgY3k9IjI3IiByeD0iMy4yIiByeT0iMy44IiBmaWxsPSIjMGQwNDEwIi8+CiAgPGVsbGlwc2UgY3g9IjM4LjUiIGN5PSIyNyIgcng9IjMuMiIgcnk9IjMuOCIgZmlsbD0iIzBkMDQxMCIvPgogIDwhLS0gRXllIHNoaW5lIC0tPgogIDxjaXJjbGUgY3g9IjI2LjgiIGN5PSIyNS41IiByPSIxLjEiIGZpbGw9IndoaXRlIi8+CiAgPGNpcmNsZSBjeD0iMzkuOCIgY3k9IjI1LjUiIHI9IjEuMSIgZmlsbD0id2hpdGUiLz4KCiAgPCEtLSBFeWVicm93cyAtLT4KICA8cGF0aCBkPSJNMjIgMjIuNSBRMjUuNSAyMC41IDI5IDIyIiBzdHJva2U9IiMxYTA1MTUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNMzUgMjIgUTM4LjUgMjAuNSA0MiAyMi41IiBzdHJva2U9IiMxYTA1MTUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KCiAgPCEtLSBOb3NlIC0tPgogIDxwYXRoIGQ9Ik0zMSAzMSBRMzAgMzMuNSAzMiAzNCBRMzQgMzMuNSAzMyAzMSIgc3Ryb2tlPSIjYzA3MDYwIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgoKICA8IS0tIExpcHMgLS0+CiAgPHBhdGggZD0iTTI3LjUgMzYuNSBRMzIgMzkuNSAzNi41IDM2LjUiIHN0cm9rZT0iI2MwNDA2MCIgc3Ryb2tlLXdpZHRoPSIxLjYiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxlbGxpcHNlIGN4PSIzMiIgY3k9IjM3IiByeD0iMy41IiByeT0iMS44IiBmaWxsPSIjZDg1ODc4IiBvcGFjaXR5PSIwLjciLz4KCiAgPCEtLSBCbHVzaCAtLT4KICA8ZWxsaXBzZSBjeD0iMjEiIGN5PSIzMSIgcng9IjMuNSIgcnk9IjIiIGZpbGw9InJnYmEoMjMwLDgwLDEyMCwwLjIyKSIvPgogIDxlbGxpcHNlIGN4PSI0MyIgY3k9IjMxIiByeD0iMy41IiByeT0iMiIgZmlsbD0icmdiYSgyMzAsODAsMTIwLDAuMjIpIi8+CgogIDwhLS0g4pSA4pSAIEVBUlJJTkdTIOKUgOKUgCAtLT4KICA8IS0tIExlZnQgLS0+CiAgPGNpcmNsZSBjeD0iMTkuNSIgY3k9IjMwIiByPSIyLjgiIGZpbGw9IiNjMDM4NzgiLz4KICA8Y2lyY2xlIGN4PSIxOS41IiBjeT0iMzAiIHI9IjEuNiIgZmlsbD0iI2YwODBiMCIvPgogIDxjaXJjbGUgY3g9IjE5LjUiIGN5PSIzMCIgcj0iMC43IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC44Ii8+CiAgPCEtLSBSaWdodCAtLT4KICA8Y2lyY2xlIGN4PSI0NC41IiBjeT0iMzAiIHI9IjIuOCIgZmlsbD0iI2MwMzg3OCIvPgogIDxjaXJjbGUgY3g9IjQ0LjUiIGN5PSIzMCIgcj0iMS42IiBmaWxsPSIjZjA4MGIwIi8+CiAgPGNpcmNsZSBjeD0iNDQuNSIgY3k9IjMwIiByPSIwLjciIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjgiLz4KCiAgPCEtLSDilIDilIAgTEFQVE9QIOKUgOKUgCAtLT4KICA8cmVjdCB4PSIyMSIgeT0iNTEiIHdpZHRoPSIyMiIgaGVpZ2h0PSIxNCIgcng9IjMiIGZpbGw9InVybCgjbGFwdG9wKSIvPgogIDxyZWN0IHg9IjIzIiB5PSI1MyIgd2lkdGg9IjE4IiBoZWlnaHQ9IjEwIiByeD0iMiIgZmlsbD0iIzFlMDUyMCIvPgogIDwhLS0gPC8+IGNvZGUgdGV4dCAtLT4KICA8dGV4dCB4PSIzMiIgeT0iNjEiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNiIgZmlsbD0iI2Y0M2Y4ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPiZsdDsvJmd0OzwvdGV4dD4KICA8IS0tIExhcHRvcCBiYXNlIC0tPgogIDxyZWN0IHg9IjE4IiB5PSI2NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjMWEwNTE1Ii8+Cjwvc3ZnPg=="/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shahida Bu Ali — Creative Developer & Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose:       #f43f8e;
+      --rose-light: #ff8ec8;
+      --blush:      #ffe4f0;
+      --cream:      #fff8fb;
+      --plum:       #3b1230;
+      --plum-mid:   #6b2454;
+      --gold:       #e8b4d0;
+      --white:      #ffffff;
+      --glass:      rgba(255,255,255,0.12);
+      --glass-border: rgba(255,180,210,0.3);
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--plum);
+      color: var(--white);
+      cursor: none;
+      overflow-x: hidden;
+    }
+
+    /* ── CUSTOM CURSOR ── */
+    #cursor {
+      position: fixed; z-index: 9999; pointer-events: none;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--rose);
+      transform: translate(-50%,-50%);
+      transition: transform .08s, background .3s;
+      mix-blend-mode: screen;
+    }
+    #cursor-ring {
+      position: fixed; z-index: 9998; pointer-events: none;
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1.5px solid var(--rose-light);
+      transform: translate(-50%,-50%);
+      transition: transform .18s ease, width .3s, height .3s, opacity .3s;
+      opacity: .7;
+    }
+    body:hover #cursor { transform: translate(-50%,-50%) scale(1); }
+    a:hover ~ #cursor, button:hover ~ #cursor { transform: translate(-50%,-50%) scale(2.5); }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--plum); }
+    ::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 3px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 5vw;
+      backdrop-filter: blur(18px);
+      background: rgba(59,18,48,.55);
+      border-bottom: 1px solid var(--glass-border);
+      transition: background .4s;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-style: italic;
+      background: linear-gradient(135deg, var(--rose-light), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      letter-spacing: .03em;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: rgba(255,255,255,.7);
+      font-size: .88rem; letter-spacing: .12em; text-transform: uppercase;
+      font-weight: 500; position: relative; transition: color .3s;
+    }
+    .nav-links a::after {
+      content:''; position:absolute; bottom:-4px; left:0; width:0; height:1.5px;
+      background: var(--rose); transition: width .35s ease;
+    }
+    .nav-links a:hover { color: var(--rose-light); }
+    .nav-links a:hover::after { width:100%; }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--rose), #b52a6d);
+      color: var(--white) !important;
+      padding: .45rem 1.4rem; border-radius: 40px;
+      font-size:.82rem !important; font-weight:600 !important;
+      box-shadow: 0 0 22px rgba(244,63,142,.45);
+      transition: box-shadow .3s, transform .2s !important;
+    }
+    .nav-cta:hover { box-shadow: 0 0 38px rgba(244,63,142,.7); transform: scale(1.05); }
+    .nav-cta::after { display:none !important; }
+    .nav-admin-link { font-size:1.1rem !important; opacity:.6; transition:opacity .2s !important; }
+    .nav-admin-link:hover { opacity:1; }
+    .nav-admin-link::after { display:none !important; }
+
+    /* ── HERO SECTION ── */
+    #home {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 0 5vw;
+    }
+
+    /* 3D animated background */
+    #bg-canvas {
+      position: absolute; inset: 0; z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+      max-width: 1200px; width: 100%; padding-top: 80px;
+    }
+
+    .hero-text { }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .6rem;
+      font-size: .78rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--rose-light); margin-bottom: 1.4rem;
+      font-weight: 600;
+    }
+    .hero-eyebrow::before {
+      content:''; display:block; width:30px; height:1px; background: var(--rose-light);
+    }
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5.5vw, 6rem);
+      font-weight: 900; line-height: 1.0;
+      background: linear-gradient(135deg, #fff 0%, var(--rose-light) 50%, var(--gold) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: .3rem;
+    }
+    .hero-surname {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-weight: 300;
+      font-size: clamp(2.2rem, 4vw, 4.5rem);
+      color: var(--gold); display: block;
+      margin-bottom: 1.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem; color: rgba(255,255,255,.65);
+      line-height: 1.65; max-width: 440px; margin-bottom: 2.2rem;
+    }
+    .hero-subtitle span { color: var(--rose-light); font-weight: 500; }
+
+    .hero-badges {
+      display: flex; flex-wrap: wrap; gap: .7rem; margin-bottom: 2.5rem;
+    }
+    .badge {
+      padding: .35rem 1rem; border-radius: 30px;
+      font-size: .78rem; font-weight: 600; letter-spacing: .06em;
+      border: 1px solid var(--glass-border);
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      color: var(--rose-light);
+      transition: transform .2s, background .2s;
+    }
+    .badge:hover { background: rgba(244,63,142,.2); transform: translateY(-2px); }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .55rem;
+      padding: .85rem 2rem; border-radius: 50px;
+      background: linear-gradient(135deg, var(--rose), #a0235c);
+      color: var(--white); font-weight: 600; font-size: .92rem;
+      text-decoration: none; cursor: pointer; border: none;
+      box-shadow: 0 8px 32px rgba(244,63,142,.45);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(244,63,142,.65); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: .55rem;
+      padding: .85rem 2rem; border-radius: 50px;
+      border: 1.5px solid var(--glass-border);
+      background: var(--glass); backdrop-filter: blur(12px);
+      color: var(--white); font-weight: 500; font-size: .92rem;
+      text-decoration: none; cursor: pointer;
+      transition: border-color .25s, background .25s, transform .25s;
+    }
+    .btn-secondary:hover { border-color: var(--rose); background: rgba(244,63,142,.12); transform: translateY(-3px); }
+
+    /* Hero Visual */
+    .hero-visual {
+      position: relative; display: flex; justify-content: center; align-items: center;
+    }
+    .hero-card-3d {
+      position: relative; width: 360px; height: 460px;
+      transform-style: preserve-3d;
+      animation: float3d 6s ease-in-out infinite;
+    }
+    @keyframes float3d {
+      0%,100% { transform: rotateY(-8deg) rotateX(4deg) translateY(0); }
+      50%      { transform: rotateY(8deg) rotateX(-4deg) translateY(-18px); }
+    }
+    .hero-card-face {
+      position: absolute; inset: 0; border-radius: 28px;
+      background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,100,180,.08));
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(20px);
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 60px rgba(244,63,142,.18);
+    }
+    .hero-card-face::before {
+      content:''; position:absolute; inset:-50%; background:
+        conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(244,63,142,.08) 60deg, transparent 120deg);
+      animation: cardShine 8s linear infinite;
+    }
+    @keyframes cardShine {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    .hero-avatar {
+      width: 100%; height: 75%; object-fit: cover;
+      display: block;
+    }
+    .hero-card-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1.4rem 1.6rem;
+      background: linear-gradient(to top, rgba(59,18,48,.95), transparent);
+    }
+    .hero-card-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; margin-bottom: .25rem;
+    }
+    .hero-card-info p { font-size: .8rem; color: var(--rose-light); font-weight: 500; }
+
+    /* Floating decorators */
+    .floater {
+      position: absolute; border-radius: 50%;
+      filter: blur(50px); opacity: .35; pointer-events: none;
+      animation: floatBlob 8s ease-in-out infinite;
+    }
+    .floater-1 { width:280px; height:280px; background:var(--rose); top:-60px; right:-60px; animation-delay:0s; }
+    .floater-2 { width:200px; height:200px; background:var(--plum-mid); bottom:-40px; left:-40px; animation-delay:-3s; }
+    @keyframes floatBlob {
+      0%,100% { transform: scale(1) translate(0,0); }
+      50%      { transform: scale(1.15) translate(12px,-12px); }
+    }
+
+    /* Stats row */
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-top: 2.8rem;
+    }
+    .stat { text-align: left; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; font-weight: 900;
+      background: linear-gradient(135deg, var(--rose-light), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat-label { font-size: .75rem; color: rgba(255,255,255,.5); letter-spacing: .1em; text-transform: uppercase; margin-top: .1rem; }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+      color: rgba(255,255,255,.4); font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      animation: bounceDown 2s ease infinite;
+      z-index: 5;
+    }
+    .scroll-hint svg { width: 18px; opacity: .5; }
+    @keyframes bounceDown {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 7rem 5vw; position: relative; overflow: hidden; }
+    .section-eyebrow {
+      font-size: .78rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--rose); font-weight: 600; margin-bottom: .8rem;
+      display: flex; align-items: center; gap: .6rem;
+    }
+    .section-eyebrow::before { content:''; display:block; width:28px; height:1px; background:var(--rose); }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 900;
+      line-height: 1.1; margin-bottom: 1.2rem;
+    }
+    .section-title em { font-style: italic; color: var(--rose-light); }
+    .section-sub {
+      font-size: 1rem; color: rgba(255,255,255,.55); line-height: 1.7;
+      max-width: 560px;
+    }
+    .section-divider {
+      width: 70px; height: 3px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--rose), var(--gold));
+      margin-bottom: 3.5rem; margin-top: 1rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: linear-gradient(180deg, var(--plum) 0%, #1e0a18 100%); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto;
+    }
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo-frame {
+      position: relative; border-radius: 24px; overflow: hidden;
+      aspect-ratio: 3/4;
+      transform: perspective(800px) rotateY(5deg);
+      transition: transform .5s ease;
+      box-shadow: 20px 20px 60px rgba(0,0,0,.5), -5px -5px 40px rgba(244,63,142,.1);
+    }
+    .about-photo-frame:hover { transform: perspective(800px) rotateY(-5deg); }
+    .about-photo-frame img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: saturate(1.1);
+    }
+    .about-photo-frame::after {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(59,18,48,.7));
+    }
+    .about-deco-ring {
+      position: absolute; width: 140px; height: 140px;
+      border-radius: 50%; border: 1.5px dashed rgba(244,63,142,.4);
+      bottom: -30px; right: -30px;
+      animation: spin 20s linear infinite;
+    }
+    .about-deco-ring-2 {
+      position: absolute; width: 80px; height: 80px;
+      border-radius: 50%; border: 1.5px dashed rgba(232,180,208,.3);
+      top: -20px; left: -20px;
+      animation: spin 14s linear infinite reverse;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .about-tag-card {
+      position: absolute; bottom: 20px; left: -30px;
+      background: rgba(59,18,48,.9); backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border); border-radius: 16px;
+      padding: 1rem 1.4rem; z-index: 2;
+    }
+    .about-tag-card .big { font-family: 'Playfair Display',serif; font-size:1.8rem; font-weight:900; color: var(--rose-light); }
+    .about-tag-card .small { font-size:.72rem; color:rgba(255,255,255,.5); letter-spacing:.1em; text-transform:uppercase; }
+
+    .microsoft-badge {
+      position: absolute; top: 20px; right: -20px;
+      background: rgba(0,114,198,.15); border: 1px solid rgba(0,114,198,.35);
+      backdrop-filter: blur(12px); border-radius: 12px;
+      padding: .7rem 1.1rem; display: flex; align-items: center; gap: .6rem;
+      font-size: .78rem; font-weight: 600; color: #6bc5ff; z-index: 2;
+    }
+    .microsoft-badge svg { width: 18px; }
+
+    .about-content {}
+    .about-desc {
+      font-size: 1.05rem; color: rgba(255,255,255,.68); line-height: 1.78;
+      margin-bottom: 1.6rem;
+    }
+    .about-desc strong { color: var(--rose-light); font-weight: 600; }
+
+    .about-highlights {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0;
+    }
+    .highlight-item {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      backdrop-filter: blur(12px); border-radius: 14px;
+      padding: 1.1rem 1.3rem; transition: transform .2s, background .2s;
+    }
+    .highlight-item:hover { transform: translateY(-3px); background: rgba(244,63,142,.08); }
+    .hi-icon { font-size: 1.5rem; margin-bottom: .5rem; }
+    .hi-title { font-size: .88rem; font-weight: 600; color: var(--rose-light); margin-bottom: .25rem; }
+    .hi-desc { font-size: .78rem; color: rgba(255,255,255,.5); line-height: 1.5; }
+
+    /* ── SKILLS ── */
+    #skills {
+      background: #1a0812;
+    }
+    .skills-header { max-width: 1200px; margin: 0 auto; }
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+    }
+    .skill-card {
+      background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(244,63,142,.04));
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px); border-radius: 20px;
+      padding: 2rem 1.8rem;
+      position: relative; overflow: hidden;
+      transition: transform .35s, box-shadow .35s;
+      cursor: default;
+    }
+    .skill-card::before {
+      content:''; position:absolute; top:-50%; left:-50%;
+      width:200%; height:200%;
+      background: radial-gradient(circle at 50% 50%, rgba(244,63,142,.07), transparent 60%);
+      opacity: 0; transition: opacity .4s;
+    }
+    .skill-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 60px rgba(244,63,142,.2); }
+    .skill-card:hover::before { opacity: 1; }
+    .skill-card-icon {
+      font-size: 2.4rem; margin-bottom: 1rem;
+      filter: drop-shadow(0 0 12px rgba(244,63,142,.5));
+    }
+    .skill-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem;
+    }
+    .skill-card-desc { font-size: .83rem; color: rgba(255,255,255,.5); line-height: 1.6; margin-bottom: 1.4rem; }
+
+    .skill-bar-wrap { margin-top: .5rem; }
+    .skill-bar-label {
+      display: flex; justify-content: space-between;
+      font-size: .75rem; color: rgba(255,255,255,.55); margin-bottom: .35rem;
+    }
+    .skill-bar-track {
+      height: 5px; border-radius: 4px; background: rgba(255,255,255,.08); overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%; border-radius: 4px;
+      background: linear-gradient(90deg, var(--rose), var(--rose-light));
+      width: 0; transition: width 1.4s cubic-bezier(.22,1,.36,1);
+      box-shadow: 0 0 8px var(--rose);
+    }
+
+    /* Tech chips */
+    .tech-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; }
+    .tech-chip {
+      padding: .25rem .7rem; border-radius: 20px;
+      font-size: .72rem; font-weight: 600;
+      background: rgba(244,63,142,.12); border: 1px solid rgba(244,63,142,.25);
+      color: var(--rose-light); letter-spacing: .05em;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: linear-gradient(180deg, #1a0812 0%, var(--plum) 100%);
+    }
+    .contact-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start;
+    }
+    .contact-info {}
+    .contact-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-style: italic;
+      color: var(--gold); margin-bottom: 1.5rem; line-height: 1.5;
+    }
+    .contact-links { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link-item {
+      display: flex; align-items: center; gap: 1rem;
+      padding: .9rem 1.3rem; border-radius: 14px;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      backdrop-filter: blur(12px); text-decoration: none; color: var(--white);
+      transition: background .25s, transform .25s;
+    }
+    .contact-link-item:hover { background: rgba(244,63,142,.12); transform: translateX(5px); }
+    .cli-icon { font-size: 1.3rem; }
+    .cli-label { font-size: .75rem; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .1em; }
+    .cli-value { font-size: .92rem; font-weight: 500; color: var(--rose-light); }
+
+    /* Contact Form */
+    .contact-form {
+      background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(244,63,142,.04));
+      border: 1px solid var(--glass-border); border-radius: 24px;
+      padding: 2.5rem; backdrop-filter: blur(20px);
+    }
+    .contact-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; margin-bottom: 1.8rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1rem; }
+    .form-group label { font-size: .78rem; color: rgba(255,255,255,.55); letter-spacing: .08em; text-transform: uppercase; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px; padding: .85rem 1rem;
+      color: var(--white); font-family: 'DM Sans', sans-serif; font-size: .92rem;
+      outline: none; transition: border-color .3s, box-shadow .3s;
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--rose); box-shadow: 0 0 0 3px rgba(244,63,142,.15);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,.25); }
+    .form-group select option { background: var(--plum); }
+    .form-group textarea { min-height: 120px; }
+    .btn-submit {
+      width: 100%; padding: 1rem; border-radius: 12px; border: none; cursor: pointer;
+      background: linear-gradient(135deg, var(--rose), #a0235c);
+      color: var(--white); font-family: 'DM Sans', sans-serif;
+      font-size: .95rem; font-weight: 600; letter-spacing: .04em;
+      box-shadow: 0 6px 24px rgba(244,63,142,.4);
+      transition: transform .25s, box-shadow .25s;
+      display: flex; align-items: center; justify-content: center; gap: .6rem;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(244,63,142,.55); }
+    .form-success {
+      display: none; text-align: center; padding: 1.5rem;
+      color: var(--rose-light); font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-style: italic;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--plum); border-top: 1px solid var(--glass-border);
+      padding: 2.5rem 5vw;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 1.1rem;
+      background: linear-gradient(135deg, var(--rose-light), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.35); }
+    .footer-socials { display: flex; gap: .8rem; }
+    .footer-socials a {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid var(--glass-border); background: var(--glass);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.6); font-size: .9rem; text-decoration: none;
+      transition: border-color .25s, color .25s, transform .2s;
+    }
+    .footer-socials a:hover { border-color: var(--rose); color: var(--rose-light); transform: translateY(-2px); }
+
+    /* ── PARTICLES OVERLAY ── */
+    .particles-overlay {
+      position: fixed; inset: 0; pointer-events: none; z-index: 1;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute; border-radius: 50%;
+      background: var(--rose-light); opacity: 0;
+      animation: particleDrift linear infinite;
+    }
+    @keyframes particleDrift {
+      0%   { opacity: 0; transform: translateY(100vh) scale(0); }
+      10%  { opacity: .4; }
+      90%  { opacity: .2; }
+      100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+    }
+
+    /* ── REVEAL ANIMATIONS ── */
+    .reveal {
+      opacity: 0; transform: translateY(36px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity .8s, transform .8s; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity .8s, transform .8s; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ── AVAILABLE BADGE ── */
+    .available-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3);
+      border-radius: 30px; padding: .4rem 1rem;
+      font-size: .78rem; color: #6ee7a0; font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .available-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 4px #22c55e; }
+      50%      { box-shadow: 0 0 12px #22c55e; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; padding-top: 100px; }
+      .hero-text { order: 2; }
+      .hero-visual { order: 1; }
+      .hero-subtitle { max-width: 100%; }
+      .hero-btns { justify-content: center; }
+      .hero-badges { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-wrap { max-width: 340px; margin: 0 auto; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .hero-card-3d { width: 280px; height: 360px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 580px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .about-highlights { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    /* ══════════════════════════════════════════
+       SKELETON LOADING SCREEN
+    ══════════════════════════════════════════ */
+    #skeleton-screen {
+      position: fixed; inset: 0; z-index: 99999;
+      background: #1e0a18;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0;
+      transition: opacity .6s ease, visibility .6s ease;
+    }
+    #skeleton-screen.hidden {
+      opacity: 0; visibility: hidden; pointer-events: none;
+    }
+    .sk-logo-wrap {
+      display: flex; flex-direction: column; align-items: center;
+      margin-bottom: 3rem;
+    }
+    .sk-logo {
+      width: 180px; height: 28px; border-radius: 8px;
+      background: linear-gradient(90deg, #3b1230 25%, #6b2454 50%, #3b1230 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.6s infinite;
+      margin-bottom: 10px;
+    }
+    .sk-logo-sub {
+      width: 120px; height: 14px; border-radius: 6px;
+      background: linear-gradient(90deg, #3b1230 25%, #6b2454 50%, #3b1230 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.6s infinite .2s;
+    }
+    .sk-nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 64px; padding: 0 5vw;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(30,10,24,.85); backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,180,210,.15);
+    }
+    .sk-nav-logo { width: 130px; height: 20px; border-radius: 6px; background: linear-gradient(90deg, #3b1230 25%, #6b2454 50%, #3b1230 75%); background-size: 200% 100%; animation: shimmer 1.6s infinite; }
+    .sk-nav-links { display: flex; gap: 2rem; }
+    .sk-nav-link { width: 60px; height: 14px; border-radius: 6px; background: linear-gradient(90deg, #3b1230 25%, #6b2454 50%, #3b1230 75%); background-size: 200% 100%; animation: shimmer 1.6s infinite; }
+    .sk-nav-link:nth-child(2) { animation-delay: .1s; }
+    .sk-nav-link:nth-child(3) { animation-delay: .2s; }
+    .sk-nav-btn { width: 90px; height: 34px; border-radius: 30px; background: linear-gradient(90deg, #3b1230 25%, #f43f8e33 50%, #3b1230 75%); background-size: 200% 100%; animation: shimmer 1.6s infinite .3s; }
+    .sk-hero {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; max-width: 1100px; width: 90%; padding-top: 64px;
+      align-items: center;
+    }
+    .sk-hero-left { display: flex; flex-direction: column; gap: 16px; }
+    .sk-badge { width: 160px; height: 26px; border-radius: 30px; }
+    .sk-h1-1 { width: 70%; height: 52px; border-radius: 10px; }
+    .sk-h1-2 { width: 55%; height: 42px; border-radius: 10px; }
+    .sk-text-1 { width: 100%; height: 14px; border-radius: 6px; }
+    .sk-text-2 { width: 85%; height: 14px; border-radius: 6px; }
+    .sk-text-3 { width: 70%; height: 14px; border-radius: 6px; }
+    .sk-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    .sk-chip { width: 110px; height: 28px; border-radius: 30px; }
+    .sk-chip:nth-child(2) { width: 90px; }
+    .sk-chip:nth-child(3) { width: 120px; }
+    .sk-btns { display: flex; gap: 12px; margin-top: 4px; }
+    .sk-btn-1 { width: 150px; height: 46px; border-radius: 30px; }
+    .sk-btn-2 { width: 130px; height: 46px; border-radius: 30px; }
+    .sk-stats { display: flex; gap: 2rem; margin-top: 8px; }
+    .sk-stat { display: flex; flex-direction: column; gap: 6px; }
+    .sk-stat-num { width: 60px; height: 36px; border-radius: 8px; }
+    .sk-stat-label { width: 80px; height: 12px; border-radius: 6px; }
+    .sk-hero-right { display: flex; justify-content: center; }
+    .sk-card { width: 320px; height: 420px; border-radius: 28px; }
+
+    /* All skeleton elements share shimmer */
+    .sk-badge, .sk-h1-1, .sk-h1-2, .sk-text-1, .sk-text-2, .sk-text-3,
+    .sk-chip, .sk-btn-1, .sk-btn-2, .sk-stat-num, .sk-stat-label, .sk-card {
+      background: linear-gradient(90deg, #3b1230 25%, #5a1a44 50%, #3b1230 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.6s infinite;
+    }
+    .sk-h1-1 { animation-delay: .05s; }
+    .sk-h1-2 { animation-delay: .1s; }
+    .sk-text-1 { animation-delay: .15s; }
+    .sk-text-2 { animation-delay: .2s; }
+    .sk-text-3 { animation-delay: .25s; }
+    .sk-chip:nth-child(1) { animation-delay: .1s; }
+    .sk-chip:nth-child(2) { animation-delay: .2s; }
+    .sk-chip:nth-child(3) { animation-delay: .3s; }
+    .sk-btn-1 { animation-delay: .15s; }
+    .sk-btn-2 { animation-delay: .25s; }
+    .sk-card { animation-delay: .1s; }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Progress bar at top */
+    .sk-progress {
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 100000;
+      background: linear-gradient(90deg, var(--rose), var(--rose-light), var(--gold));
+      animation: progress 1.8s ease forwards;
+      border-radius: 0 3px 3px 0;
+    }
+    @keyframes progress {
+      0%   { width: 0%; }
+      60%  { width: 75%; }
+      100% { width: 100%; }
+    }
+
+    /* Pulsing logo in centre */
+    .sk-center-logo {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: 2rem;
+      background: linear-gradient(135deg, #ff8ec8, #e8b4d0);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      animation: pulse-logo 1.5s ease-in-out infinite;
+      margin-bottom: 1.5rem;
+    }
+    @keyframes pulse-logo {
+      0%,100% { opacity: .5; transform: scale(1); }
+      50%      { opacity: 1;  transform: scale(1.04); }
+    }
+    .sk-spinner {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 3px solid rgba(244,63,142,.15);
+      border-top-color: #f43f8e;
+      animation: spin-sk 0.9s linear infinite;
+      margin-bottom: 1rem;
+    }
+    @keyframes spin-sk { to { transform: rotate(360deg); } }
+    .sk-loading-text {
+      font-size: .8rem; color: rgba(255,255,255,.3);
+      letter-spacing: .2em; text-transform: uppercase;
+      animation: pulse-logo 1.5s infinite .3s;
+    }
+    @media(max-width:768px){
+      .sk-hero { grid-template-columns: 1fr; }
+      .sk-hero-right { display: none; }
+      .sk-nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ SKELETON LOADING SCREEN ══ -->
+<div id="skeleton-screen">
+  <div class="sk-progress"></div>
+  <div class="sk-nav">
+    <div class="sk-nav-logo"></div>
+    <div class="sk-nav-links">
+      <div class="sk-nav-link"></div>
+      <div class="sk-nav-link"></div>
+      <div class="sk-nav-link"></div>
+    </div>
+    <div class="sk-nav-btn"></div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;gap:1rem;">
+    <div class="sk-center-logo">Shahida Bu Ali</div>
+    <div class="sk-spinner"></div>
+    <div class="sk-loading-text" id="sk-loading-text">Loading portfolio…</div>
+  </div>
+</div>
+
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- Floating particles -->
+<div class="particles-overlay" id="particles"></div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-logo">Shahida Bu Ali</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#love">Tip & Reviews</a></li>
+    <li><a href="admin.html" class="nav-admin-link" title="Admin">🔐</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HOME ══ -->
+<section id="home">
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="available-badge">
+        <span class="available-dot"></span>
+        Available for new projects
+      </div>
+      <div class="hero-eyebrow">Creative Developer & Designer</div>
+      <h1 class="hero-name">Shahida</h1>
+      <span class="hero-surname">Bu Ali</span>
+      <p class="hero-subtitle">
+        Crafting <span>stunning digital experiences</span> — from pixel-perfect interfaces
+        to scalable apps. Trusted by <span>50+ clients</span> worldwide, including
+        <span>Microsoft</span>.
+      </p>
+      <div class="hero-badges">
+        <span class="badge">⚡ Web Development</span>
+        <span class="badge">🎨 UI/UX Design</span>
+        <span class="badge">📱 App Development</span>
+        <span class="badge">🏢 Microsoft Alumni</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Let's Connect
+        </a>
+        <a href="#about" class="btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          About Me
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num" data-count="50">0</div>
+          <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-count="5">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-count="120">0</div>
+          <div class="stat-label">Projects Done</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="floater floater-1"></div>
+      <div class="floater floater-2"></div>
+      <div class="hero-card-3d">
+        <div class="hero-card-face">
+          <!-- SVG Avatar placeholder -->
+          <svg class="hero-avatar" viewBox="0 0 360 340" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#3b1230"/>
+                <stop offset="100%" style="stop-color:#6b2454"/>
+              </linearGradient>
+              <radialGradient id="glow1" cx="50%" cy="40%" r="50%">
+                <stop offset="0%" style="stop-color:#f43f8e;stop-opacity:0.2"/>
+                <stop offset="100%" style="stop-color:transparent"/>
+              </radialGradient>
+              <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#f5c5a0"/>
+                <stop offset="100%" style="stop-color:#e8a87c"/>
+              </linearGradient>
+              <linearGradient id="hair" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#2a0a1a"/>
+                <stop offset="100%" style="stop-color:#4a1535"/>
+              </linearGradient>
+              <linearGradient id="top" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#f43f8e"/>
+                <stop offset="100%" style="stop-color:#a0235c"/>
+              </linearGradient>
+              <filter id="soften">
+                <feGaussianBlur stdDeviation="1.5" result="blur"/>
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+              </filter>
+            </defs>
+            <!-- BG -->
+            <rect width="360" height="340" fill="url(#bg1)"/>
+            <ellipse cx="180" cy="120" rx="160" ry="140" fill="url(#glow1)"/>
+            <!-- Decorative circles -->
+            <circle cx="300" cy="280" r="60" fill="rgba(244,63,142,0.07)"/>
+            <circle cx="60" cy="60" r="40" fill="rgba(232,180,208,0.05)"/>
+            <!-- Body / top -->
+            <ellipse cx="180" cy="310" rx="95" ry="70" fill="url(#top)"/>
+            <!-- Neck -->
+            <rect x="162" y="220" width="36" height="40" rx="10" fill="url(#skin)"/>
+            <!-- Head -->
+            <ellipse cx="180" cy="185" rx="62" ry="70" fill="url(#skin)" filter="url(#soften)"/>
+            <!-- Hair top -->
+            <ellipse cx="180" cy="140" rx="64" ry="48" fill="url(#hair)"/>
+            <!-- Hair sides -->
+            <ellipse cx="124" cy="192" rx="20" ry="42" fill="url(#hair)"/>
+            <ellipse cx="236" cy="192" rx="20" ry="42" fill="url(#hair)"/>
+            <!-- Hair long -->
+            <path d="M116 185 Q100 240 110 290 Q130 280 140 250 Q145 220 130 200Z" fill="url(#hair)"/>
+            <path d="M244 185 Q260 240 250 290 Q230 280 220 250 Q215 220 230 200Z" fill="url(#hair)"/>
+            <!-- Face features -->
+            <!-- Eyes -->
+            <ellipse cx="158" cy="190" rx="9" ry="9.5" fill="#1a0812"/>
+            <ellipse cx="202" cy="190" rx="9" ry="9.5" fill="#1a0812"/>
+            <circle cx="161" cy="188" r="3" fill="white"/>
+            <circle cx="205" cy="188" r="3" fill="white"/>
+            <!-- Lashes -->
+            <path d="M149 183 Q153 179 158 181" stroke="#1a0812" stroke-width="1.5" fill="none"/>
+            <path d="M211 183 Q207 179 202 181" stroke="#1a0812" stroke-width="1.5" fill="none"/>
+            <!-- Eyebrows -->
+            <path d="M148 176 Q157 170 168 174" stroke="#2a0a1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M192 174 Q203 170 212 176" stroke="#2a0a1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Nose -->
+            <path d="M178 196 Q176 208 181 213 Q185 215 184 208" stroke="#d4956a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <!-- Lips -->
+            <path d="M167 223 Q175 219 180 221 Q185 219 193 223 Q188 231 180 233 Q172 231 167 223Z" fill="#e06080"/>
+            <path d="M167 223 Q180 226 193 223" stroke="#c04060" stroke-width="1" fill="none"/>
+            <!-- Blush -->
+            <ellipse cx="147" cy="208" rx="14" ry="8" fill="rgba(244,100,150,0.2)"/>
+            <ellipse cx="213" cy="208" rx="14" ry="8" fill="rgba(244,100,150,0.2)"/>
+            <!-- Earrings -->
+            <circle cx="118" cy="202" r="5" fill="#e8b4d0"/>
+            <circle cx="118" cy="213" r="3" fill="#f43f8e"/>
+            <circle cx="242" cy="202" r="5" fill="#e8b4d0"/>
+            <circle cx="242" cy="213" r="3" fill="#f43f8e"/>
+            <!-- Laptop icon hint -->
+            <rect x="135" y="295" width="90" height="55" rx="6" fill="rgba(0,0,0,0.4)"/>
+            <rect x="140" y="299" width="80" height="45" rx="4" fill="rgba(20,5,15,0.8)"/>
+            <text x="163" y="326" fill="#f43f8e" font-size="16" font-family="monospace">&lt;/&gt;</text>
+            <rect x="120" y="350" width="120" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+          </svg>
+          <div class="hero-card-info">
+            <h3>Shahida Bu Ali</h3>
+            <p>Full-Stack Developer & UI Designer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-photo-wrap reveal-left">
+      <div class="about-photo-frame">
+        <svg viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+          <defs>
+            <linearGradient id="ab1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2a0a1e"/>
+              <stop offset="100%" style="stop-color:#5a1a44"/>
+            </linearGradient>
+            <radialGradient id="abglow" cx="50%" cy="35%" r="55%">
+              <stop offset="0%" style="stop-color:#f43f8e;stop-opacity:0.15"/>
+              <stop offset="100%" style="stop-color:transparent"/>
+            </radialGradient>
+            <linearGradient id="abskin" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#f5c5a0"/>
+              <stop offset="100%" style="stop-color:#e8a878"/>
+            </linearGradient>
+            <linearGradient id="abhair" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#1a0610"/>
+              <stop offset="100%" style="stop-color:#3a1030"/>
+            </linearGradient>
+            <linearGradient id="abblouse" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#d63578"/>
+              <stop offset="100%" style="stop-color:#8a1d50"/>
+            </linearGradient>
+          </defs>
+          <rect width="320" height="420" fill="url(#ab1)"/>
+          <rect width="320" height="420" fill="url(#abglow)"/>
+          <!-- Bokeh circles -->
+          <circle cx="40" cy="50" r="25" fill="rgba(244,63,142,0.07)"/>
+          <circle cx="270" cy="380" r="45" fill="rgba(232,180,208,0.06)"/>
+          <circle cx="300" cy="80" r="18" fill="rgba(244,63,142,0.05)"/>
+          <!-- Body -->
+          <ellipse cx="160" cy="420" rx="110" ry="80" fill="url(#abblouse)"/>
+          <rect x="110" y="340" width="100" height="90" fill="url(#abblouse)"/>
+          <!-- Shoulders accent -->
+          <path d="M80 370 Q100 340 160 330 Q220 340 240 370 L240 420 L80 420Z" fill="url(#abblouse)"/>
+          <path d="M80 370 Q100 340 160 330 Q220 340 240 370" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" fill="none"/>
+          <!-- Neck -->
+          <rect x="145" y="285" width="30" height="50" rx="9" fill="url(#abskin)"/>
+          <!-- Head -->
+          <ellipse cx="160" cy="240" rx="56" ry="64" fill="url(#abskin)"/>
+          <!-- Hair -->
+          <ellipse cx="160" cy="195" rx="58" ry="44" fill="url(#abhair)"/>
+          <path d="M104 230 Q90 290 96 360 Q116 350 125 310 Q130 278 118 252Z" fill="url(#abhair)"/>
+          <path d="M216 230 Q230 290 224 360 Q204 350 195 310 Q190 278 202 252Z" fill="url(#abhair)"/>
+          <path d="M104 225 Q95 200 105 180 Q130 160 160 195" fill="url(#abhair)"/>
+          <path d="M216 225 Q225 200 215 180 Q190 160 160 195" fill="url(#abhair)"/>
+          <!-- Eyes -->
+          <ellipse cx="141" cy="244" rx="8.5" ry="9" fill="#1a0812"/>
+          <ellipse cx="179" cy="244" rx="8.5" ry="9" fill="#1a0812"/>
+          <circle cx="144" cy="241" r="2.5" fill="white"/>
+          <circle cx="182" cy="241" r="2.5" fill="white"/>
+          <!-- Eyebrows -->
+          <path d="M131 234 Q140 228 151 232" stroke="#2a0a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <path d="M169 232 Q180 228 189 234" stroke="#2a0a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <!-- Lashes -->
+          <path d="M133 237 Q136 233 141 235" stroke="#1a0812" stroke-width="1.5" fill="none"/>
+          <path d="M187 237 Q184 233 179 235" stroke="#1a0812" stroke-width="1.5" fill="none"/>
+          <!-- Nose -->
+          <path d="M158 252 Q156 263 160 267 Q164 269 163 262" stroke="#d4956a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- Smile -->
+          <path d="M148 278 Q158 285 172 278" stroke="#c04060" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Lips -->
+          <path d="M148 274 Q155 270 160 272 Q165 270 172 274 Q168 282 160 284 Q152 282 148 274Z" fill="#e06080"/>
+          <!-- Blush -->
+          <ellipse cx="130" cy="262" rx="13" ry="7" fill="rgba(244,100,150,0.18)"/>
+          <ellipse cx="190" cy="262" rx="13" ry="7" fill="rgba(244,100,150,0.18)"/>
+          <!-- Earrings -->
+          <circle cx="104" cy="255" r="4.5" fill="#e8b4d0"/>
+          <path d="M104 260 L102 272" stroke="#f43f8e" stroke-width="2"/>
+          <circle cx="104" cy="273" r="3.5" fill="#f43f8e"/>
+          <circle cx="216" cy="255" r="4.5" fill="#e8b4d0"/>
+          <path d="M216 260 L218 272" stroke="#f43f8e" stroke-width="2"/>
+          <circle cx="218" cy="273" r="3.5" fill="#f43f8e"/>
+          <!-- Necklace hint -->
+          <path d="M135 295 Q160 310 185 295" stroke="#e8b4d0" stroke-width="1.5" fill="none" opacity="0.6"/>
+          <!-- Laptop bottom corner -->
+          <rect x="75" y="375" width="170" height="40" rx="8" fill="rgba(0,0,0,0.35)" opacity="0.8"/>
+          <text x="115" y="401" fill="rgba(244,63,142,0.8)" font-size="14" font-family="monospace">{'</>'}</text>
+        </svg>
+      </div>
+      <div class="about-tag-card">
+        <div class="big">50+</div>
+        <div class="small">Happy Clients</div>
+      </div>
+      <div class="microsoft-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23"><rect width="11" height="11" fill="#f25022"/><rect x="12" width="11" height="11" fill="#7fba00"/><rect y="12" width="11" height="11" fill="#00a4ef"/><rect x="12" y="12" width="11" height="11" fill="#ffb900"/></svg>
+        Microsoft Alumni
+      </div>
+      <div class="about-deco-ring"></div>
+      <div class="about-deco-ring-2"></div>
+    </div>
+
+    <div class="about-content reveal-right">
+      <div class="section-eyebrow">About Me</div>
+      <h2 class="section-title">The Woman Behind<br><em>the Code & Canvas</em></h2>
+      <div class="section-divider"></div>
+      <p class="about-desc">
+        Hello! I'm <strong>Shahida Bu Ali</strong> — a passionate full-stack developer
+        and digital designer who transforms ideas into breathtaking, functional digital realities.
+        I believe great design is where <strong>art meets logic</strong>.
+      </p>
+      <p class="about-desc">
+        With experience at <strong>Microsoft</strong> and a portfolio spanning <strong>50+ clients</strong>
+        across industries, I bring both corporate-level precision and boutique creative flair
+        to every project. Whether it's a sleek website, a pixel-perfect app, or a complete brand identity —
+        I pour my heart into every pixel.
+      </p>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <div class="hi-icon">🌐</div>
+          <div class="hi-title">Web Development</div>
+          <div class="hi-desc">Responsive, fast, and SEO-optimized websites built for impact and performance.</div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon">🎨</div>
+          <div class="hi-title">UI/UX Design</div>
+          <div class="hi-desc">Intuitive, beautiful interfaces that delight users on every screen.</div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon">📱</div>
+          <div class="hi-title">App Development</div>
+          <div class="hi-desc">Cross-platform mobile apps that scale beautifully across devices.</div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon">🏢</div>
+          <div class="hi-title">Enterprise Experience</div>
+          <div class="hi-desc">Worked with Microsoft — bringing enterprise-grade skills to every project.</div>
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary" style="display:inline-flex; margin-top:.5rem;">
+        Let's Build Something ✨
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills">
+  <div class="skills-header reveal">
+    <div class="section-eyebrow">My Expertise</div>
+    <h2 class="section-title">Crafted with <em>Passion</em> &<br>Polished to Perfection</h2>
+    <div class="section-divider"></div>
+    <p class="section-sub" style="margin-bottom:3rem;">
+      From front-end magic to back-end architecture — every skill sharpened through real-world projects
+      and a relentless pursuit of excellence.
+    </p>
+  </div>
+  <div class="skills-grid">
+    <!-- Card 1 -->
+    <div class="skill-card reveal" style="transition-delay:.05s">
+      <div class="skill-card-icon">💻</div>
+      <div class="skill-card-title">Frontend Development</div>
+      <div class="skill-card-desc">Crafting pixel-perfect, responsive UIs with modern frameworks and cutting-edge CSS techniques.</div>
+      <div class="skill-bar-wrap">
+        <div class="skill-bar-label"><span>React / Next.js</span><span>95%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+      </div>
+      <div class="skill-bar-wrap" style="margin-top:.6rem">
+        <div class="skill-bar-label"><span>HTML / CSS / JS</span><span>98%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="98"></div></div>
+      </div>
+      <div class="tech-chips">
+        <span class="tech-chip">React</span><span class="tech-chip">Next.js</span>
+        <span class="tech-chip">Vue</span><span class="tech-chip">Tailwind</span>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="skill-card reveal" style="transition-delay:.1s">
+      <div class="skill-card-icon">⚙️</div>
+      <div class="skill-card-title">Backend Development</div>
+      <div class="skill-card-desc">Building robust, scalable APIs and server architectures that power seamless digital products.</div>
+      <div class="skill-bar-wrap">
+        <div class="skill-bar-label"><span>Node.js / Express</span><span>90%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+      </div>
+      <div class="skill-bar-wrap" style="margin-top:.6rem">
+        <div class="skill-bar-label"><span>Python / Django</span><span>82%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+      </div>
+      <div class="tech-chips">
+        <span class="tech-chip">Node.js</span><span class="tech-chip">Express</span>
+        <span class="tech-chip">Python</span><span class="tech-chip">REST APIs</span>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="skill-card reveal" style="transition-delay:.15s">
+      <div class="skill-card-icon">🎨</div>
+      <div class="skill-card-title">UI/UX Design</div>
+      <div class="skill-card-desc">User-first designs that blend aesthetics with intuitive flows — from wireframe to final handoff.</div>
+      <div class="skill-bar-wrap">
+        <div class="skill-bar-label"><span>Figma / XD</span><span>96%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="96"></div></div>
+      </div>
+      <div class="skill-bar-wrap" style="margin-top:.6rem">
+        <div class="skill-bar-label"><span>Prototyping</span><span>92%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+      </div>
+      <div class="tech-chips">
+        <span class="tech-chip">Figma</span><span class="tech-chip">Adobe XD</span>
+        <span class="tech-chip">Illustrator</span><span class="tech-chip">Photoshop</span>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="skill-card reveal" style="transition-delay:.2s">
+      <div class="skill-card-icon">📱</div>
+      <div class="skill-card-title">App Development</div>
+      <div class="skill-card-desc">Cross-platform mobile solutions with smooth UX, blazing performance, and native feel.</div>
+      <div class="skill-bar-wrap">
+        <div class="skill-bar-label"><span>React Native</span><span>88%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+      </div>
+      <div class="skill-bar-wrap" style="margin-top:.6rem">
+        <div class="skill-bar-label"><span>Flutter</span><span>78%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+      </div>
+      <div class="tech-chips">
+        <span class="tech-chip">React Native</span><span class="tech-chip">Flutter</span>
+        <span class="tech-chip">iOS</span><span class="tech-chip">Android</span>
+      </div>
+    </div>
+    <!-- Card 5 -->
+    <div class="skill-card reveal" style="transition-delay:.25s">
+      <div class="skill-card-icon">🗄️</div>
+      <div class="skill-card-title">Database & Cloud</div>
+      <div class="skill-card-desc">Architecting efficient data layers and deploying on cloud infrastructure for maximum reliability.</div>
+      <div class="skill-bar-wrap">
+        <div class="skill-bar-label"><span>MongoDB / PostgreSQL</span><span>87%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="87"></div></div>
+      </div>
+      <div class="skill-bar-wrap" style="margin-top:.6rem">
+        <div class="skill-bar-label"><span>Azure / AWS</span><span>80%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+      </div>
+      <div class="tech-chips">
+        <span class="tech-chip">MongoDB</span><span class="tech-chip">PostgreSQL</span>
+        <span class="tech-chip">Azure</span><span class="tech-chip">Firebase</span>
+      </div>
+    </div>
+    <!-- Card 6 -->
+    <div class="skill-card reveal" style="transition-delay:.3s">
+      <div class="skill-card-icon">✨</div>
+      <div class="skill-card-title">Creative & Strategy</div>
+      <div class="skill-card-desc">Branding, motion design, and digital strategy — bringing creative visions to life holistically.</div>
+      <div class="skill-bar-wrap">
+        <div class="skill-bar-label"><span>Branding & Identity</span><span>91%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="91"></div></div>
+      </div>
+      <div class="skill-bar-wrap" style="margin-top:.6rem">
+        <div class="skill-bar-label"><span>Motion / Animation</span><span>84%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="84"></div></div>
+      </div>
+      <div class="tech-chips">
+        <span class="tech-chip">After Effects</span><span class="tech-chip">Lottie</span>
+        <span class="tech-chip">GSAP</span><span class="tech-chip">Three.js</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info reveal-left">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-title">Let's Create<br><em>Something Beautiful</em></h2>
+      <div class="section-divider"></div>
+      <p class="contact-tagline">
+        "Great design is not just what it looks like —<br>it's how it works and how it feels."
+      </p>
+      <p class="section-sub">
+        I'm <strong style="color:var(--rose-light)">happily open to work</strong> — whether you need a
+        full website, a mobile app, a brand identity, or just a brilliant collaborator.
+        Let's talk!
+      </p>
+      <div class="contact-links">
+        <a href="mailto:shahidabuali123@gmail.com" class="contact-link-item">
+          <span class="cli-icon">📧</span>
+          <div>
+            <div class="cli-label">Email</div>
+            <div class="cli-value">shahidabuali123@gmail.com</div>
+          </div>
+        </a>
+        <div class="contact-link-item">
+          <span class="cli-icon">📍</span>
+          <div>
+            <div class="cli-label">Location</div>
+            <div class="cli-value">Available Worldwide · Remote Ready</div>
+          </div>
+        </div>
+        <div class="contact-link-item">
+          <span class="cli-icon">🕐</span>
+          <div>
+            <div class="cli-label">Response Time</div>
+            <div class="cli-value">Within 24 hours</div>
+          </div>
+        </div>
+        <div class="contact-link-item" style="border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.06);">
+          <span class="cli-icon">✅</span>
+          <div>
+            <div class="cli-label" style="color:#6ee7a0;">Status</div>
+            <div class="cli-value" style="color:#6ee7a0;">Open to New Projects</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal-right">
+      <h3>Send Me a Message 💌</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="e.g. Sarah Johnson" id="f-name"/>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@example.com" id="f-email"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Project Type</label>
+        <select id="f-type">
+          <option value="">Select a service…</option>
+          <option>Web Development</option>
+          <option>UI/UX Design</option>
+          <option>Mobile App</option>
+          <option>Branding & Identity</option>
+          <option>Full-Stack Project</option>
+          <option>Consultation</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Budget Range</label>
+        <select id="f-budget">
+          <option value="">Select budget range…</option>
+          <option>Under $500</option>
+          <option>$500 – $2,000</option>
+          <option>$2,000 – $5,000</option>
+          <option>$5,000 – $10,000</option>
+          <option>$10,000+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Message</label>
+        <textarea placeholder="Tell me about your project, goals, and timeline…" id="f-msg"></textarea>
+      </div>
+      <button class="btn-submit" onclick="submitForm()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+        Send Message
+      </button>
+      <div class="form-success" id="form-success">
+        ✨ Thank you! I'll be in touch within 24 hours. ✨
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TIP & REVIEWS ══ -->
+<section id="love" style="background: linear-gradient(180deg,#1a0812 0%,#2a0a1e 100%);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal" style="text-align:center;margin-bottom:4rem;">
+      <div class="section-eyebrow" style="justify-content:center;">Show Some Love</div>
+      <h2 class="section-title">Enjoyed My <em>Work?</em></h2>
+      <div class="section-divider" style="margin:1rem auto 1.2rem;"></div>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">
+        If I've made a positive impact on your project, feel free to leave a tip or share your experience —
+        it means the world! 💖
+      </p>
+    </div>
+
+    <!-- TIP + REVIEW GRID -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;" class="love-grid">
+
+      <!-- ── TIP JAR ── -->
+      <div class="contact-form reveal-left" style="position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-40px;right:-40px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(244,63,142,.12),transparent);pointer-events:none;"></div>
+        <div style="font-size:2.8rem;margin-bottom:.6rem;text-align:center;">☕</div>
+        <h3 style="text-align:center;margin-bottom:.3rem;">Buy Me a Coffee</h3>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.45);text-align:center;margin-bottom:1.8rem;line-height:1.6;">
+          Your tip directly supports my work and helps me keep creating amazing things!
+        </p>
+
+        <!-- Preset amounts -->
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.4rem;" id="tip-presets">
+          <button class="tip-preset" data-val="3" onclick="selectTip(3,this)">☕ $3</button>
+          <button class="tip-preset" data-val="5" onclick="selectTip(5,this)">🌸 $5</button>
+          <button class="tip-preset" data-val="10" onclick="selectTip(10,this)">💖 $10</button>
+          <button class="tip-preset" data-val="20" onclick="selectTip(20,this)">✨ $20</button>
+          <button class="tip-preset tip-custom-btn" onclick="toggleCustomTip()" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.5);">Custom</button>
+        </div>
+        <div id="custom-tip-wrap" style="display:none;margin-bottom:1rem;">
+          <div class="form-group">
+            <label>Custom Amount (USD)</label>
+            <input type="number" id="tip-custom-amount" placeholder="Enter amount…" min="1" step="0.5"
+              oninput="document.getElementById('tip-amount-hidden').value=this.value"/>
+          </div>
+        </div>
+        <input type="hidden" id="tip-amount-hidden" value="5"/>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="tip-name" placeholder="e.g. Alex (optional)"/>
+          </div>
+          <div class="form-group">
+            <label>Method</label>
+            <select id="tip-method">
+              <option value="card">💳 Credit Card</option>
+              <option value="paypal">🅿 PayPal</option>
+              <option value="crypto">₿ Crypto</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Leave a Sweet Note (optional)</label>
+          <input type="text" id="tip-note" placeholder="You're amazing! Keep it up 🌸"/>
+        </div>
+
+        <button class="btn-submit" id="tip-btn" onclick="submitTip()">
+          <span>💸</span> Send Tip
+        </button>
+        <div id="tip-success" style="display:none;" class="form-success"></div>
+        <div id="tip-counter" style="text-align:center;margin-top:1rem;font-size:.78rem;color:rgba(255,255,255,.35);">
+          Loading tip stats…
+        </div>
+      </div>
+
+      <!-- ── REVIEW SECTION ── -->
+      <div style="display:flex;flex-direction:column;gap:2rem;">
+
+        <!-- Write Review card -->
+        <div class="contact-form reveal-right">
+          <h3 style="margin-bottom:.3rem;">Leave a Review ⭐</h3>
+          <p style="font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:1.4rem;line-height:1.6;">
+            Worked together? I'd love to hear about your experience!
+          </p>
+
+          <!-- Star picker -->
+          <div style="margin-bottom:1.2rem;">
+            <div style="font-size:.75rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;">Your Rating</div>
+            <div id="star-picker" style="display:flex;gap:.35rem;">
+              <span class="star-btn" data-s="1" onclick="setStars(1)">★</span>
+              <span class="star-btn" data-s="2" onclick="setStars(2)">★</span>
+              <span class="star-btn" data-s="3" onclick="setStars(3)">★</span>
+              <span class="star-btn" data-s="4" onclick="setStars(4)">★</span>
+              <span class="star-btn" data-s="5" onclick="setStars(5)">★</span>
+            </div>
+            <div id="star-label" style="font-size:.78rem;color:var(--rose-light);margin-top:.4rem;min-height:1em;"></div>
+          </div>
+          <input type="hidden" id="review-rating" value="0"/>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="rev-name" placeholder="e.g. Sarah K."/>
+            </div>
+            <div class="form-group">
+              <label>Your Role</label>
+              <input type="text" id="rev-role" placeholder="e.g. Startup Founder"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Project Type</label>
+            <select id="rev-type">
+              <option value="">What did we work on?</option>
+              <option>Web Development</option>
+              <option>UI/UX Design</option>
+              <option>Mobile App</option>
+              <option>Branding</option>
+              <option>Full-Stack Project</option>
+              <option>Consultation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Review</label>
+            <textarea id="rev-comment" placeholder="Describe your experience working with Shahida…"></textarea>
+          </div>
+          <button class="btn-submit" onclick="submitReview()">
+            <span>⭐</span> Submit Review
+          </button>
+          <div id="review-success" class="form-success" style="display:none;"></div>
+        </div>
+
+        <!-- Live Reviews Display -->
+        <div id="reviews-display" class="reveal" style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="font-size:.78rem;color:rgba(255,255,255,.3);text-align:center;padding:1rem;">Loading reviews…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <a href="admin.html" class="footer-logo" style="text-decoration:none;cursor:pointer;" title="Admin Panel">Shahida Bu Ali</a>
+  <div class="footer-copy">
+    © 2025 Shahida Bu Ali. All rights reserved. Made with 💖
+  </div>
+  <div class="footer-socials">
+    <a href="#" title="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    </a>
+    <a href="#" title="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+    </a>
+    <a href="mailto:shahidabuali123@gmail.com" title="Email">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    </a>
+    <a href="#" title="Dribbble">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.628 0-12 5.373-12 12s5.372 12 12 12 12-5.373 12-12-5.372-12-12-12zm9.885 11.441c-2.575-.422-4.943-.445-7.103-.073-.244-.563-.497-1.125-.767-1.68 2.31-1 4.165-2.358 5.548-4.082 1.35 1.594 2.197 3.619 2.322 5.835zm-3.842-7.282c-1.205 1.554-2.868 2.783-4.986 3.68-1.016-1.861-2.178-3.676-3.488-5.438.779-.197 1.591-.314 2.431-.314 2.275 0 4.368.779 6.043 2.072zm-10.516-.993c1.331 1.742 2.511 3.538 3.537 5.381-2.43.715-5.331 1.082-8.684 1.105.692-2.835 2.601-5.193 5.147-6.486zm-5.44 8.834l.013-.256c3.849-.005 7.169-.448 9.95-1.322.233.475.456.952.67 1.432-3.38 1.057-6.165 3.222-8.337 6.48-1.432-1.719-2.296-3.927-2.296-6.334zm3.829 7.81c1.969-3.088 4.482-5.098 7.598-6.027.928 2.42 1.609 4.91 2.043 7.46-3.349 1.291-7.494-2.046-9.641-1.433zm11.586.43c-.438-2.353-1.08-4.653-1.92-6.897 1.876-.265 3.94-.196 6.199.196-.437 2.786-2.028 5.192-4.279 6.701z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<style>
+  /* ── TIP & REVIEW EXTRAS ── */
+  .love-grid { }
+  @media(max-width:900px){ .love-grid{ grid-template-columns:1fr !important; } }
+
+  .tip-preset {
+    padding: .45rem 1.1rem; border-radius: 30px;
+    background: var(--glass); border: 1.5px solid var(--glass-border);
+    color: rgba(255,255,255,.7); font-size: .85rem; font-weight: 600;
+    cursor: pointer; transition: all .2s; font-family: 'DM Sans', sans-serif;
+  }
+  .tip-preset:hover  { border-color: var(--rose); color: var(--rose-light); background: rgba(244,63,142,.1); }
+  .tip-preset.active { border-color: var(--rose); color: var(--white); background: linear-gradient(135deg,var(--rose),#a0235c); box-shadow: 0 4px 16px rgba(244,63,142,.35); }
+
+  .star-btn {
+    font-size: 2rem; cursor: pointer; color: rgba(255,255,255,.18);
+    transition: color .15s, transform .15s; display:inline-block;
+  }
+  .star-btn.lit   { color: #fbbf24; text-shadow: 0 0 10px rgba(251,191,36,.6); }
+  .star-btn:hover { transform: scale(1.2); }
+
+  .review-card {
+    background: linear-gradient(145deg,rgba(255,255,255,.06),rgba(244,63,142,.03));
+    border: 1px solid var(--glass-border); border-radius: 16px;
+    padding: 1.3rem 1.5rem; backdrop-filter: blur(12px);
+    transition: transform .2s;
+    animation: slideUp .5s ease both;
+  }
+  @keyframes slideUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .review-card:hover { transform: translateY(-3px); }
+  .review-card-top { display:flex; align-items:center; gap:.8rem; margin-bottom:.7rem; }
+  .review-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: linear-gradient(135deg,var(--rose),var(--plum-mid));
+    display: flex; align-items:center; justify-content:center;
+    font-size: 1rem; font-weight:700; color:#fff; flex-shrink:0;
+    border: 2px solid rgba(244,63,142,.3);
+  }
+  .review-name  { font-weight:600; font-size:.92rem; }
+  .review-role  { font-size:.74rem; color:rgba(255,255,255,.4); }
+  .review-stars { display:flex; gap:2px; margin-bottom:.5rem; }
+  .review-stars span { font-size:.95rem; }
+  .review-text  { font-size:.85rem; color:rgba(255,255,255,.62); line-height:1.65; }
+  .review-type-badge {
+    display:inline-block; margin-top:.6rem;
+    padding:.18rem .65rem; border-radius:20px; font-size:.7rem; font-weight:600;
+    background:rgba(244,63,142,.1); border:1px solid rgba(244,63,142,.2); color:var(--rose-light);
+  }
+  .avg-rating-bar {
+    display:flex; align-items:center; gap:.8rem;
+    margin-bottom:1.2rem; padding:.8rem 1.2rem;
+    background:rgba(251,191,36,.06); border:1px solid rgba(251,191,36,.2);
+    border-radius:12px;
+  }
+  .avg-big { font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; color:#fbbf24; }
+  .avg-stars-row { display:flex; gap:2px; }
+  .avg-stars-row span { font-size:1.1rem; color:#fbbf24; }
+  .avg-label { font-size:.75rem; color:rgba(255,255,255,.4); margin-top:.15rem; }
+</style>
+
+<script>
+  /* ═══════════════════════════════════════════════
+     BACKEND API CONFIG
+     When server.js is running locally use:
+       const API = 'http://localhost:3001/api';
+     For a deployed server, replace with your URL.
+     In demo mode (no server) forms show local feedback.
+  ═══════════════════════════════════════════════ */
+  const API = 'http://localhost:3001/api';
+  const DEMO_MODE = true; // set false when server.js is running
+
+  async function apiPost(endpoint, body) {
+    if (DEMO_MODE) return { ok: true, _demo: true };
+    const r = await fetch(API + endpoint, {
+      method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)
+    });
+    return r.json();
+  }
+  async function apiGet(endpoint) {
+    if (DEMO_MODE) return { ok: true, _demo: true };
+    const r = await fetch(API + endpoint);
+    return r.json();
+  }
+
+  /* ── CURSOR ── */
+  const cursor = document.getElementById('cursor');
+  const ring   = document.getElementById('cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+  });
+  (function animRing(){
+    rx += (mx - rx) * .14; ry += (my - ry) * .14;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(animRing);
+  })();
+  document.querySelectorAll('a, button, .skill-card, .highlight-item').forEach(el => {
+    el.addEventListener('mouseenter', () => { ring.style.width='60px'; ring.style.height='60px'; ring.style.borderColor='var(--rose)'; });
+    el.addEventListener('mouseleave', () => { ring.style.width='40px'; ring.style.height='40px'; ring.style.borderColor='var(--rose-light)'; });
+  });
+
+  /* ── 3D CANVAS BACKGROUND ── */
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  function resizeCanvas(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  resizeCanvas(); window.addEventListener('resize', resizeCanvas);
+  const stars = Array.from({length:120}, () => ({
+    x: Math.random()*2-1, y: Math.random()*2-1, z: Math.random(),
+    r: Math.random()*1.8+.3, hue: Math.random() < .5 ? 320 : 350, speed: Math.random()*.0003+.0001
+  }));
+  const orbs = Array.from({length:6}, (_,i) => ({
+    x: Math.random()*W, y: Math.random()*H, r: 180+Math.random()*220,
+    vx: (Math.random()-.5)*.3, vy: (Math.random()-.5)*.3,
+    hue: 310+i*15, alpha: .04+Math.random()*.06
+  }));
+  let mouseX = 0, mouseY = 0;
+  document.addEventListener('mousemove', e => { mouseX = e.clientX/W-.5; mouseY = e.clientY/H-.5; });
+  function drawBg(){
+    ctx.clearRect(0,0,W,H);
+    orbs.forEach(o => {
+      o.x += o.vx + mouseX*.4; o.y += o.vy + mouseY*.4;
+      if(o.x<-o.r) o.x=W+o.r; if(o.x>W+o.r) o.x=-o.r;
+      if(o.y<-o.r) o.y=H+o.r; if(o.y>H+o.r) o.y=-o.r;
+      const g = ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);
+      g.addColorStop(0, `hsla(${o.hue},80%,55%,${o.alpha})`); g.addColorStop(1,'transparent');
+      ctx.fillStyle=g; ctx.beginPath(); ctx.arc(o.x,o.y,o.r,0,Math.PI*2); ctx.fill();
+    });
+    stars.forEach(s => {
+      s.z -= s.speed; if(s.z<=0) s.z=1;
+      const sx=(s.x/s.z)*W*.5+W*.5+mouseX*30, sy=(s.y/s.z)*H*.5+H*.5+mouseY*30;
+      const sr=s.r*(1-s.z)*.8, al=(1-s.z)*0.8;
+      ctx.beginPath(); ctx.arc(sx,sy,sr,0,Math.PI*2);
+      ctx.fillStyle=`hsla(${s.hue},80%,80%,${al})`; ctx.fill();
+    });
+    requestAnimationFrame(drawBg);
+  }
+  drawBg();
+
+  /* ── PARTICLES ── */
+  const pContainer = document.getElementById('particles');
+  for(let i=0;i<28;i++){
+    const p=document.createElement('div'); p.className='particle';
+    const sz=Math.random()*4+1.5;
+    p.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;animation-duration:${10+Math.random()*20}s;animation-delay:${Math.random()*-25}s;opacity:${Math.random()*.5};`;
+    pContainer.appendChild(p);
+  }
+
+  /* ── COUNTER ANIMATION ── */
+  function animateCounter(el){
+    const target=+el.dataset.count; let start=0;
+    const step=()=>{ start+=Math.ceil(target/60); if(start>=target){el.textContent=target+'+';return;} el.textContent=start+'+'; requestAnimationFrame(step); };
+    step();
+  }
+
+  /* ── INTERSECTION OBSERVER ── */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('.skill-bar-fill').forEach(b=>{ b.style.width=b.dataset.width+'%'; });
+        e.target.querySelectorAll('.stat-num[data-count]').forEach(animateCounter);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
+  document.querySelectorAll('.skill-card').forEach(el => io.observe(el));
+  document.querySelector('.hero-stats') && io.observe(document.querySelector('.hero-stats'));
+
+  /* ── CONTACT FORM ── */
+  async function submitForm(){
+    const name  = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const msg   = document.getElementById('f-msg').value.trim();
+    if(!name||!email||!msg){ showToast('Please fill in name, email, and message! 💌','warn'); return; }
+    const btn = document.querySelector('.btn-submit');
+    btn.textContent = 'Sending…'; btn.disabled = true;
+    const res = await apiPost('/contact', {
+      name, email,
+      projectType: document.getElementById('f-type').value,
+      budget: document.getElementById('f-budget').value,
+      message: msg
+    });
+    if(res.ok){
+      document.getElementById('form-success').style.display='block';
+      btn.style.display='none';
+      showToast('Message sent! I\'ll reply within 24h ✨','ok');
+    } else {
+      showToast(res.error || 'Something went wrong 😢','err');
+      btn.textContent='Send Message'; btn.disabled=false;
+    }
+  }
+
+  /* ── TIP SYSTEM ── */
+  let selectedTip = 5;
+  function selectTip(val, el){
+    selectedTip = val;
+    document.getElementById('tip-amount-hidden').value = val;
+    document.querySelectorAll('.tip-preset').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('custom-tip-wrap').style.display = 'none';
+  }
+  function toggleCustomTip(){
+    const w = document.getElementById('custom-tip-wrap');
+    w.style.display = w.style.display==='none' ? 'block' : 'none';
+    document.querySelectorAll('.tip-preset').forEach(b => b.classList.remove('active'));
+    document.querySelector('.tip-custom-btn').classList.add('active');
+  }
+  // Select $5 by default
+  document.addEventListener('DOMContentLoaded', () => {
+    const def = document.querySelector('[data-val="5"]');
+    if(def) def.classList.add('active');
+    loadTipStats();
+    loadReviews();
+  });
+
+  async function loadTipStats(){
+    const tc = document.getElementById('tip-counter');
+    if(DEMO_MODE){ tc.textContent = '☕ 12 supporters · $147 raised so far'; return; }
+    try {
+      const d = await apiGet('/tips/total');
+      if(d.ok) tc.textContent = `☕ ${d.count} supporters · $${d.total} raised so far`;
+    } catch { tc.textContent = ''; }
+  }
+
+  async function submitTip(){
+    const amount = parseFloat(document.getElementById('tip-amount-hidden').value || selectedTip);
+    if(!amount || amount <= 0){ showToast('Please select or enter a tip amount 💸','warn'); return; }
+    const btn = document.getElementById('tip-btn');
+    btn.textContent = 'Processing…'; btn.disabled = true;
+    const res = await apiPost('/tip', {
+      name:   document.getElementById('tip-name').value.trim() || 'Anonymous',
+      amount,
+      note:   document.getElementById('tip-note').value.trim(),
+      method: document.getElementById('tip-method').value
+    });
+    const suc = document.getElementById('tip-success');
+    if(res.ok){
+      suc.style.display = 'block';
+      suc.textContent = res._demo
+        ? `💖 Thank you for the $${amount} tip! It means everything!`
+        : res.message;
+      btn.style.display = 'none';
+      showToast('Tip sent — thank you so much! 💖','ok');
+      loadTipStats();
+    } else {
+      showToast(res.error || 'Something went wrong','err');
+      btn.textContent='Send Tip'; btn.disabled=false;
+    }
+  }
+
+  /* ── STAR RATING ── */
+  const starLabels = ['','Just okay','Good work!','Great job! 😊','Really impressive! 🌟','Absolutely amazing! 💖'];
+  function setStars(n){
+    document.getElementById('review-rating').value = n;
+    document.querySelectorAll('.star-btn').forEach((s,i) => {
+      s.classList.toggle('lit', i < n);
+    });
+    document.getElementById('star-label').textContent = starLabels[n];
+  }
+  document.querySelectorAll('.star-btn').forEach(s => {
+    s.addEventListener('mouseenter', () => {
+      const n = +s.dataset.s;
+      document.querySelectorAll('.star-btn').forEach((x,i)=> x.style.color = i<n?'#fbbf24':'');
+    });
+    s.addEventListener('mouseleave', () => {
+      const cur = +document.getElementById('review-rating').value;
+      document.querySelectorAll('.star-btn').forEach((x,i)=> x.style.color = '');
+      document.querySelectorAll('.star-btn').forEach((x,i)=> { if(i<cur) x.classList.add('lit'); });
+    });
+  });
+
+  async function submitReview(){
+    const name    = document.getElementById('rev-name').value.trim();
+    const rating  = +document.getElementById('review-rating').value;
+    const comment = document.getElementById('rev-comment').value.trim();
+    if(!name){ showToast('Please enter your name 😊','warn'); return; }
+    if(!rating){ showToast('Please select a star rating ⭐','warn'); return; }
+    if(!comment){ showToast('Please write a short review 💬','warn'); return; }
+    const btn = document.querySelector('#love .btn-submit:last-of-type');
+    const allBtns = document.querySelectorAll('#love .btn-submit');
+    const revBtn = allBtns[allBtns.length-1];
+    revBtn.textContent = 'Submitting…'; revBtn.disabled = true;
+    const res = await apiPost('/reviews', {
+      name, rating, comment,
+      role: document.getElementById('rev-role').value.trim(),
+      projectType: document.getElementById('rev-type').value
+    });
+    const suc = document.getElementById('review-success');
+    if(res.ok){
+      suc.style.display='block';
+      suc.textContent = '⭐ Thank you for your review! It\'s been published.';
+      revBtn.style.display='none';
+      // Inject new review into display
+      const rev = res._demo ? {
+        name, rating, comment,
+        role: document.getElementById('rev-role').value.trim() || 'Client',
+        projectType: document.getElementById('rev-type').value || 'General',
+        createdAt: new Date().toISOString()
+      } : res.review;
+      prependReviewCard(rev);
+      showToast('Review published! Thank you ⭐','ok');
+    } else {
+      showToast(res.error || 'Something went wrong','err');
+      revBtn.textContent='Submit Review'; revBtn.disabled=false;
+    }
+  }
+
+  /* ── REVIEW DISPLAY ── */
+  const DEMO_REVIEWS = [
+    { name:'Amira Hassan', role:'CEO, TechBloom', rating:5, comment:'Shahida delivered a stunning website that exceeded every expectation. The attention to detail and creativity was unmatched!', projectType:'Web Development', createdAt:'2025-03-10' },
+    { name:'Jordan Lee', role:'Product Manager', rating:5, comment:'Working with Shahida felt effortless. She understood our vision immediately and brought it to life beautifully. Highly recommended!', projectType:'UI/UX Design', createdAt:'2025-02-18' },
+    { name:'Priya Mehta', role:'Startup Founder', rating:5, comment:'The mobile app she built for us has gotten incredible feedback from users. Professional, on-time, and genuinely talented.', projectType:'Mobile App', createdAt:'2025-01-30' },
+  ];
+
+  async function loadReviews(){
+    const display = document.getElementById('reviews-display');
+    let reviews = DEMO_REVIEWS;
+    let avg = '5.0'; let count = DEMO_REVIEWS.length;
+    if(!DEMO_MODE){
+      try {
+        const d = await apiGet('/reviews');
+        if(d.ok && d.reviews.length){ reviews = d.reviews; avg = d.averageRating; count = d.count; }
+      } catch {}
+    }
+    display.innerHTML = '';
+    if(reviews.length){
+      // Avg bar
+      const avgBar = document.createElement('div');
+      avgBar.className='avg-rating-bar';
+      avgBar.innerHTML=`
+        <div class="avg-big">${avg}</div>
+        <div>
+          <div class="avg-stars-row">${'⭐'.repeat(Math.round(+avg))}</div>
+          <div class="avg-label">${count} review${count!==1?'s':''}</div>
+        </div>`;
+      display.appendChild(avgBar);
+    }
+    reviews.slice(0,4).forEach(r => {
+      display.appendChild(makeReviewCard(r));
+    });
+    if(!reviews.length){
+      display.innerHTML='<div style="text-align:center;color:rgba(255,255,255,.3);font-size:.85rem;padding:1rem;">Be the first to leave a review! ⭐</div>';
+    }
+  }
+  function makeReviewCard(r){
+    const card = document.createElement('div');
+    card.className='review-card';
+    const stars = '★'.repeat(r.rating) + '☆'.repeat(5-r.rating);
+    const init = r.name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+    const date = new Date(r.createdAt).toLocaleDateString('en-US',{month:'short',year:'numeric'});
+    card.innerHTML=`
+      <div class="review-card-top">
+        <div class="review-avatar">${init}</div>
+        <div><div class="review-name">${r.name}</div><div class="review-role">${r.role||'Client'}</div></div>
+        <div style="margin-left:auto;font-size:.72rem;color:rgba(255,255,255,.3);">${date}</div>
+      </div>
+      <div class="review-stars">
+        ${[...stars].map(s=>`<span style="color:${s==='★'?'#fbbf24':'rgba(255,255,255,.15)'}">${s}</span>`).join('')}
+      </div>
+      <div class="review-text">"${r.comment}"</div>
+      ${r.projectType?`<span class="review-type-badge">${r.projectType}</span>`:''}
+    `;
+    return card;
+  }
+  function prependReviewCard(r){
+    const display = document.getElementById('reviews-display');
+    const card = makeReviewCard(r);
+    const avgBar = display.querySelector('.avg-rating-bar');
+    if(avgBar) display.insertBefore(card, avgBar.nextSibling);
+    else display.prepend(card);
+  }
+
+  /* ── TOAST NOTIFICATIONS ── */
+  function showToast(msg, type='ok'){
+    const t = document.createElement('div');
+    const colors = { ok:'rgba(34,197,94,.9)', warn:'rgba(251,191,36,.9)', err:'rgba(239,68,68,.9)' };
+    t.style.cssText=`
+      position:fixed;bottom:2rem;right:2rem;z-index:99999;
+      background:${colors[type]||colors.ok};
+      color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;
+      padding:.8rem 1.5rem;border-radius:12px;
+      box-shadow:0 8px 32px rgba(0,0,0,.35);
+      animation:slideInToast .35s ease both;
+      max-width:320px;line-height:1.4;
+    `;
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(()=>{ t.style.opacity='0'; t.style.transition='opacity .4s'; setTimeout(()=>t.remove(),400); }, 3500);
+  }
+  const toastStyle = document.createElement('style');
+  toastStyle.textContent = `@keyframes slideInToast { from{transform:translateX(120%);opacity:0} to{transform:translateX(0);opacity:1} }`;
+  document.head.appendChild(toastStyle);
+
+
+  /* ── SKELETON LOADER DISMISS ── */
+  const skLoadingMsgs = [
+    'Loading portfolio…',
+    'Preparing your experience…',
+    'Almost there…',
+    'Setting the stage…'
+  ];
+  let skIdx = 0;
+  const skTextEl = document.getElementById('sk-loading-text');
+  const skInterval = setInterval(() => {
+    skIdx = (skIdx + 1) % skLoadingMsgs.length;
+    if(skTextEl) skTextEl.textContent = skLoadingMsgs[skIdx];
+  }, 600);
+
+  function hideSkeleton() {
+    clearInterval(skInterval);
+    const sk = document.getElementById('skeleton-screen');
+    if(sk) {
+      sk.classList.add('hidden');
+      setTimeout(() => sk.remove(), 700);
+    }
+  }
+
+  // Hide after fonts + images + scripts load
+  if(document.readyState === 'complete') {
+    setTimeout(hideSkeleton, 800);
+  } else {
+    window.addEventListener('load', () => setTimeout(hideSkeleton, 800));
+  }
+  // Failsafe — always hide after 3.5s no matter what
+  setTimeout(hideSkeleton, 3500);
+
+  /* ── SMOOTH NAV ACTIVE ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur='';
+    sections.forEach(s=>{ if(window.scrollY>=s.offsetTop-120) cur=s.id; });
+    navLinks.forEach(a=>{ a.style.color=a.getAttribute('href')==='#'+cur?'var(--rose-light)':''; });
+  });
+</script>
+
+<!-- ══════════════════════════════════════════════════════════
+     SUPABASE BACKEND — Fully connected, secured, production-ready
+     Project: shahidabuali'sportfolio
+════════════════════════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* ── Supabase Init ── */
+const _sb = window.supabase.createClient(
+  'https://oiztdngwarwhjbxtgsdx.supabase.co',
+  'sb_publishable_gpIruorbcC0-VxG3bko_2Q_eU2FRWbN',
+  { auth:{ autoRefreshToken:false, persistSession:false, detectSessionInUrl:false } }
+);
+
+/* ── Rate Limiter ── */
+const _rl={};
+function _rateOk(k,max=3){
+  const now=Date.now(),s=(_rl[k]||[]).filter(t=>now-t<3600000);
+  _rl[k]=s; if(s.length>=max)return false; _rl[k].push(now); return true;
+}
+/* ── Sanitize ── */
+function _c(s){return String(s||'').replace(/</g,'&lt;').replace(/>/g,'&gt;').trim().slice(0,2000);}
+function _em(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
+/* ── Toast ── */
+function showToast(msg,type='ok'){
+  let t=document.getElementById('sb-toast');
+  if(!t){t=document.createElement('div');t.id='sb-toast';
+    const s=document.createElement('style');
+    s.textContent='@keyframes sbIn{from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1}}';
+    document.head.appendChild(s); document.body.appendChild(t);}
+  const c={ok:'rgba(34,197,94,.95)',warn:'rgba(251,191,36,.95)',err:'rgba(239,68,68,.95)'};
+  t.style.cssText=`position:fixed;bottom:2rem;right:2rem;z-index:99999;background:${c[type]||c.ok};
+    color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;
+    padding:.8rem 1.5rem;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.3);
+    max-width:300px;line-height:1.4;animation:sbIn .35s cubic-bezier(.34,1.56,.64,1) both;`;
+  t.textContent=msg; clearTimeout(t._t);
+  t._t=setTimeout(()=>{t.style.opacity='0';t.style.transition='opacity .4s';},3200);
+}
+
+/* ══════════════════════════════════════════
+   CONTACT FORM  →  messages table
+══════════════════════════════════════════ */
+async function submitForm(){
+  const name =_c(document.getElementById('f-name')?.value);
+  const email=_c(document.getElementById('f-email')?.value);
+  const msg  =_c(document.getElementById('f-msg')?.value);
+  const type =_c(document.getElementById('f-type')?.value);
+  const bdgt =_c(document.getElementById('f-budget')?.value);
+  if(!name||!email||!msg){showToast('Please fill in name, email & message! 💌','warn');return;}
+  if(!_em(email)){showToast('Please enter a valid email! 📧','warn');return;}
+  if(!_rateOk('c_'+email,3)){showToast('Too many messages. Please wait an hour! 💌','warn');return;}
+  const btn=document.querySelector('#contact .btn-submit');
+  if(btn){btn.disabled=true;btn.innerHTML='⏳ Sending…';}
+  const{error}=await _sb.from('messages').insert([{
+    name,email,project_type:type||'—',budget:bdgt||'—',message:msg,is_read:false
+  }]);
+  if(error){
+    console.error(error);
+    showToast('Something went wrong. Try again! 😢','err');
+    if(btn){btn.disabled=false;btn.innerHTML='✉️ Send Message';}
+  } else {
+    document.getElementById('form-success').style.display='block';
+    if(btn)btn.style.display='none';
+    showToast('Message sent! I\'ll reply within 24 hours ✨','ok');
+  }
+}
+
+/* ══════════════════════════════════════════
+   TIP JAR  →  tips table
+══════════════════════════════════════════ */
+async function submitTip(){
+  const amount=parseFloat(document.getElementById('tip-amount-hidden')?.value||5);
+  const name  =_c(document.getElementById('tip-name')?.value)||'Anonymous';
+  const note  =_c(document.getElementById('tip-note')?.value);
+  const method=_c(document.getElementById('tip-method')?.value)||'card';
+  if(!amount||amount<=0){showToast('Please select a tip amount! 💸','warn');return;}
+  if(amount>10000){showToast('Max tip is $10,000','warn');return;}
+  if(!_rateOk('t_'+name,5)){showToast('Too many tips! Thank you though 💖','warn');return;}
+  const btn=document.getElementById('tip-btn');
+  if(btn){btn.disabled=true;btn.textContent='Processing…';}
+  const{error}=await _sb.from('tips').insert([{name,amount,currency:'USD',note,method}]);
+  if(error){
+    console.error(error);
+    showToast('Something went wrong. Try again!','err');
+    if(btn){btn.disabled=false;btn.textContent='💸 Send Tip';}
+  } else {
+    const suc=document.getElementById('tip-success');
+    if(suc){suc.style.display='block';suc.textContent=`💖 Thank you for the $${amount} tip, ${name}!`;}
+    if(btn)btn.style.display='none';
+    showToast('Tip sent — thank you so much! 💖','ok');
+    _loadTipStats();
+  }
+}
+
+/* ══════════════════════════════════════════
+   REVIEWS  →  reviews table
+══════════════════════════════════════════ */
+async function submitReview(){
+  const name   =_c(document.getElementById('rev-name')?.value);
+  const role   =_c(document.getElementById('rev-role')?.value);
+  const comment=_c(document.getElementById('rev-comment')?.value);
+  const type   =_c(document.getElementById('rev-type')?.value);
+  const rating =parseInt(document.getElementById('review-rating')?.value||0);
+  if(!name){showToast('Please enter your name 😊','warn');return;}
+  if(!rating){showToast('Please select a star rating ⭐','warn');return;}
+  if(!comment||comment.length<10){showToast('Please write a bit more! 💬','warn');return;}
+  if(!_rateOk('r_'+name,2)){showToast('You already submitted a review recently!','warn');return;}
+  const allBtns=document.querySelectorAll('#love .btn-submit');
+  const revBtn=allBtns[allBtns.length-1];
+  if(revBtn){revBtn.disabled=true;revBtn.textContent='Submitting…';}
+  const{data,error}=await _sb.from('reviews').insert([{
+    name,role:role||'Client',project_type:type||'General',
+    rating,comment,approved:true
+  }]).select().single();
+  if(error){
+    console.error(error);
+    showToast('Something went wrong. Try again!','err');
+    if(revBtn){revBtn.disabled=false;revBtn.textContent='⭐ Submit Review';}
+  } else {
+    const suc=document.getElementById('review-success');
+    if(suc){suc.style.display='block';suc.textContent='⭐ Thank you for your review! It\'s live now.';}
+    if(revBtn)revBtn.style.display='none';
+    if(data)prependReviewCard(data);
+    showToast('Review published! Thank you ⭐','ok');
+  }
+}
+
+/* ══════════════════════════════════════════
+   LOAD REVIEWS  from Supabase
+══════════════════════════════════════════ */
+async function loadReviews(){
+  const display=document.getElementById('reviews-display');
+  if(!display)return;
+  const{data,error}=await _sb.from('reviews').select('*')
+    .eq('approved',true).order('created_at',{ascending:false}).limit(6);
+  const reviews=(!error&&data?.length)?data:[
+    {name:'Amira Hassan',role:'CEO, TechBloom',rating:5,comment:'Shahida delivered a stunning website beyond every expectation. Absolutely incredible work!',project_type:'Web Development',created_at:new Date().toISOString()},
+    {name:'Jordan Lee',role:'Product Manager',rating:5,comment:'She understood our vision immediately and brought it to life beautifully. Highly recommended!',project_type:'UI/UX Design',created_at:new Date().toISOString()},
+    {name:'Priya Mehta',role:'Startup Founder',rating:5,comment:'The mobile app she built got incredible user feedback. Professional, on-time, genuinely talented.',project_type:'Mobile App',created_at:new Date().toISOString()},
+  ];
+  display.innerHTML='';
+  const avg=(reviews.reduce((s,r)=>s+r.rating,0)/reviews.length).toFixed(1);
+  const ab=document.createElement('div');
+  ab.className='avg-rating-bar';
+  ab.innerHTML=`<div class="avg-big">${avg}</div><div><div class="avg-stars-row">${'⭐'.repeat(Math.round(+avg))}</div><div class="avg-label">${reviews.length} review${reviews.length!==1?'s':''}</div></div>`;
+  display.appendChild(ab);
+  reviews.slice(0,4).forEach(r=>display.appendChild(makeReviewCard(r)));
+}
+
+/* ── Tip Stats ── */
+async function _loadTipStats(){
+  const tc=document.getElementById('tip-counter');
+  if(!tc)return;
+  const{count}=await _sb.from('tips').select('*',{count:'exact',head:true});
+  tc.textContent=`☕ ${count||0} supporter${count!==1?'s':''} so far`;
+}
+
+/* ── Init ── */
+document.addEventListener('DOMContentLoaded',()=>{
+  loadReviews();
+  _loadTipStats();
+  const def=document.querySelector('[data-val="5"]');
+  if(def)def.classList.add('active');
+});
+</script>
+</body>
+</html>

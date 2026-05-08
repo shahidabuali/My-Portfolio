@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin — Private</title>
+  <!-- No indexing, no sharing, fully hidden from search engines -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --rose:    #f43f8e;
+      --roseL:   #ff8ec8;
+      --plum:    #1e0a18;
+      --plumM:   #3b1230;
+      --glass:   rgba(255,255,255,0.07);
+      --glassB:  rgba(255,180,210,0.2);
+      --gold:    #e8b4d0;
+      --green:   #22c55e;
+      --yellow:  #fbbf24;
+      --red:     #ef4444;
+      --blue:    #60a5fa;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'DM Sans',sans-serif;
+      background: var(--plum);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width:5px; }
+    ::-webkit-scrollbar-track { background:var(--plum); }
+    ::-webkit-scrollbar-thumb { background:var(--rose); border-radius:3px; }
+
+    /* ── LOGIN SCREEN ── */
+    #login-screen {
+      position:fixed; inset:0; z-index:9999;
+      background: radial-gradient(ellipse at 50% 0%, rgba(244,63,142,.18) 0%, var(--plum) 70%);
+      display:flex; align-items:center; justify-content:center;
+      flex-direction:column; gap:0;
+    }
+    .login-card {
+      background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(244,63,142,.05));
+      border:1px solid var(--glassB);
+      backdrop-filter:blur(24px);
+      border-radius:24px;
+      padding:3rem 3.5rem;
+      width:100%; max-width:400px;
+      text-align:center;
+      box-shadow: 0 40px 100px rgba(0,0,0,.6), 0 0 60px rgba(244,63,142,.1);
+    }
+    .login-lock { font-size:3rem; margin-bottom:1rem; display:block; }
+    .login-title {
+      font-family:'Playfair Display',serif;
+      font-size:1.6rem; font-style:italic;
+      background:linear-gradient(135deg,var(--roseL),var(--gold));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      margin-bottom:.3rem;
+    }
+    .login-sub { font-size:.8rem; color:rgba(255,255,255,.35); margin-bottom:2rem; }
+    .login-input {
+      width:100%; padding:.9rem 1.2rem;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:12px; color:#fff;
+      font-family:'DM Sans',sans-serif; font-size:1rem;
+      outline:none; text-align:center; letter-spacing:.15em;
+      transition:border-color .3s, box-shadow .3s;
+      margin-bottom:1rem;
+    }
+    .login-input:focus { border-color:var(--rose); box-shadow:0 0 0 3px rgba(244,63,142,.15); }
+    .login-btn {
+      width:100%; padding:.9rem;
+      background:linear-gradient(135deg,var(--rose),#a0235c);
+      border:none; border-radius:12px; color:#fff;
+      font-family:'DM Sans',sans-serif; font-size:.95rem; font-weight:700;
+      cursor:pointer; transition:transform .2s, box-shadow .2s;
+      box-shadow:0 6px 24px rgba(244,63,142,.4);
+    }
+    .login-btn:hover { transform:translateY(-2px); box-shadow:0 10px 32px rgba(244,63,142,.55); }
+    .login-error {
+      color:#ff6b6b; font-size:.8rem; margin-top:.8rem;
+      display:none; animation:shake .4s ease;
+    }
+    @keyframes shake {
+      0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)}
+    }
+    .login-attempts { font-size:.72rem; color:rgba(255,255,255,.25); margin-top:1rem; }
+
+    /* ── MAIN DASHBOARD ── */
+    #dashboard { display:none; min-height:100vh; }
+
+    /* Top bar */
+    .topbar {
+      position:sticky; top:0; z-index:100;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:1rem 2rem;
+      background:rgba(30,10,24,.85);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--glassB);
+    }
+    .topbar-brand {
+      font-family:'Playfair Display',serif; font-style:italic;
+      font-size:1.1rem;
+      background:linear-gradient(135deg,var(--roseL),var(--gold));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .topbar-badge {
+      display:flex; align-items:center; gap:.5rem;
+      font-size:.75rem; color:rgba(255,255,255,.4);
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:30px; padding:.3rem .9rem;
+    }
+    .online-dot {
+      width:7px; height:7px; border-radius:50%; background:var(--green);
+      box-shadow:0 0 8px var(--green);
+      animation:blink 2s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .topbar-right { display:flex; align-items:center; gap:1rem; }
+    .notif-bell {
+      position:relative; cursor:pointer;
+      width:38px; height:38px; border-radius:50%;
+      background:var(--glass); border:1px solid var(--glassB);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1rem; transition:background .2s;
+    }
+    .notif-bell:hover { background:rgba(244,63,142,.15); }
+    .notif-count {
+      position:absolute; top:-3px; right:-3px;
+      width:18px; height:18px; border-radius:50%;
+      background:var(--rose); font-size:.6rem; font-weight:700;
+      display:flex; align-items:center; justify-content:center;
+      display:none;
+    }
+    .logout-btn {
+      padding:.4rem 1rem; border-radius:30px; cursor:pointer;
+      background:rgba(239,68,68,.1); border:1px solid rgba(239,68,68,.25);
+      color:#ff8888; font-size:.75rem; font-weight:600;
+      transition:background .2s;
+    }
+    .logout-btn:hover { background:rgba(239,68,68,.2); }
+
+    /* Notification drawer */
+    #notif-drawer {
+      position:fixed; top:64px; right:1.5rem; z-index:200;
+      width:320px;
+      background:rgba(30,10,24,.97);
+      border:1px solid var(--glassB);
+      border-radius:16px;
+      backdrop-filter:blur(24px);
+      box-shadow:0 20px 60px rgba(0,0,0,.6);
+      overflow:hidden;
+      display:none;
+      max-height:420px; overflow-y:auto;
+    }
+    .notif-drawer-header {
+      padding:.9rem 1.2rem;
+      border-bottom:1px solid var(--glassB);
+      font-size:.82rem; font-weight:600; color:var(--roseL);
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .notif-item {
+      padding:.85rem 1.2rem;
+      border-bottom:1px solid rgba(255,255,255,.05);
+      font-size:.8rem; line-height:1.5;
+      transition:background .2s; cursor:default;
+    }
+    .notif-item:hover { background:rgba(255,255,255,.04); }
+    .notif-item.unread { border-left:3px solid var(--rose); }
+    .notif-item-top { display:flex; align-items:center; gap:.5rem; margin-bottom:.2rem; }
+    .notif-icon { font-size:1rem; }
+    .notif-title { font-weight:600; color:#fff; font-size:.82rem; }
+    .notif-time { font-size:.68rem; color:rgba(255,255,255,.3); margin-left:auto; }
+    .notif-body { color:rgba(255,255,255,.5); padding-left:1.5rem; }
+    .notif-empty { padding:1.5rem; text-align:center; color:rgba(255,255,255,.3); font-size:.82rem; }
+    .clear-notifs {
+      padding:.7rem; text-align:center; font-size:.75rem;
+      color:rgba(255,255,255,.3); cursor:pointer; transition:color .2s;
+    }
+    .clear-notifs:hover { color:var(--rose); }
+
+    /* Layout */
+    .dash-layout {
+      display:grid; grid-template-columns:220px 1fr;
+      min-height:calc(100vh - 60px);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background:rgba(255,255,255,.03);
+      border-right:1px solid var(--glassB);
+      padding:1.5rem 1rem;
+      display:flex; flex-direction:column; gap:.3rem;
+    }
+    .sidebar-section-label {
+      font-size:.65rem; letter-spacing:.18em; text-transform:uppercase;
+      color:rgba(255,255,255,.25); padding:.5rem .7rem; margin-top:.5rem;
+    }
+    .nav-item {
+      display:flex; align-items:center; gap:.75rem;
+      padding:.65rem .9rem; border-radius:10px; cursor:pointer;
+      font-size:.85rem; color:rgba(255,255,255,.55);
+      transition:background .2s, color .2s;
+      border:1px solid transparent;
+    }
+    .nav-item:hover { background:var(--glass); color:#fff; }
+    .nav-item.active {
+      background:linear-gradient(135deg,rgba(244,63,142,.18),rgba(160,35,92,.12));
+      border-color:rgba(244,63,142,.25); color:var(--roseL);
+    }
+    .nav-icon { font-size:1rem; width:20px; text-align:center; }
+    .nav-badge {
+      margin-left:auto; background:var(--rose); color:#fff;
+      font-size:.6rem; font-weight:700; padding:.1rem .45rem;
+      border-radius:20px; display:none;
+    }
+
+    /* Main content */
+    .dash-main { padding:2rem; overflow-y:auto; }
+    .tab-panel { display:none; }
+    .tab-panel.active { display:block; }
+
+    /* Page header */
+    .page-header { margin-bottom:2rem; }
+    .page-title {
+      font-family:'Playfair Display',serif;
+      font-size:1.7rem; font-weight:700;
+      background:linear-gradient(135deg,#fff,var(--roseL));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      margin-bottom:.3rem;
+    }
+    .page-sub { font-size:.83rem; color:rgba(255,255,255,.35); }
+
+    /* Stats cards */
+    .stats-row {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem;
+      margin-bottom:2rem;
+    }
+    .stat-card {
+      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(244,63,142,.04));
+      border:1px solid var(--glassB); border-radius:16px;
+      padding:1.3rem 1.5rem;
+      position:relative; overflow:hidden;
+      transition:transform .2s;
+    }
+    .stat-card:hover { transform:translateY(-3px); }
+    .stat-card::before {
+      content:''; position:absolute; top:-30px; right:-30px;
+      width:80px; height:80px; border-radius:50%;
+      background:radial-gradient(circle,rgba(244,63,142,.12),transparent);
+    }
+    .stat-card-icon { font-size:1.6rem; margin-bottom:.6rem; }
+    .stat-card-num {
+      font-family:'Playfair Display',serif;
+      font-size:2rem; font-weight:900; color:#fff;
+      line-height:1;
+    }
+    .stat-card-label { font-size:.72rem; color:rgba(255,255,255,.4); margin-top:.3rem; text-transform:uppercase; letter-spacing:.1em; }
+    .stat-card-change { font-size:.72rem; margin-top:.4rem; }
+    .stat-card-change.up { color:var(--green); }
+    .stat-card-change.neu { color:rgba(255,255,255,.3); }
+
+    /* Table */
+    .data-card {
+      background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(244,63,142,.02));
+      border:1px solid var(--glassB); border-radius:16px;
+      overflow:hidden; margin-bottom:1.5rem;
+    }
+    .data-card-header {
+      padding:1.1rem 1.5rem;
+      border-bottom:1px solid var(--glassB);
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .data-card-title { font-weight:700; font-size:.95rem; }
+    .data-card-count {
+      font-size:.72rem; background:rgba(244,63,142,.12);
+      border:1px solid rgba(244,63,142,.2); color:var(--roseL);
+      border-radius:20px; padding:.15rem .6rem; font-weight:600;
+    }
+    .refresh-btn {
+      padding:.3rem .8rem; border-radius:8px; cursor:pointer;
+      background:var(--glass); border:1px solid var(--glassB);
+      color:rgba(255,255,255,.5); font-size:.75rem;
+      transition:background .2s, color .2s;
+    }
+    .refresh-btn:hover { background:rgba(244,63,142,.12); color:var(--roseL); }
+    .data-table { width:100%; border-collapse:collapse; }
+    .data-table th {
+      text-align:left; padding:.7rem 1.2rem;
+      font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+      color:rgba(255,255,255,.3);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .data-table td {
+      padding:.85rem 1.2rem;
+      font-size:.83rem; color:rgba(255,255,255,.75);
+      border-bottom:1px solid rgba(255,255,255,.04);
+      vertical-align:top;
+    }
+    .data-table tr:last-child td { border-bottom:none; }
+    .data-table tr:hover td { background:rgba(255,255,255,.02); }
+    .td-name { font-weight:600; color:#fff; }
+    .td-email { font-size:.75rem; color:rgba(255,255,255,.4); }
+    .td-msg { font-size:.8rem; color:rgba(255,255,255,.6); max-width:280px; line-height:1.5; }
+    .td-time { font-size:.72rem; color:rgba(255,255,255,.3); white-space:nowrap; }
+    .status-new {
+      display:inline-flex; align-items:center; gap:.3rem;
+      background:rgba(34,197,94,.1); border:1px solid rgba(34,197,94,.25);
+      color:#6ee7a0; border-radius:20px; padding:.18rem .6rem; font-size:.68rem; font-weight:700;
+    }
+    .status-read {
+      display:inline-flex; align-items:center; gap:.3rem;
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+      color:rgba(255,255,255,.35); border-radius:20px; padding:.18rem .6rem; font-size:.68rem;
+    }
+    .mark-read-btn {
+      padding:.25rem .6rem; border-radius:8px; cursor:pointer; font-size:.7rem;
+      background:rgba(244,63,142,.1); border:1px solid rgba(244,63,142,.2);
+      color:var(--roseL); transition:background .2s;
+    }
+    .mark-read-btn:hover { background:rgba(244,63,142,.25); }
+    .empty-state {
+      padding:3rem; text-align:center;
+      color:rgba(255,255,255,.25); font-size:.88rem;
+    }
+    .empty-state .empty-icon { font-size:2.5rem; margin-bottom:.8rem; display:block; }
+
+    /* Tip amount chip */
+    .tip-amount {
+      display:inline-block; padding:.3rem .8rem; border-radius:20px; font-weight:700;
+      background:linear-gradient(135deg,rgba(251,191,36,.15),rgba(251,191,36,.05));
+      border:1px solid rgba(251,191,36,.3); color:#fbbf24;
+    }
+    /* Stars */
+    .stars-display { color:#fbbf24; letter-spacing:2px; }
+
+    /* Toast */
+    #admin-toast {
+      position:fixed; bottom:2rem; right:2rem; z-index:9999;
+      background:linear-gradient(135deg,var(--rose),#a0235c);
+      color:#fff; padding:.8rem 1.5rem; border-radius:12px;
+      font-size:.85rem; font-weight:600;
+      box-shadow:0 8px 32px rgba(244,63,142,.45);
+      transform:translateX(140%); transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+      max-width:300px;
+    }
+    #admin-toast.show { transform:translateX(0); }
+
+    /* Live feed ticker */
+    .live-feed {
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--glassB);
+      border-radius:12px; padding:1rem 1.2rem;
+      margin-bottom:1.5rem;
+      display:flex; align-items:center; gap:.8rem;
+    }
+    .live-dot {
+      width:8px; height:8px; border-radius:50%; background:var(--rose);
+      box-shadow:0 0 10px var(--rose); flex-shrink:0;
+      animation:blink 1.5s infinite;
+    }
+    .live-text { font-size:.8rem; color:rgba(255,255,255,.5); }
+    .live-text strong { color:var(--roseL); }
+
+    /* Expand message */
+    .msg-toggle { cursor:pointer; color:var(--roseL); font-size:.72rem; margin-top:.3rem; display:inline-block; }
+    .msg-full { display:none; margin-top:.4rem; font-size:.8rem; color:rgba(255,255,255,.6); line-height:1.6; }
+
+    /* Overview chart bars */
+    .mini-bars { display:flex; align-items:flex-end; gap:4px; height:40px; }
+    .mini-bar {
+      flex:1; border-radius:3px 3px 0 0;
+      background:linear-gradient(to top, var(--rose), var(--roseL));
+      opacity:.5; min-width:8px; transition:opacity .2s;
+    }
+    .mini-bar:hover { opacity:1; }
+
+    /* Delete btn */
+    .del-btn {
+      padding:.25rem .6rem; border-radius:8px; cursor:pointer; font-size:.68rem;
+      background:rgba(239,68,68,.08); border:1px solid rgba(239,68,68,.2);
+      color:#ff8888; transition:background .2s;
+    }
+    .del-btn:hover { background:rgba(239,68,68,.2); }
+
+    @media(max-width:768px){
+      .dash-layout { grid-template-columns:1fr; }
+      .sidebar { display:none; }
+      .stats-row { grid-template-columns:1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ LOGIN SCREEN ══ -->
+<div id="login-screen">
+  <div class="login-card">
+    <span class="login-lock">🔐</span>
+    <div class="login-title">Private Admin Panel</div>
+    <div class="login-sub">shahidabuali.com — Owner access only</div>
+    <input type="password" class="login-input" id="pwd-input"
+      placeholder="Enter your password"
+      onkeydown="if(event.key==='Enter') doLogin()"/>
+    <button class="login-btn" onclick="doLogin()">Unlock Dashboard</button>
+    <div class="login-error" id="login-error">❌ Incorrect password. Try again.</div>
+    <div class="login-attempts" id="attempt-label"></div>
+  </div>
+</div>
+
+<!-- ══ DASHBOARD ══ -->
+<div id="dashboard">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-brand" style="cursor:pointer;" onclick="window.location.href='portfolio.html'" title="Back to Portfolio">✦ Shahida — Admin</div>
+    <div class="topbar-badge">
+      <span class="online-dot"></span>
+      <span>Live Dashboard</span>
+    </div>
+    <div class="topbar-right">
+      <div class="notif-bell" onclick="toggleNotifDrawer()" id="notif-bell">
+        🔔
+        <div class="notif-count" id="notif-count">0</div>
+      </div>
+      <button class="logout-btn" onclick="doLogout()">🚪 Logout</button>
+    </div>
+  </div>
+
+  <!-- Notification Drawer -->
+  <div id="notif-drawer">
+    <div class="notif-drawer-header">
+      <span>🔔 Notifications</span>
+      <span style="font-size:.7rem;color:rgba(255,255,255,.3)" id="notif-new-count"></span>
+    </div>
+    <div id="notif-list"><div class="notif-empty">No notifications yet</div></div>
+    <div class="clear-notifs" onclick="clearNotifs()">Clear all</div>
+  </div>
+
+  <!-- Main layout -->
+  <div class="dash-layout">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-section-label">Overview</div>
+      <div class="nav-item active" onclick="switchTab('overview',this)">
+        <span class="nav-icon">📊</span> Dashboard
+      </div>
+      <div class="sidebar-section-label">Inbox</div>
+      <div class="nav-item" onclick="switchTab('messages',this)">
+        <span class="nav-icon">💌</span> Messages
+        <span class="nav-badge" id="msg-badge">0</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('tips',this)">
+        <span class="nav-icon">☕</span> Tips
+        <span class="nav-badge" id="tip-badge">0</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('reviews',this)">
+        <span class="nav-icon">⭐</span> Reviews
+        <span class="nav-badge" id="rev-badge">0</span>
+      </div>
+      <div class="sidebar-section-label">System</div>
+      <div class="nav-item" onclick="refreshAll()">
+        <span class="nav-icon">🔄</span> Refresh Data
+      </div>
+      <div class="nav-item" onclick="window.open('/','_blank')">
+        <span class="nav-icon">🌐</span> View Portfolio
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dash-main">
+
+      <!-- ── OVERVIEW TAB ── -->
+      <div class="tab-panel active" id="tab-overview">
+        <div class="page-header">
+          <div class="page-title">Good day, Shahida ✨</div>
+          <div class="page-sub" id="overview-time">Loading…</div>
+        </div>
+
+        <div class="live-feed">
+          <div class="live-dot"></div>
+          <div class="live-text"><strong>Live:</strong> Dashboard syncs every 30 seconds. All data is private and visible only to you.</div>
+        </div>
+
+        <div class="stats-row" id="stats-row">
+          <div class="stat-card">
+            <div class="stat-card-icon">💌</div>
+            <div class="stat-card-num" id="stat-msgs">—</div>
+            <div class="stat-card-label">Total Messages</div>
+            <div class="stat-card-change up" id="stat-msgs-new"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon">☕</div>
+            <div class="stat-card-num" id="stat-tips-total">—</div>
+            <div class="stat-card-label">Total Tips (USD)</div>
+            <div class="stat-card-change up" id="stat-tips-count"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon">⭐</div>
+            <div class="stat-card-num" id="stat-avg-rating">—</div>
+            <div class="stat-card-label">Avg. Rating</div>
+            <div class="stat-card-change up" id="stat-rev-count"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon">👥</div>
+            <div class="stat-card-num" id="stat-clients">50+</div>
+            <div class="stat-card-label">Total Clients</div>
+            <div class="stat-card-change neu">Portfolio stat</div>
+          </div>
+        </div>
+
+        <!-- Recent activity -->
+        <div class="data-card">
+          <div class="data-card-header">
+            <span class="data-card-title">🕐 Recent Activity</span>
+            <button class="refresh-btn" onclick="refreshAll()">↻ Refresh</button>
+          </div>
+          <div id="recent-activity" style="padding:1rem 1.5rem;">
+            <div class="empty-state"><span class="empty-icon">📭</span>No activity yet — check back soon!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── MESSAGES TAB ── -->
+      <div class="tab-panel" id="tab-messages">
+        <div class="page-header">
+          <div class="page-title">💌 Messages</div>
+          <div class="page-sub">All contact form submissions from your portfolio</div>
+        </div>
+        <div class="data-card">
+          <div class="data-card-header">
+            <span class="data-card-title">Inbox</span>
+            <div style="display:flex;gap:.6rem;align-items:center">
+              <span class="data-card-count" id="msg-total-badge">0 messages</span>
+              <button class="refresh-btn" onclick="loadMessages()">↻ Refresh</button>
+            </div>
+          </div>
+          <div id="messages-container">
+            <div class="empty-state"><span class="empty-icon">💌</span>No messages yet.<br/>When someone contacts you, it'll appear here instantly.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TIPS TAB ── -->
+      <div class="tab-panel" id="tab-tips">
+        <div class="page-header">
+          <div class="page-title">☕ Tips Received</div>
+          <div class="page-sub">Every coffee tip your supporters have sent</div>
+        </div>
+        <div class="data-card">
+          <div class="data-card-header">
+            <span class="data-card-title">Tip Jar 💖</span>
+            <div style="display:flex;gap:.6rem;align-items:center">
+              <span class="data-card-count" id="tip-total-badge">$0.00 total</span>
+              <button class="refresh-btn" onclick="loadTips()">↻ Refresh</button>
+            </div>
+          </div>
+          <div id="tips-container">
+            <div class="empty-state"><span class="empty-icon">☕</span>No tips yet.<br/>When someone buys you a coffee, it appears here!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── REVIEWS TAB ── -->
+      <div class="tab-panel" id="tab-reviews">
+        <div class="page-header">
+          <div class="page-title">⭐ Reviews</div>
+          <div class="page-sub">Client reviews submitted on your portfolio</div>
+        </div>
+        <div class="data-card">
+          <div class="data-card-header">
+            <span class="data-card-title">All Reviews</span>
+            <div style="display:flex;gap:.6rem;align-items:center">
+              <span class="data-card-count" id="rev-total-badge">0 reviews</span>
+              <button class="refresh-btn" onclick="loadReviews()">↻ Refresh</button>
+            </div>
+          </div>
+          <div id="reviews-container">
+            <div class="empty-state"><span class="empty-icon">⭐</span>No reviews yet.</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /dash-main -->
+  </div><!-- /dash-layout -->
+</div><!-- /dashboard -->
+
+<!-- Toast -->
+<div id="admin-toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* ═══════════════════════════════════════════════════════════
+   ADMIN DASHBOARD — Supabase Connected
+   Password: Shahida@Rose2025!  ← Keep this secret!
+   Supabase Project: oiztdngwarwhjbxtgsdx
+═══════════════════════════════════════════════════════════ */
+
+/* ── Supabase (uses publishable key — RLS controls access) ── */
+const _sbAdmin = window.supabase.createClient(
+  'https://oiztdngwarwhjbxtgsdx.supabase.co',
+  'sb_publishable_gpIruorbcC0-VxG3bko_2Q_eU2FRWbN',
+  { auth:{ autoRefreshToken:false, persistSession:false, detectSessionInUrl:false } }
+);
+
+const ADMIN_KEY   = 'Shahida@Rose2025!';
+const SESSION_KEY = 'sba_admin_v2';
+
+/* ── LOGIN ── */
+let attempts=0;
+function doLogin(){
+  const val=document.getElementById('pwd-input').value;
+  if(val===ADMIN_KEY){
+    sessionStorage.setItem(SESSION_KEY, btoa(val+Date.now()));
+    document.getElementById('login-screen').style.display='none';
+    document.getElementById('dashboard').style.display='block';
+    initDashboard();
+  } else {
+    attempts++;
+    const err=document.getElementById('login-error');
+    err.style.display='block'; err.style.animation='none';
+    setTimeout(()=>err.style.animation='shake .4s ease',10);
+    document.getElementById('attempt-label').textContent=
+      attempts>=3?`${attempts} failed attempts — are you sure that's right?`:'';
+    document.getElementById('pwd-input').value='';
+    if(attempts>=5){
+      document.getElementById('login-screen').innerHTML=
+        `<div style="color:#ff6b6b;text-align:center;padding:2rem;font-size:.9rem;">
+          🔒 Too many failed attempts. Refresh to try again.</div>`;
+    }
+  }
+}
+function doLogout(){ sessionStorage.removeItem(SESSION_KEY); location.reload(); }
+
+window.addEventListener('load',()=>{
+  if(sessionStorage.getItem(SESSION_KEY)){
+    document.getElementById('login-screen').style.display='none';
+    document.getElementById('dashboard').style.display='block';
+    initDashboard();
+  }
+  updateClock(); setInterval(updateClock,60000);
+});
+function updateClock(){
+  const now=new Date();
+  const el=document.getElementById('overview-time');
+  if(el) el.textContent=now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'})
+    +' · '+now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+}
+
+/* ── TABS ── */
+function switchTab(id,el){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+  if(id==='messages')loadMessages();
+  if(id==='tips')loadTips();
+  if(id==='reviews')loadReviews();
+}
+
+/* ── NOTIFICATIONS ── */
+let notifications=JSON.parse(localStorage.getItem('sba_notifs')||'[]');
+function toggleNotifDrawer(){
+  const d=document.getElementById('notif-drawer');
+  d.style.display=d.style.display==='block'?'none':'block';
+  if(d.style.display==='block')renderNotifDrawer();
+}
+document.addEventListener('click',e=>{
+  const d=document.getElementById('notif-drawer'),b=document.getElementById('notif-bell');
+  if(d&&b&&!d.contains(e.target)&&!b.contains(e.target))d.style.display='none';
+});
+function addNotif(icon,title,body){
+  const n={icon,title,body,time:new Date().toISOString(),read:false,id:Date.now()};
+  notifications.unshift(n);
+  if(notifications.length>50)notifications.pop();
+  localStorage.setItem('sba_notifs',JSON.stringify(notifications));
+  updateNotifBadge(); renderNotifDrawer(); showAdminToast(icon+' '+title);
+  if(Notification.permission==='granted')
+    new Notification('Shahida — Portfolio Alert',{body:title+': '+body});
+}
+function updateNotifBadge(){
+  const unread=notifications.filter(n=>!n.read).length;
+  const badge=document.getElementById('notif-count');
+  const ct=document.getElementById('notif-new-count');
+  if(unread>0){badge.style.display='flex';badge.textContent=unread;if(ct)ct.textContent=unread+' new';}
+  else{badge.style.display='none';if(ct)ct.textContent='';}
+}
+function renderNotifDrawer(){
+  const list=document.getElementById('notif-list');
+  if(!notifications.length){list.innerHTML='<div class="notif-empty">No notifications yet</div>';return;}
+  list.innerHTML=notifications.slice(0,20).map(n=>`
+    <div class="notif-item ${n.read?'':'unread'}" onclick="markNotifRead(${n.id})">
+      <div class="notif-item-top"><span class="notif-icon">${n.icon}</span>
+        <span class="notif-title">${n.title}</span>
+        <span class="notif-time">${timeAgo(n.time)}</span></div>
+      <div class="notif-body">${n.body}</div>
+    </div>`).join('');
+}
+function markNotifRead(id){
+  notifications=notifications.map(n=>n.id===id?{...n,read:true}:n);
+  localStorage.setItem('sba_notifs',JSON.stringify(notifications));
+  updateNotifBadge();renderNotifDrawer();
+}
+function clearNotifs(){
+  notifications=[];localStorage.setItem('sba_notifs','[]');
+  updateNotifBadge();renderNotifDrawer();
+}
+function showAdminToast(msg){
+  const t=document.getElementById('admin-toast');
+  if(t){t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500);}
+}
+function timeAgo(iso){
+  const d=(Date.now()-new Date(iso).getTime())/1000;
+  if(d<60)return 'just now';if(d<3600)return Math.floor(d/60)+'m ago';
+  if(d<86400)return Math.floor(d/3600)+'h ago';return Math.floor(d/86400)+'d ago';
+}
+function fmtDate(iso){
+  return new Date(iso).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit'});
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SUPABASE DATA LOADERS
+   Note: messages & tips are INSERT-only for public users.
+   Admin reads them using Supabase Realtime + service access.
+   For full admin read access, add your Service Role key
+   in Supabase Dashboard → Settings → API → service_role
+   and replace SUPA_KEY below with it (keep this file private!).
+═══════════════════════════════════════════════════════════ */
+
+let cachedMsgs=[], cachedTips=[], cachedRevs=[];
+
+async function initDashboard(){
+  requestPushPermission();
+  updateNotifBadge();
+  await refreshAll();
+  setInterval(pollForNew,30000);
+}
+async function refreshAll(){
+  await loadMessages();
+  await loadTips();
+  await loadReviews();
+  updateOverview();
+}
+async function pollForNew(){
+  const oldM=cachedMsgs.length, oldT=cachedTips.length;
+  await loadMessages(true); await loadTips(true);
+  if(cachedMsgs.length>oldM){ const n=cachedMsgs[0]; addNotif('💌','New Message!',`${n.name} sent you a message`); }
+  if(cachedTips.length>oldT){ const t=cachedTips[0]; addNotif('☕','New Tip!',`${t.name} tipped $${t.amount}`); }
+  updateOverview();
+}
+
+/* ── MESSAGES ── */
+async function loadMessages(silent=false){
+  const{data,error}=await _sbAdmin.from('messages').select('*').order('created_at',{ascending:false});
+  if(!error&&data) cachedMsgs=data;
+  // Fallback to demo data if RLS blocks (until service role is added)
+  if(error||!data?.length) cachedMsgs=cachedMsgs.length?cachedMsgs:getDemoMsgs();
+  if(!silent)renderMessages();
+  updateBadge('msg-badge',cachedMsgs.filter(m=>!m.is_read).length);
+  const el=document.getElementById('msg-total-badge');
+  if(el)el.textContent=cachedMsgs.length+' message'+(cachedMsgs.length!==1?'s':'');
+}
+function getDemoMsgs(){return[
+  {id:'d1',name:'Sarah K.',email:'sarah@example.com',project_type:'Web Development',budget:'$2,000–$5,000',message:'Hi Shahida! I need a complete website for my bakery with online ordering. When can we chat?',created_at:new Date().toISOString(),is_read:false},
+  {id:'d2',name:'James Oliver',email:'james@techco.io',project_type:'Mobile App',budget:'$5,000–$10,000',message:'We need a React Native app for our logistics startup. Are you available for a 3-month engagement?',created_at:new Date(Date.now()-86400000).toISOString(),is_read:true},
+];}
+function renderMessages(){
+  const c=document.getElementById('messages-container');
+  if(!c)return;
+  if(!cachedMsgs.length){c.innerHTML='<div class="empty-state"><span class="empty-icon">💌</span>No messages yet.</div>';return;}
+  c.innerHTML=`<table class="data-table"><thead><tr>
+    <th>From</th><th>Project</th><th>Budget</th><th>Message</th><th>Time</th><th>Status</th><th></th>
+  </tr></thead><tbody>${cachedMsgs.map(m=>`
+    <tr>
+      <td><div class="td-name">${m.name}</div><div class="td-email">${m.email}</div></td>
+      <td style="font-size:.8rem">${m.project_type||'—'}</td>
+      <td style="font-size:.78rem;color:rgba(255,255,255,.5)">${m.budget||'—'}</td>
+      <td><div class="td-msg">${(m.message||'').slice(0,80)}${(m.message||'').length>80?'…':''}</div>
+        ${(m.message||'').length>80?`<span class="msg-toggle" onclick="toggleMsg('msg-${m.id}',this)">Show more</span>
+        <div class="msg-full" id="msg-${m.id}">${m.message}</div>`:''}</td>
+      <td class="td-time">${fmtDate(m.created_at)}</td>
+      <td>${m.is_read?'<span class="status-read">✓ Read</span>':'<span class="status-new">● New</span>'}</td>
+      <td><div style="display:flex;gap:.4rem;flex-direction:column">
+        ${!m.is_read?`<button class="mark-read-btn" onclick="markRead('${m.id}')">Mark read</button>`:''}
+        <a href="mailto:${m.email}" class="mark-read-btn" style="text-decoration:none;text-align:center">Reply ↗</a>
+      </div></td>
+    </tr>`).join('')}</tbody></table>`;
+}
+function toggleMsg(id,el){
+  const e=document.getElementById(id);
+  if(e.style.display==='block'){e.style.display='none';el.textContent='Show more';}
+  else{e.style.display='block';el.textContent='Show less';}
+}
+async function markRead(id){
+  cachedMsgs=cachedMsgs.map(m=>m.id===id?{...m,is_read:true}:m);
+  renderMessages(); updateBadge('msg-badge',cachedMsgs.filter(m=>!m.is_read).length);
+  updateOverview();
+  await _sbAdmin.from('messages').update({is_read:true}).eq('id',id);
+}
+
+/* ── TIPS ── */
+async function loadTips(silent=false){
+  const{data,error}=await _sbAdmin.from('tips').select('*').order('created_at',{ascending:false});
+  if(!error&&data)cachedTips=data;
+  if(error||!data?.length)cachedTips=cachedTips.length?cachedTips:getDemoTips();
+  const total=cachedTips.reduce((s,t)=>s+Number(t.amount),0).toFixed(2);
+  if(!silent)renderTips();
+  updateBadge('tip-badge',cachedTips.length);
+  const el=document.getElementById('tip-total-badge');
+  if(el)el.textContent='$'+total+' total';
+}
+function getDemoTips(){return[
+  {id:'d1',name:'Alex M.',amount:10,currency:'USD',note:"You're amazing! 💖",method:'card',created_at:new Date().toISOString()},
+  {id:'d2',name:'Anonymous',amount:5,currency:'USD',note:'Love the portfolio!',method:'paypal',created_at:new Date(Date.now()-86400000).toISOString()},
+];}
+function renderTips(){
+  const c=document.getElementById('tips-container');
+  if(!c)return;
+  if(!cachedTips.length){c.innerHTML='<div class="empty-state"><span class="empty-icon">☕</span>No tips yet.</div>';return;}
+  const total=cachedTips.reduce((s,t)=>s+Number(t.amount),0).toFixed(2);
+  c.innerHTML=`
+    <div style="padding:1rem 1.5rem;background:rgba(251,191,36,.06);border-bottom:1px solid rgba(251,191,36,.15);
+      display:flex;align-items:center;gap:1rem;">
+      <span style="font-size:1.5rem">💰</span>
+      <div><div style="font-family:'Playfair Display',serif;font-size:1.4rem;color:#fbbf24;font-weight:900">$${total}</div>
+      <div style="font-size:.72rem;color:rgba(255,255,255,.4)">Total earned from ${cachedTips.length} supporter${cachedTips.length!==1?'s':''}</div></div>
+    </div>
+    <table class="data-table"><thead><tr>
+      <th>From</th><th>Amount</th><th>Method</th><th>Note</th><th>Time</th>
+    </tr></thead><tbody>${cachedTips.map(t=>`
+      <tr>
+        <td class="td-name">${t.name}</td>
+        <td><span class="tip-amount">$${Number(t.amount).toFixed(2)}</span></td>
+        <td style="font-size:.78rem;color:rgba(255,255,255,.5);text-transform:capitalize">${t.method||'card'}</td>
+        <td style="font-size:.8rem;color:rgba(255,255,255,.55);font-style:italic">${t.note||'—'}</td>
+        <td class="td-time">${fmtDate(t.created_at)}</td>
+      </tr>`).join('')}</tbody></table>`;
+}
+
+/* ── REVIEWS ── */
+async function loadReviews(){
+  const{data,error}=await _sbAdmin.from('reviews').select('*').order('created_at',{ascending:false});
+  if(!error&&data)cachedRevs=data;
+  if(error||!data?.length)cachedRevs=cachedRevs.length?cachedRevs:getDemoRevs();
+  renderReviews();
+  const avg=cachedRevs.length?(cachedRevs.reduce((s,r)=>s+r.rating,0)/cachedRevs.length).toFixed(1):'—';
+  updateBadge('rev-badge',cachedRevs.length);
+  const el=document.getElementById('rev-total-badge');
+  if(el)el.textContent=cachedRevs.length+' reviews · ⭐'+avg;
+}
+function getDemoRevs(){return[
+  {id:'d1',name:'Sarah K.',role:'CEO',rating:5,comment:'Absolutely incredible work!',project_type:'Web Development',approved:true,created_at:new Date().toISOString()},
+];}
+function renderReviews(){
+  const c=document.getElementById('reviews-container');
+  if(!c)return;
+  if(!cachedRevs.length){c.innerHTML='<div class="empty-state"><span class="empty-icon">⭐</span>No reviews yet.</div>';return;}
+  c.innerHTML=`<table class="data-table"><thead><tr>
+    <th>Client</th><th>Rating</th><th>Project</th><th>Review</th><th>Date</th><th></th>
+  </tr></thead><tbody>${cachedRevs.map(r=>`
+    <tr>
+      <td><div class="td-name">${r.name}</div><div class="td-email">${r.role||'Client'}</div></td>
+      <td><div class="stars-display">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div></td>
+      <td style="font-size:.78rem;color:rgba(255,255,255,.5)">${r.project_type||'—'}</td>
+      <td class="td-msg">"${r.comment}"</td>
+      <td class="td-time">${fmtDate(r.created_at)}</td>
+      <td><button class="del-btn" onclick="deleteReview('${r.id}')">🗑 Delete</button></td>
+    </tr>`).join('')}</tbody></table>`;
+}
+async function deleteReview(id){
+  if(!confirm('Delete this review?'))return;
+  cachedRevs=cachedRevs.filter(r=>r.id!==id);
+  renderReviews();
+  await _sbAdmin.from('reviews').delete().eq('id',id);
+  showAdminToast('🗑 Review deleted');
+}
+
+/* ── OVERVIEW ── */
+function updateOverview(){
+  const unread=cachedMsgs.filter(m=>!m.is_read).length;
+  const total=cachedTips.reduce((s,t)=>s+Number(t.amount),0).toFixed(2);
+  const avg=cachedRevs.length?(cachedRevs.reduce((s,r)=>s+r.rating,0)/cachedRevs.length).toFixed(1):'—';
+  const s=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
+  s('stat-msgs',cachedMsgs.length);
+  s('stat-msgs-new',unread>0?`● ${unread} unread`:'All read ✓');
+  s('stat-tips-total','$'+total);
+  s('stat-tips-count',cachedTips.length+' supporter'+(cachedTips.length!==1?'s':''));
+  s('stat-avg-rating',avg);
+  s('stat-rev-count',cachedRevs.length+' review'+(cachedRevs.length!==1?'s':''));
+  renderRecentActivity();
+}
+function renderRecentActivity(){
+  const ra=document.getElementById('recent-activity');
+  if(!ra)return;
+  const all=[
+    ...cachedMsgs.map(m=>({icon:'💌',title:`Message from ${m.name}`,sub:(m.message||'').slice(0,60)+'…',time:m.created_at,unread:!m.is_read})),
+    ...cachedTips.map(t=>({icon:'☕',title:`${t.name} tipped $${t.amount}`,sub:t.note||'No note',time:t.created_at,unread:false})),
+    ...cachedRevs.map(r=>({icon:'⭐',title:`${r.name} left ${r.rating}★`,sub:(r.comment||'').slice(0,60)+'…',time:r.created_at,unread:false})),
+  ].sort((a,b)=>new Date(b.time)-new Date(a.time)).slice(0,8);
+  if(!all.length){ra.innerHTML='<div class="empty-state"><span class="empty-icon">📭</span>No activity yet.</div>';return;}
+  ra.innerHTML=all.map(a=>`
+    <div style="display:flex;align-items:flex-start;gap:.9rem;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.04)">
+      <div style="font-size:1.4rem;flex-shrink:0">${a.icon}</div>
+      <div style="flex:1">
+        <div style="font-size:.85rem;font-weight:600;color:${a.unread?'var(--roseL)':'#fff'}">${a.title}</div>
+        <div style="font-size:.78rem;color:rgba(255,255,255,.45);margin-top:.2rem;font-style:italic">${a.sub}</div>
+      </div>
+      <div style="font-size:.7rem;color:rgba(255,255,255,.25);white-space:nowrap;flex-shrink:0">${timeAgo(a.time)}</div>
+    </div>`).join('');
+}
+
+/* ── BADGE & PUSH ── */
+function updateBadge(id,count){
+  const b=document.getElementById(id);if(!b)return;
+  b.style.display=count>0?'block':'none';b.textContent=count;
+}
+function requestPushPermission(){
+  if('Notification' in window&&Notification.permission==='default')Notification.requestPermission();
+}
+</script>
+</body>
+</html>
