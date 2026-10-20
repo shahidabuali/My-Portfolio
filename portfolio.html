@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shahida Bu Ali — Frontend &amp; Full-Stack Developer</title>
+<meta name="description" content="Shahida Bu Ali, Frontend and Full-Stack Developer who designs and builds websites and web apps for businesses. Every project is live. Built with HTML, CSS, JavaScript, React and Supabase.">
+<meta property="og:title" content="Shahida Bu Ali — Frontend &amp; Full-Stack Developer">
+<meta property="og:description" content="I design and build websites and web apps. Free 1-to-1 call and free project consultation. Open to remote roles.">
+<meta property="og:image" content="https://shahidas-portfolio.vercel.app/og-image.png">
+<meta name="theme-color" content="#eee2c9">
+<script>(function(){var r=document.documentElement,t=null,seen=false;try{t=localStorage.getItem('theme');seen=sessionStorage.getItem('splash')==='1';sessionStorage.setItem('splash','1')}catch(e){}r.setAttribute('data-theme',t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));if(seen)r.classList.add('seen')})();</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://shahidas-portfolio.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shahidas-portfolio.vercel.app/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shahida Bu Ali: I design and build the website your business deserves. Free 1-to-1 call.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://shahidas-portfolio.vercel.app/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
+<style>
+/* Palette tokens: change these to re-color the whole site */
+:root{--bg:#eee2c9;--ink:#12302b;--mute:#4a5f55;--accent:#1c6f60;--hi:#f2c94c;--card:#f6ecd6;--line:#12302b33;--btn:#1f6b55;--btnt:#f6ecd6}
+:root[data-theme="dark"]{--btn:#f3ebdd;--btnt:#0e1b19;--bg:#0e1b19;--ink:#f3ebdd;--mute:#a9c0b9;--accent:#7fd1bd;--hi:#f2c94c;--card:#16302b;--line:#f3ebdd33}
+*{box-sizing:border-box}
+html{scroll-padding-top:120px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 'Bricolage Grotesque',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}h1,h2,h3,p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+#splash{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:center;justify-content:center;animation:sOut .2s ease-out .35s forwards}
+#splash b{font-size:clamp(2.4rem,9vw,6.5rem);font-weight:800;letter-spacing:-.035em;line-height:1;color:var(--ink);clip-path:inset(0 100% 0 0);animation:sWipe .2s ease-out forwards}
+#splash b span{color:var(--accent)}
+@keyframes sWipe{to{clip-path:inset(0 0 0 0)}}
+@keyframes sOut{to{opacity:0;visibility:hidden}}
+html.seen #splash{display:none}
+@media(prefers-reduced-motion:reduce){#splash{display:none}}
+.mc{display:block;margin-left:12px;flex:none}.mc svg{display:block;height:68px;width:auto}
+.wave{transform-origin:44px 48px;animation:wv .9s ease-in-out .8s infinite}
+@keyframes wv{0%,100%{transform:rotate(0)}30%{transform:rotate(-18deg)}70%{transform:rotate(12deg)}}
+@media(prefers-reduced-motion:reduce){.wave{animation:none}}
+@media(max-width:560px){.mc svg{height:58px}}
+
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:12px;background:var(--hi);color:#12302b;padding:8px 14px;z-index:30}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
+.logo{font-weight:800;text-decoration:none;font-size:20px}
+nav{display:flex;align-items:center;gap:6px;margin-left:auto}
+nav a{text-decoration:none;font-size:16px;padding:8px 14px;border-radius:8px}
+nav a:hover{background:var(--card)}nav a[aria-current="true"]{background:var(--btn);color:var(--btnt)}
+.tools{display:flex;gap:10px;align-items:center}
+.tgl,.mb{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;background:none;color:var(--ink);border:1.5px solid var(--ink);border-radius:8px;cursor:pointer}
+.tgl:hover,.mb:hover{background:var(--card)}
+.tgl svg,.mb svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.i-sun{display:none}:root[data-theme="dark"] .i-sun{display:block}:root[data-theme="dark"] .i-moon{display:none}
+.mb{display:none}.mb .i-x{display:none}.mb[aria-expanded=true] .i-x{display:block}.mb[aria-expanded=true] .i-bars{display:none}
+.ann{display:block;background:var(--hi);color:#12302b;text-align:center;font-weight:600;font-size:15px;padding:9px 16px;text-decoration:none}
+.ann:hover{text-decoration:underline}
+.offer{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;padding:0;list-style:none}
+.offer li{display:flex;align-items:center;gap:10px;background:var(--btn);color:var(--btnt);padding:12px 20px;border-radius:14px;font-weight:800;font-size:1.15rem}
+.offer svg{width:22px;height:22px;fill:none;stroke:var(--hi);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:8px;background:var(--btn);color:var(--btnt);font-weight:600;text-decoration:none;border:1.5px solid var(--btn);font-size:17px;cursor:pointer;font-family:inherit}
+.btn.alt{background:none;color:var(--ink);border-color:var(--ink)}
+.hero{padding:80px 0 64px}
+.status{display:inline-flex;align-items:center;gap:10px;background:var(--hi);color:#12302b;padding:8px 16px;border-radius:8px;font-weight:600;font-size:15px}
+.status i{width:9px;height:9px;border-radius:50%;background:#12302b}
+h1{font-size:clamp(2.7rem,7.2vw,6.2rem);line-height:1;font-weight:800;letter-spacing:-.035em;margin:30px 0 26px;max-width:12em}
+.lead{font-size:clamp(1.15rem,2vw,1.4rem);max-width:36em;color:var(--mute)}
+.path{margin-top:40px;border:1.5px solid var(--ink);border-radius:18px;background:var(--card);max-width:760px}
+[role=tablist]{display:flex;border-bottom:1.5px solid var(--ink)}
+[role=tab]{flex:1;font:600 16px 'Bricolage Grotesque',sans-serif;padding:14px;background:none;color:var(--ink);border:0;cursor:pointer;min-height:48px}
+[role=tab][aria-selected=true]{background:var(--btn);color:var(--btnt)}
+[role=tab]:first-child{border-radius:16px 0 0 0}[role=tab]:last-child{border-radius:0 16px 0 0}
+[role=tabpanel]{padding:24px}[role=tabpanel] p{margin-bottom:18px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:48px;flex-wrap:wrap;margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
+.facts b{display:block;font-size:2.2rem;line-height:1.1;font-weight:800}.facts span{color:var(--mute);font-size:15px}
+section{padding:84px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.04;font-weight:800;letter-spacing:-.025em;margin-bottom:24px;max-width:15em}
+.sub{color:var(--mute);max-width:36em;margin-bottom:40px;font-size:1.15rem}
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:64px}.about p{font-size:1.25rem;max-width:34em}
+.proj{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center;padding:44px 20px;margin:0 -20px;border-top:1px solid var(--line);border-radius:20px}
+.proj:nth-of-type(even){grid-template-columns:1fr 1.25fr}.proj:nth-of-type(even) figure{order:2}
+.proj.on{background:var(--card);box-shadow:inset 0 0 0 2px var(--accent)}
+figure{margin:0}
+figure img{display:block;width:100%;height:auto;border-radius:14px;border:1.5px solid var(--ink);box-shadow:8px 8px 0 var(--accent);background:var(--card)}
+.note{display:flex;gap:10px;align-items:flex-start;margin-top:26px;font:italic 400 1.15rem/1.35 'Newsreader',Georgia,serif;color:var(--accent)}
+.note svg{flex:none;margin-top:4px}
+.proj h3{font-size:2.1rem;line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px;padding:0;list-style:none}
+.tags li{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:3px 13px;font-size:14px}
+dl{margin:0 0 26px;display:grid;gap:14px}dt{font-weight:800;font-size:16px}dd{margin:2px 0 0;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.chip{font:600 16px 'Bricolage Grotesque',sans-serif;background:var(--card);color:var(--ink);border:1.5px solid var(--ink);border-radius:8px;padding:9px 18px;min-height:44px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--btn);color:var(--btnt)}
+.chip.plain{border-style:dashed;cursor:default;color:var(--mute)}
+#sk{min-height:1.7em;color:var(--accent);font-weight:600;margin-bottom:8px}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.how div{border:1.5px solid var(--ink);border-radius:16px;padding:22px;background:var(--card)}
+.how h3{font-size:1.2rem;font-weight:800;margin-bottom:8px}.how p{color:var(--mute);font-size:1rem}
+.pth{list-style:none;margin:0;padding:0 0 0 26px;border-left:2px solid var(--accent)}.pth li{position:relative;padding-bottom:30px}.pth li:last-child{padding-bottom:0}.pth li::before{content:'';position:absolute;left:-34px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--accent)}.pth b{font-size:1.3rem;font-weight:800}.pth p{font-size:1.15rem;color:var(--mute)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.links{display:grid;gap:10px;margin:28px 0;font-size:1.2rem}.links a{width:fit-content}
+label{display:block;font-weight:600;font-size:16px}
+input,textarea,select{display:block;width:100%;margin:6px 0 4px;padding:13px 14px;background:var(--card);color:var(--ink);border:1.5px solid var(--ink);border-radius:10px;font:inherit}
+.f{margin-bottom:18px}.er{display:none;color:#b3261e;font-size:15px;font-weight:600}:root[data-theme="dark"] .er{color:#ff9d94}
+.bad input,.bad textarea{border-color:#b3261e}.bad .er{display:block}
+#fs{min-height:1.6em;margin-top:14px;color:var(--accent);font-weight:600}
+footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
+#top2{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:8px;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer;opacity:0;pointer-events:none;z-index:15;display:flex;align-items:center;justify-content:center}
+#top2.show{opacity:1;pointer-events:auto}
+#top2 svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+#toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--btn);color:var(--btnt);padding:12px 22px;border-radius:8px;font-weight:600;opacity:0;pointer-events:none;z-index:50}
+#toast.show{opacity:1}
+@media(max-width:820px){
+.about,.contact,.proj,.proj:nth-of-type(even){grid-template-columns:1fr;gap:28px}.proj:nth-of-type(even) figure{order:0}
+.mb{display:inline-block}
+nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 28px 20px;margin:0}
+nav.open{display:flex}nav a{padding:14px 12px;font-size:18px}
+.hero{padding-top:52px}section{padding:60px 0}.facts{gap:28px}}
+.hg{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center}
+.hb{grid-column:1/-1}
+.hero h1.nm{font-size:clamp(3rem,8.4vw,7.2rem);line-height:.95;margin:26px 0 18px;max-width:none}
+.nm span{color:var(--accent)}
+.tag{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:800;line-height:1.2;letter-spacing:-.01em;margin-bottom:22px;max-width:20em}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;list-style:none;margin:0 0 24px;padding:0;font-weight:600}
+.roles li{display:flex;align-items:center;gap:10px}
+.roles svg{width:26px;height:26px;padding:4px;border-radius:50%;background:var(--accent);fill:none;stroke:var(--bg);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.hr{position:relative;justify-self:center;width:100%;max-width:480px}
+.ph{aspect-ratio:1;border-radius:50%;overflow:hidden;border:3px solid var(--ink);box-shadow:10px 10px 0 var(--accent);background:var(--card)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.bdg{position:absolute;right:-6px;bottom:6%;display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--ink);border-radius:16px;padding:12px 18px;line-height:1.2}
+.bdg b{font-size:2.2rem;font-weight:800;color:var(--accent)}.bdg span{font-weight:600;font-size:14px}
+.mk{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:var(--btn);color:var(--btnt);font-weight:800;font-size:19px;letter-spacing:-.03em}
+.hc{min-height:44px;padding:0 18px;font-size:15px}
+@media(max-width:820px){.hg{grid-template-columns:1fr;gap:32px}.hr{order:-1;max-width:300px}.roles{grid-template-columns:1fr}.bdg{right:-4px}}
+@media(max-width:560px){.hc{display:none}}
+.lg{width:48px;height:48px;display:block}
+.herobg{position:relative;overflow:hidden;background:linear-gradient(100deg,var(--bg) 0%,var(--bg) 44%,#8fb0a6 74%,#2f5f55 100%)}
+:root[data-theme="dark"] .herobg{background:linear-gradient(100deg,var(--bg) 0%,var(--bg) 44%,#143f38 76%,#0c6b58 100%)}
+.herobg .u{position:absolute;display:block;border-radius:22px;background:rgba(255,255,255,.14);filter:blur(1.5px);pointer-events:none}
+.u1{right:-4%;top:9%;width:46%;height:56%;transform:rotate(-8deg);background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,255,255,.05))!important}
+.u2{right:30%;top:48%;width:20%;height:22%;transform:rotate(-8deg)}
+.u3{right:6%;top:70%;width:30%;height:10%;transform:rotate(-8deg)}
+.u4{right:42%;top:14%;width:12%;height:6%;border-radius:8px;transform:rotate(-8deg)}
+.herobg .wrap{position:relative}
+.ph{aspect-ratio:886/1010;border-radius:50% 50% 22px 22px/44% 44% 22px 22px;border:0;box-shadow:0 24px 60px rgba(0,0,0,.28);background:#cfd4d0}
+.hr{max-width:440px}
+@media(max-width:820px){.herobg{background:linear-gradient(180deg,var(--bg) 0%,var(--bg) 55%,#8fb0a6 100%)}:root[data-theme="dark"] .herobg{background:linear-gradient(180deg,var(--bg) 0%,var(--bg) 55%,#143f38 100%)}.u1,.u2,.u3,.u4{display:none}}
+</style>
+</head>
+<body>
+<div id="splash" aria-hidden="true"><b>Shahida <span>Bu Ali</span></b></div>
+<a class="skip" href="#projects">Skip to projects</a>
+<header><a class="ann" href="#contact" data-topic="Free 1-to-1 consultation">Free 30-minute call on Google Meet, plus a free project consultation. Book yours now</a>
+<div class="wrap bar">
+<a class="logo" href="#top" aria-label="Shahida Bu Ali, home"><svg class="lg" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 44 14v20L24 45 4 34V14z" fill="var(--ink)"/><path d="M24 3 44 14 24 25 4 14z" fill="var(--accent)"/><text x="24" y="37" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="15" fill="var(--bg)">SB</text></svg></a><span class="mc"><svg viewBox="0 0 64 112" role="img" aria-label="Cartoon of Shahida waving"><ellipse cx="32" cy="108.5" rx="17" ry="2.6" fill="#000" opacity=".18"/><path d="M17 24C16 3 48 3 47 24L49 62C49 69 43 70 41 66L23 66C21 70 15 69 15 62Z" fill="#1b1411"/><rect x="28" y="34" width="8" height="10" rx="3" fill="#e6ad88"/><path d="M20 45 Q32 41 44 45 L47 82 L17 82Z" fill="#1c6f60"/><path d="M28 43 L36 43 L32 57Z" fill="#f6ecd6"/><path d="M27 44 L32 59 L37 44" fill="none" stroke="#0f3d34" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="68" r="1.1" fill="#f6ecd6"/><circle cx="32" cy="75" r="1.1" fill="#f6ecd6"/><path d="M19 80 L31 80 L30 105 L21 105Z" fill="#2f4a45"/><path d="M33 80 L45 80 L43 105 L34 105Z" fill="#2f4a45"/><ellipse cx="25" cy="107" rx="6.5" ry="2.6" fill="#2a1c17"/><ellipse cx="39" cy="107" rx="6.5" ry="2.6" fill="#2a1c17"/><path d="M20 46 L14 49 L12 67 L20 68Z" fill="#1c6f60"/><ellipse cx="32" cy="24" rx="13" ry="14.5" fill="#e6ad88"/><path d="M18.5 25C17 7 47 7 45.5 25C43 17 37 14 32 13C27 14 21 17 18.5 25Z" fill="#1b1411"/><path d="M19 24L18 46C18 48 22 48 22 46L22.5 27Z" fill="#1b1411"/><path d="M45 24L46 46C46 48 42 48 42 46L41.5 27Z" fill="#1b1411"/><path d="M32 13 C31 16 31 18 31.5 20" stroke="#3a2a22" stroke-width=".8" fill="none"/><circle cx="27" cy="26.5" r="1.7" fill="#2a1a14"/><circle cx="37" cy="26.5" r="1.7" fill="#2a1a14"/><circle cx="27.5" cy="26" r=".5" fill="#fff"/><circle cx="37.5" cy="26" r=".5" fill="#fff"/><circle cx="24" cy="31" r="2.3" fill="#f08a7a" opacity=".55"/><circle cx="40" cy="31" r="2.3" fill="#f08a7a" opacity=".55"/><path d="M27.5 31.5Q32 36.5 36.5 31.5" stroke="#7a3b2e" stroke-width="1.5" fill="none" stroke-linecap="round"/><g><rect x="3" y="58" width="19" height="12.5" rx="1.6" fill="#d9dedb" stroke="#12302b" stroke-width="1"/><rect x="5" y="60" width="15" height="8.5" rx=".8" fill="#12302b"/><text x="12.5" y="66.6" font-family="monospace" font-weight="700" font-size="5.2" text-anchor="middle" fill="#7fd1bd">&lt;/&gt;</text><rect x="1.5" y="70.5" width="22" height="2.4" rx="1.1" fill="#9aa5a1"/></g><circle cx="14" cy="71.5" r="3.3" fill="#e6ad88"/><g class="wave"><path d="M44 48 L52 39 L55 25" fill="none" stroke="#1c6f60" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="55.3" cy="21" r="3.9" fill="#e6ad88"/></g></svg></span>
+<nav id="mnav" aria-label="Main"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#how">How I design</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<div class="tools"><a class="btn hc" href="#contact" data-topic="Free 1-to-1 consultation">Book a free call</a><button class="tgl" id="theme" type="button" aria-label="Switch between light and dark theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button class="mb" id="menu" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg class="i-bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+</div></header>
+
+<main id="top">
+<div class="herobg"><i class="u u1"></i><i class="u u2"></i><i class="u u3"></i><i class="u u4"></i>
+<div class="wrap hero hg">
+<div class="hl">
+<p class="status"><i></i>Taking on new projects, big or small</p>
+<h1 class="nm">Shahida <span>Bu Ali</span></h1>
+<p class="tag">I design and build the website your business deserves.</p>
+<ul class="roles"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Frontend Developer</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Full-Stack Developer</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>UI Designer in Figma</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Supabase Backends</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Real-time and 2FA Apps</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>AI API Integrations</li></ul>
+<p class="lead">You bring the idea. I take it from a blank Figma frame to a live, working product, and you deal with me directly the whole way. Starting small or growing fast, you don't need an agency. You need one developer who can carry the whole build, and I can.</p>
+<ul class="offer"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free 30-minute Meet call</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free project consultation</li></ul>
+<div class="cta" style="margin-top:28px"><a class="btn" href="#projects">See my projects</a><a class="btn alt" href="#how">See how I design</a></div>
+</div>
+<div class="hr"><div class="ph"><img src="images/shahida-arch.jpg" alt="Portrait of Shahida Bu Ali" width="800" height="800" fetchpriority="high"></div><p class="bdg"><b>3</b><span>live projects<br>you can open</span></p></div>
+<div class="hb"><div class="path">
+<div role="tablist" aria-label="Why you are here">
+<button role="tab" id="t1" aria-selected="true" aria-controls="p1" type="button">I'm hiring</button>
+<button role="tab" id="t2" aria-selected="false" aria-controls="p2" type="button" tabindex="-1">I have a project</button>
+</div>
+<div role="tabpanel" id="p1" aria-labelledby="t1"><p>Looking for a full-time remote frontend or web developer? I work with HTML, CSS, JavaScript and React, and I have built sign-in with 2FA, real-time messaging and an admin panel from scratch.</p>
+<div class="cta"><a class="btn" href="Shahida-Bu-Ali-CV.pdf" download>Download CV</a><a class="btn alt" href="#contact" data-topic="I'm hiring">Message me</a></div></div>
+<div role="tabpanel" id="p2" aria-labelledby="t2" hidden><p>Need a website, a web app or just one small job done? Nothing is too small. I design it, build it and talk to you directly, with no account manager in between and a clean handover at the end.</p>
+<div class="cta"><a class="btn" href="#contact" data-topic="Free 1-to-1 consultation">Book a free 30-minute call</a><a class="btn alt" href="#projects">See what I've built</a></div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section id="services"><div class="wrap">
+<h2>Big project or small job, it gets the same care.</h2>
+<p class="sub">Your business shouldn't wait for a developer who has time for it. Bring me the whole build or the one thing that's stuck.</p>
+<div class="how">
+<div><h3>Websites and stores</h3><p>A site that looks right and works on every screen, from a business page to a store with cart and checkout.</p></div>
+<div><h3>Web apps</h3><p>Sign-in with 2FA, a database and real-time features, built together with the design instead of bolted on later.</p></div>
+<div><h3>AI-powered tools</h3><p>Features that use the Gemini API, like the image captioner you can try below.</p></div>
+<div><h3>Small jobs too</h3><p>A new page, a redesign, a feature you need added. I take small work as seriously as big projects.</p></div>
+</div>
+<div class="cta" style="margin-top:36px"><a class="btn" href="#contact" data-topic="Free 1-to-1 consultation">Book a free consultation</a></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Three projects, each with a job to do.</h2>
+<p class="sub">Each one is deployed. Open the demo and try it yourself.</p>
+
+<article class="proj" id="rishtaelite" data-uses="html css javascript supabase">
+<figure><img src="images/rishtaelite.png" alt="Screenshot of the RishtaElite matrimonial platform" loading="lazy" width="1280" height="599">
+<figcaption class="note"><svg aria-hidden="true" width="34" height="18" viewBox="0 0 34 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 14C12 14 20 8 31 4M24 2l7 2-3 7"/></svg><span>2FA at login, an English / Urdu toggle, light and dark theme.</span></figcaption></figure>
+<div><h3>RishtaElite</h3>
+<ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Supabase</li></ul>
+<dl><div><dt>The brief</dt><dd>A matrimonial platform for the Pakistani market that works in English and Urdu, keeps accounts secure and lets people talk in real time.</dd></div>
+<div><dt>What I built</dt><dd>Two-factor login, real-time messaging, a language toggle, a light and dark theme, and a working admin panel.</dd></div></dl>
+<a class="btn" href="https://rishta-elite.vercel.app/" target="_blank" rel="noopener">Open live demo</a></div>
+</article>
+
+<article class="proj" id="threadco" data-uses="html css javascript emailjs">
+<figure><img src="images/thread-co.png" alt="Screenshot of the THREAD CO. e-commerce store" loading="lazy" width="1280" height="603">
+<figcaption class="note"><svg aria-hidden="true" width="34" height="18" viewBox="0 0 34 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 14C12 14 20 8 31 4M24 2l7 2-3 7"/></svg><span>Cart and checkout work from start to finish.</span></figcaption></figure>
+<div><h3>THREAD CO.</h3>
+<ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>EmailJS</li></ul>
+<dl><div><dt>The brief</dt><dd>A store should make buying feel effortless and safe. THREAD CO. is a complete online store: browse the collection, fill a cart, check out, and sign in with a verified code so every account stays protected.</dd></div>
+<div><dt>What I built</dt><dd>A multi-page store with a working cart and checkout, and two-factor authentication through EmailJS. It's the kind of build a small business can launch with.</dd></div></dl>
+<a class="btn" href="https://thread-co-e-commerce-rose.vercel.app/" target="_blank" rel="noopener">Open live demo</a></div>
+</article>
+
+<article class="proj" id="captioner" data-uses="react vite gemini">
+<figure><img src="images/ai-captioner.png" alt="Screenshot of the AI Image Captioner app" loading="lazy" width="1280" height="565">
+<figcaption class="note"><svg aria-hidden="true" width="34" height="18" viewBox="0 0 34 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 14C12 14 20 8 31 4M24 2l7 2-3 7"/></svg><span>Captions come from the Gemini API.</span></figcaption></figure>
+<div><h3>AI Image Captioner</h3>
+<ul class="tags"><li>React</li><li>Vite</li><li>Gemini API</li></ul>
+<dl><div><dt>The brief</dt><dd>Turn any image into captions without writing them by hand.</dd></div>
+<div><dt>What I built</dt><dd>A React app where you upload an image and get captions generated by the Gemini API.</dd></div></dl>
+<a class="btn" href="https://image-captioner-pi.vercel.app/" target="_blank" rel="noopener">Open live demo</a></div>
+</article>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Pick a tool. See where I used it.</h2>
+<p class="sub">Tap a skill to highlight the projects that prove it.</p>
+<div class="chips" id="chips">
+<button class="chip" type="button" aria-pressed="false" data-k="html">HTML</button>
+<button class="chip" type="button" aria-pressed="false" data-k="css">CSS</button>
+<button class="chip" type="button" aria-pressed="false" data-k="javascript">JavaScript</button>
+<button class="chip" type="button" aria-pressed="false" data-k="react">React (Vite)</button>
+<button class="chip" type="button" aria-pressed="false" data-k="supabase">Supabase</button>
+<button class="chip" type="button" aria-pressed="false" data-k="gemini">Gemini API</button>
+<button class="chip" type="button" aria-pressed="false" data-k="emailjs">EmailJS</button>
+</div>
+<p id="sk" role="status" aria-live="polite"></p>
+<div class="chips"><span class="chip plain">TypeScript</span><span class="chip plain">Node.js</span><span class="chip plain">Python</span><span class="chip plain">Figma</span><span class="chip plain">Git and GitHub</span><span class="chip plain">VS Code</span></div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<h2>How I design.</h2>
+<p class="sub">The same four moves on every project, in this order.</p>
+<div class="how">
+<div><h3>I start on a blank frame</h3><p>Every project begins as a Figma file, before any code exists. You see and approve the look first.</p></div>
+<div><h3>I design for real use</h3><p>RishtaElite works in English and Urdu and in light and dark theme because those were design decisions, not extras added at the end.</p></div>
+<div><h3>I build what I drew</h3><p>I write the code myself, so what you approve in the design is what ships.</p></div>
+<div><h3>I connect it and hand it over</h3><p>Sign-in, database and real-time features go in with the build. You talk to me directly and get a live site with organized files.</p></div>
+</div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+<h2>How I got here.</h2>
+<div><ol class="pth">
+<li><b>2023</b><p>In matric, my father bought me my first laptop. That is where my journey into tech began, and I have been building ever since.</p></li>
+<li><b>2025</b><p>Started my Computer Science degree at Lahore College for Women University (graduating 2029).</p></li>
+<li><b>Since then</b><p>Designed and built RishtaElite, THREAD CO. and the AI Image Captioner. All three are live.</p></li>
+<li><b>Now</b><p>Taking on projects from founders and businesses, and open to remote frontend or web developer roles.</p></li>
+</ol></div>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+<div><h2>Tell me what you need built.</h2>
+<p class="lead">Describe your project, even if it's still a rough idea, or tell me about the role you're hiring for. Prefer to talk? Book a free 30-minute call on Google Meet. I'm in Lahore, Pakistan, and work remotely.</p>
+<div class="links"><a href="mailto:shahidabuali123@gmail.com" id="mail">shahidabuali123@gmail.com</a><a href="https://www.linkedin.com/in/shahida-bu-ali-3010ba288/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/shahidabuali" target="_blank" rel="noopener">GitHub</a></div>
+<div class="cta"><a class="btn" href="#contact" data-topic="Free 1-to-1 consultation">Book a free 30-minute call</a><button class="btn alt" id="copy" type="button">Copy email</button><a class="btn alt" href="Shahida-Bu-Ali-CV.pdf" download>Download CV</a></div></div>
+<form id="cf" novalidate>
+<div class="f"><label for="tp">I'm contacting you about</label><select id="tp" name="topic"><option>Free 1-to-1 consultation</option><option>I'm hiring</option><option>I have a project</option><option>Something else</option></select></div>
+<div class="f" data-f="n"><label for="n">Your name</label><input id="n" name="name" autocomplete="name"><span class="er">Enter your name.</span></div>
+<div class="f" data-f="e"><label for="e">Email address</label><input id="e" name="email" type="email" autocomplete="email"><span class="er">Enter a valid email address.</span></div>
+<div class="f" data-f="m"><label for="m">Your message</label><textarea id="m" name="message" rows="5"></textarea><span class="er">Write a short message.</span></div>
+<p class="sub" style="margin:0 0 16px;font-size:.95rem">By sending this form you agree to the <a href="privacy.html">Privacy Policy</a>.</p>
+<button class="btn" type="submit">Send message</button>
+<p id="fs" role="status" aria-live="polite"></p>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap" style="display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between"><span>© 2026 Shahida Bu Ali. Lahore, Pakistan.</span><span><a href="privacy.html">Privacy Policy</a> &nbsp;&nbsp; <a href="terms.html">Terms and Conditions</a></span></div></footer>
+<button id="top2" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4M5 11l7-7 7 7"/></svg></button>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+var $=function(s,c){return(c||document).querySelector(s)},$$=function(s,c){return[].slice.call((c||document).querySelectorAll(s))};
+/* ===== CONFIG: paste your Google Calendar appointment booking link here ===== */
+var BOOKING_URL='https://calendar.app.google/EhjtborMw4p7fwhn6';
+/* ============================================================================ */
+var r=document.documentElement,K='theme';
+function setT(t){r.setAttribute('data-theme',t);try{localStorage.setItem(K,t)}catch(e){}}
+var s=null;try{s=localStorage.getItem(K)}catch(e){}
+r.setAttribute('data-theme',s||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+$('#theme').onclick=function(){setT(r.getAttribute('data-theme')==='dark'?'light':'dark')};
+function toast(t){var x=$('#toast');x.textContent=t;x.classList.add('show');clearTimeout(toast.i);toast.i=setTimeout(function(){x.classList.remove('show')},2200)}
+
+/* mobile menu */
+var nav=$('#mnav'),mb=$('#menu');
+function menu(o){nav.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Close menu':'Open menu')}
+mb.onclick=function(){menu(!nav.classList.contains('open'))};
+$$('a',nav).forEach(function(a){a.onclick=function(){menu(false)}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){menu(false);mb.focus()}});
+
+/* scroll progress, back to top, active link */
+var tb=$('#top2');
+addEventListener('scroll',function(){tb.classList.toggle('show',scrollY>600)},{passive:true});
+tb.onclick=function(){scrollTo({top:0})};
+var links=$$('a',nav);
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.removeAttribute('aria-current');if(a.getAttribute('href')==='#'+e.target.id)a.setAttribute('aria-current','true')})}})},{rootMargin:'-40% 0px -55% 0px'});
+$$('main section').forEach(function(x){io.observe(x)})}
+
+/* hero tabs */
+var tabs=$$('[role=tab]');
+function pick(t){tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;$('#'+b.getAttribute('aria-controls')).hidden=!on})}
+tabs.forEach(function(t,i){t.onclick=function(){pick(t)};t.onkeydown=function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=tabs[(i+1)%tabs.length];pick(n);n.focus()}}});
+
+/* booking links go straight to Google Calendar when BOOKING_URL is set */
+if(BOOKING_URL){$$('a[data-topic="Free 1-to-1 consultation"]').forEach(function(a){a.href=BOOKING_URL;a.target='_blank';a.rel='noopener'})}
+/* contact topic links */
+$$('[data-topic]').forEach(function(a){a.addEventListener('click',function(){$('#tp').value=a.getAttribute('data-topic')})});
+
+/* skills -> projects */
+var names={html:'HTML',css:'CSS',javascript:'JavaScript',react:'React (Vite)',supabase:'Supabase',gemini:'Gemini API',emailjs:'EmailJS'};
+$$('.chip[data-k]').forEach(function(c){c.onclick=function(){
+var on=c.getAttribute('aria-pressed')!=='true';
+$$('.chip[data-k]').forEach(function(x){x.setAttribute('aria-pressed','false')});
+$$('.proj').forEach(function(p){p.classList.remove('on')});
+if(!on){$('#sk').textContent='';return}
+c.setAttribute('aria-pressed','true');
+var k=c.getAttribute('data-k'),hit=$$('.proj').filter(function(p){return p.getAttribute('data-uses').split(' ').indexOf(k)>-1});
+hit.forEach(function(p){p.classList.add('on')});
+$('#sk').textContent=names[k]+' is used in: '+hit.map(function(p){return $('h3',p).textContent}).join(', ')+'.';
+if(hit[0])hit[0].scrollIntoView({block:'center'})}});
+
+/* copy email */
+$('#copy').onclick=function(){var m='shahidabuali123@gmail.com';
+(navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).then(function(){toast('Email copied')}).catch(function(){toast('Copy failed. Select the email above.')})};
+
+/* form */
+var f=$('#cf'),st=$('#fs');
+function bad(id,v){var w=$('[data-f='+id+']');w.classList.toggle('bad',v);return v}
+f.addEventListener('submit',function(ev){
+ev.preventDefault();
+var em=$('#e'),d={topic:$('#tp').value,name:$('#n').value.trim(),email:em.value.trim(),message:$('#m').value.trim()};
+var e1=bad('n',!d.name),e2=bad('e',!em.checkValidity()||!d.email),e3=bad('m',!d.message);
+if(e1||e2||e3){st.textContent='Check the highlighted fields.';return}
+st.textContent='';
+/* Hook: define window.sendMessage(d) to save to your Supabase "messages" table. Without it, the form opens the visitor's email app. */
+if(typeof window.sendMessage==='function'){
+st.textContent='Sending…';
+Promise.resolve(window.sendMessage(d)).then(function(){st.textContent='Message sent. I will reply soon.';f.reset()}).catch(function(){st.textContent='Sending failed. Email me directly at shahidabuali123@gmail.com.'});
+}else{
+location.href='mailto:shahidabuali123@gmail.com?subject='+encodeURIComponent('['+d.topic+'] Message from '+d.name)+'&body='+encodeURIComponent(d.message+'\n\n'+d.name+' ('+d.email+')');
+st.textContent='Opening your email app.'}
+});
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* Contact form -> Supabase "messages" table (insert only; admin.html reads it) */
+(function(){
+var sb=window.supabase?window.supabase.createClient('https://oiztdngwarwhjbxtgsdx.supabase.co','sb_publishable_gpIruorbcC0-VxG3bko_2Q_eU2FRWbN',{auth:{autoRefreshToken:false,persistSession:false,detectSessionInUrl:false}}):null;
+var log={};
+function ok(k){var n=Date.now(),a=(log[k]||[]).filter(function(t){return n-t<3600000});log[k]=a;if(a.length>=3)return false;a.push(n);return true}
+function clean(v,m){return String(v||'').replace(/</g,'&lt;').replace(/>/g,'&gt;').trim().slice(0,m||2000)}
+window.sendMessage=function(d){
+if(!sb)return Promise.reject(new Error('no client'));
+if(!ok('c_'+d.email))return Promise.reject(new Error('rate'));
+return sb.from('messages').insert([{name:clean(d.name,200),email:clean(d.email,200),project_type:clean(d.topic,100),budget:'—',message:clean(d.message),is_read:false}]).then(function(r){if(r.error)throw r.error})};
+})();
+</script>
+</body>
+</html>

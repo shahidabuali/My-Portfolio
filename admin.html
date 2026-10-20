@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Messages — Private</title>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet"/>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/favicon.ico" sizes="48x48"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#eee2c9;--ink:#12302b;--mute:#4a5f55;--accent:#1c6f60;--hi:#f2c94c;--card:#f6ecd6;--line:#12302b33;--btn:#1f6b55;--btnt:#f6ecd6;--red:#b3261e}
+    :root[data-theme="dark"]{--bg:#0e1b19;--ink:#f3ebdd;--mute:#a9c0b9;--accent:#7fd1bd;--hi:#f2c94c;--card:#16302b;--line:#f3ebdd33;--btn:#f3ebdd;--btnt:#0e1b19;--red:#ff9d94}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{font:400 17px/1.55 'Bricolage Grotesque',system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent)}
+    button,input{font:inherit}
+    :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+    .hidden{display:none!important}
+    .center{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+    .card{background:var(--card);border:1.5px solid var(--ink);border-radius:20px;box-shadow:8px 8px 0 var(--accent);padding:2.2rem 2rem;width:100%;max-width:400px}
+    .lg{width:52px;height:52px;display:block;margin-bottom:14px}
+    h1{font-size:1.9rem;line-height:1.1;font-weight:800;letter-spacing:-.02em;margin-bottom:.4rem}
+    .sub{font-size:.95rem;color:var(--mute);margin-bottom:1.2rem}
+    label{display:block;font-size:.9rem;font-weight:600;margin:.9rem 0 .3rem}
+    input{width:100%;padding:.8rem 1rem;border-radius:10px;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:1.5px solid var(--btn);cursor:pointer;border-radius:999px;padding:.7rem 1.5rem;min-height:44px;font-weight:600;font-size:.95rem;text-decoration:none;color:var(--btnt);background:var(--btn)}
+    .btn.block{width:100%;margin-top:1.3rem}
+    .btn.ghost{background:none;border-color:var(--ink);color:var(--ink)}
+    .btn.danger{background:none;border-color:var(--red);color:var(--red)}
+    .btn.sm{padding:.3rem 1rem;min-height:40px;font-size:.88rem}
+    .btn:disabled{opacity:.6;cursor:wait}
+    .err{color:var(--red);font-weight:600;font-size:.9rem;margin-top:.9rem;min-height:1.2em}
+    header{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto;padding:1.6rem 1.2rem .6rem}
+    header h1{margin:0}
+    .hd{display:flex;align-items:center;gap:14px}.hd .lg{margin:0}
+    .who{font-size:.88rem;color:var(--mute)}
+    .bar{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+    main{max-width:960px;margin:0 auto;padding:0 1.2rem 3rem}
+    .stats{display:flex;gap:.8rem;flex-wrap:wrap;margin:1rem 0}
+    .stat{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:.7rem 1.2rem;font-size:.9rem;color:var(--mute)}
+    .stat b{font-size:1.7rem;line-height:1.1;display:block;color:var(--ink);font-weight:800}
+    .tabs{display:flex;gap:.5rem;margin:.4rem 0 1rem}
+    .tab{background:none;border:1.5px solid var(--ink);color:var(--ink);border-radius:999px;padding:.4rem 1.1rem;min-height:40px;cursor:pointer;font-size:.9rem;font-weight:600}
+    .tab[aria-pressed="true"]{background:var(--btn);color:var(--btnt);border-color:var(--btn)}
+    .msg{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:1.1rem 1.3rem;margin-bottom:.9rem}
+    .msg.unread{border-color:var(--ink);box-shadow:5px 5px 0 var(--accent)}
+    .msg-top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.5rem}
+    .msg-name{font-weight:800;font-size:1.1rem}
+    .msg-meta{font-size:.85rem;color:var(--mute)}
+    .msg-body{white-space:pre-wrap;word-break:break-word;line-height:1.6;margin:.5rem 0 .9rem}
+    .msg-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+    .badge{font-size:.72rem;font-weight:800;letter-spacing:.04em;padding:.15rem .6rem;border-radius:999px;background:var(--hi);color:#12302b;margin-left:.5rem}
+    .topic{display:inline-block;font-size:.8rem;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:.1rem .7rem;margin-top:.35rem;color:var(--ink)}
+    .empty{text-align:center;color:var(--mute);padding:2.5rem 1rem}
+    .tgl{position:fixed;top:14px;right:14px;z-index:5;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+    .tgl svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .i-sun{display:none}:root[data-theme="dark"] .i-sun{display:block}:root[data-theme="dark"] .i-moon{display:none}
+    @media(max-width:560px){header{padding-top:4.2rem}}
+  </style>
+</head>
+<body>
+<button class="tgl" id="theme" type="button" aria-label="Switch between light and dark theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+
+<div id="login-view" class="center">
+  <form class="card" id="login-form" autocomplete="on">
+    <svg class="lg" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 44 14v20L24 45 4 34V14z" fill="var(--ink)"/><path d="M24 3 44 14 24 25 4 14z" fill="var(--accent)"/><text x="24" y="37" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="15" fill="var(--bg)">SB</text></svg><h1>Private Admin</h1>
+    <p class="sub">Sign in to read your contact messages.</p>
+    <label for="email">Email</label>
+    <input id="email" type="email" autocomplete="username" required/>
+    <label for="password">Password</label>
+    <input id="password" type="password" autocomplete="current-password" required/>
+    <button class="btn block" id="login-btn" type="submit">Sign in</button>
+    <div class="err" id="login-err" role="alert"></div>
+  </form>
+</div>
+
+<div id="app-view" class="hidden">
+  <header>
+    <div class="hd"><svg class="lg" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 44 14v20L24 45 4 34V14z" fill="var(--ink)"/><path d="M24 3 44 14 24 25 4 14z" fill="var(--accent)"/><text x="24" y="37" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="15" fill="var(--bg)">SB</text></svg><div>
+      <h1>Contact Messages</h1>
+      <div class="who" id="who"></div>
+    </div></div>
+    <div class="bar">
+      <button class="btn ghost sm" id="refresh-btn" type="button">Refresh</button>
+      <button class="btn ghost sm" id="logout-btn" type="button">Sign out</button>
+    </div>
+  </header>
+  <main>
+    <div class="stats">
+      <div class="stat"><b id="n-total">0</b>Total</div>
+      <div class="stat"><b id="n-unread">0</b>Unread</div>
+    </div>
+    <div class="tabs" role="group" aria-label="Filter">
+      <button class="tab" id="tab-all" type="button" aria-pressed="true">All</button>
+      <button class="tab" id="tab-unread" type="button" aria-pressed="false">Unread</button>
+    </div>
+    <div id="list" aria-live="polite"></div>
+  </main>
+</div>
+
+<script>
+(function(){var r=document.documentElement,K='theme',s=null;try{s=localStorage.getItem(K)}catch(e){}
+r.setAttribute('data-theme',s||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+document.getElementById('theme').onclick=function(){var t=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',t);try{localStorage.setItem(K,t)}catch(e){}}})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SB_URL = 'https://oiztdngwarwhjbxtgsdx.supabase.co';
+const SB_KEY = 'sb_publishable_gpIruorbcC0-VxG3bko_2Q_eU2FRWbN';
+const sb = window.supabase.createClient(SB_URL, SB_KEY);
+
+const $ = id => document.getElementById(id);
+let msgs = [];
+let filter = 'all';
+
+function esc(v){
+  return String(v == null ? '' : v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function fmt(iso){
+  if(!iso) return '';
+  try { return new Date(iso).toLocaleString([], {dateStyle:'medium', timeStyle:'short'}); } catch(e){ return ''; }
+}
+
+function show(loggedIn, email){
+  $('login-view').classList.toggle('hidden', loggedIn);
+  $('app-view').classList.toggle('hidden', !loggedIn);
+  if(loggedIn) $('who').textContent = 'Signed in as ' + (email || '');
+}
+
+$('login-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = $('login-btn'), err = $('login-err');
+  err.textContent = ''; btn.disabled = true; btn.textContent = 'Signing in…';
+  const { data, error } = await sb.auth.signInWithPassword({ email: $('email').value.trim(), password: $('password').value });
+  btn.disabled = false; btn.textContent = 'Sign in';
+  if(error){ err.textContent = 'Incorrect email or password.'; return; }
+  $('password').value = '';
+  show(true, data.user.email);
+  load();
+});
+
+$('logout-btn').addEventListener('click', async () => {
+  await sb.auth.signOut();
+  msgs = []; render(); show(false);
+});
+$('refresh-btn').addEventListener('click', load);
+$('tab-all').addEventListener('click', () => setFilter('all'));
+$('tab-unread').addEventListener('click', () => setFilter('unread'));
+
+function setFilter(f){
+  filter = f;
+  $('tab-all').setAttribute('aria-pressed', f === 'all');
+  $('tab-unread').setAttribute('aria-pressed', f === 'unread');
+  render();
+}
+
+async function load(){
+  const { data, error } = await sb.from('messages').select('*').order('created_at', { ascending: false });
+  if(error){
+    $('list').innerHTML = '<div class="empty">Could not load messages. ' + esc(error.message) + '</div>';
+    return;
+  }
+  msgs = data || [];
+  render();
+}
+
+function render(){
+  $('n-total').textContent = msgs.length;
+  $('n-unread').textContent = msgs.filter(m => !m.is_read).length;
+  const rows = msgs.filter(m => filter === 'all' || !m.is_read);
+  if(!rows.length){ $('list').innerHTML = '<div class="empty">No messages here yet.</div>'; return; }
+  $('list').innerHTML = rows.map(m => `
+    <article class="msg ${m.is_read ? '' : 'unread'}">
+      <div class="msg-top">
+        <div><span class="msg-name">${esc(m.name)}</span>${m.is_read ? '' : '<span class="badge">NEW</span>'}
+          <div class="msg-meta"><a href="mailto:${esc(m.email)}">${esc(m.email)}</a></div>${m.project_type && m.project_type !== '—' ? '<span class="topic">' + esc(m.project_type) + '</span>' : ''}</div>
+        <div class="msg-meta">${esc(fmt(m.created_at))}</div>
+      </div>
+      <div class="msg-body">${esc(m.message)}</div>
+      <div class="msg-actions">
+        <a class="btn sm" href="mailto:${esc(m.email)}?subject=Re: your message">Reply by email</a>
+        ${m.is_read ? '' : '<button class="btn ghost sm" type="button" data-act="read" data-id="' + esc(m.id) + '">Mark read</button>'}
+        <button class="btn danger sm" type="button" data-act="del" data-id="${esc(m.id)}">Delete</button>
+      </div>
+    </article>`).join('');
+}
+
+$('list').addEventListener('click', async e => {
+  const b = e.target.closest('button[data-act]');
+  if(!b) return;
+  const id = b.dataset.id;
+  if(b.dataset.act === 'read'){
+    const { error } = await sb.from('messages').update({ is_read: true }).eq('id', id);
+    if(!error){ msgs = msgs.map(m => String(m.id) === id ? { ...m, is_read: true } : m); render(); }
+  } else if(b.dataset.act === 'del'){
+    if(!confirm('Delete this message permanently?')) return;
+    const { error } = await sb.from('messages').delete().eq('id', id);
+    if(!error){ msgs = msgs.filter(m => String(m.id) !== id); render(); }
+  }
+});
+
+(async () => {
+  const { data } = await sb.auth.getSession();
+  if(data.session){ show(true, data.session.user.email); load(); } else { show(false); }
+})();
+</script>
+</body>
+</html>
