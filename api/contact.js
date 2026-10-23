@@ -33,10 +33,12 @@ module.exports = async (req, res) => {
       body: JSON.stringify([{ name, email, project_type: topic, message, is_read: false }]),
     });
     saved = r.ok;
-  } catch (e) { saved = false; }
+    if (!r.ok) console.error('Supabase insert failed', r.status, await r.text());
+  } catch (e) { saved = false; console.error('Supabase error', e && e.message); }
 
   const key = process.env.RESEND_API_KEY;
   const to = process.env.NOTIFY_EMAIL;
+  if (!key || !to) console.error('Missing RESEND_API_KEY or NOTIFY_EMAIL');
   if (key && to) {
     try {
       const r = await fetch('https://api.resend.com/emails', {
@@ -51,7 +53,8 @@ module.exports = async (req, res) => {
         }),
       });
       emailed = r.ok;
-    } catch (e) { emailed = false; }
+      if (!r.ok) console.error('Resend failed', r.status, await r.text());
+    } catch (e) { emailed = false; console.error('Resend error', e && e.message); }
   }
 
   if (saved || emailed) return res.status(200).json({ ok: true, saved, emailed });
