@@ -52,6 +52,7 @@ html.seen #splash{display:none}
 .aud{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 22px}.ac{border:1.5px solid var(--ink);border-radius:12px;background:var(--card);padding:16px 18px;text-align:left}.ac p{font-size:.95rem;color:var(--mute);margin:0 0 12px}.ac .at{font-weight:800;font-size:1.3rem;margin:0 0 4px;color:var(--ink)}.ac .cta{gap:8px;margin-top:0}.ac .btn{min-height:44px;padding:0 16px;font-size:15px}
 #adm{position:fixed;inset:0;z-index:200;background:var(--bg)}#adm[hidden]{display:none}#adm iframe{width:100%;height:100%;border:0;display:block}#admx{position:absolute;left:14px;top:14px;z-index:2;width:44px;height:44px;border:1.5px solid var(--ink);border-radius:8px;background:var(--bg);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center}#admx svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
 .proj .cta{gap:10px;flex-wrap:wrap}.proj .cta .btn{padding:0 16px;font-size:15px;min-height:46px}
+.xl{display:inline-block;margin-top:12px;font-weight:700;color:var(--accent);text-decoration:none}.xl:hover,.xl:focus-visible{text-decoration:underline}.xl[hidden]{display:none}
 .xh{font-size:1.3rem;font-weight:800;margin:36px 0 14px}.xp{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.xc{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px}.xi{font-weight:800;color:var(--accent);margin:0 0 4px;font-size:.95rem}.xc h3{font-size:1.15rem;line-height:1.25;margin:0 0 8px;font-weight:800}.xm{color:var(--mute);font-size:.92rem;margin:0}
 .skip{position:absolute;left:-999px}.skip:focus{left:16px;top:12px;background:var(--hi);color:#12302b;padding:8px 14px;z-index:30}
 header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -245,9 +246,9 @@ nav.open{display:flex}nav a{padding:14px 12px;font-size:18px}
 <h2>Experience and certificates.</h2>
 <p class="sub">Virtual job simulations and courses I completed in October 2026. They are practice programs, not employment.</p>
 <h3 class="xh">Job simulations on Forage</h3>
-<div class="xp"><article class="xc"><p class="xi">Walmart Global Tech</p><h3>Advanced Software Engineering</h3><p class="xm">Forage job simulation. October 25, 2026</p></article><article class="xc"><p class="xi">BCG X</p><h3>GenAI</h3><p class="xm">Forage job simulation. October 23, 2026</p></article><article class="xc"><p class="xi">EAB</p><h3>GenAI for Proposal Generation</h3><p class="xm">Forage job simulation. October 22, 2026</p></article></div>
+<div class="xp"><article class="xc"><p class="xi">Walmart Global Tech</p><h3>Advanced Software Engineering</h3><p class="xm">Forage job simulation. October 25, 2026</p><a class="xl" data-cert="sim-walmart" hidden>View program</a></article><article class="xc"><p class="xi">BCG X</p><h3>GenAI</h3><p class="xm">Forage job simulation. October 23, 2026</p><a class="xl" data-cert="sim-bcg" hidden>View program</a></article><article class="xc"><p class="xi">EAB</p><h3>GenAI for Proposal Generation</h3><p class="xm">Forage job simulation. October 22, 2026</p><a class="xl" data-cert="sim-eab" hidden>View program</a></article></div>
 <h3 class="xh">Certificates</h3>
-<div class="xp"><article class="xc"><p class="xi">IBM SkillsBuild</p><h3>Artificial Intelligence Fundamentals</h3><p class="xm">Certificate. October 24, 2026</p></article><article class="xc"><p class="xi">Walmart Global Tech</p><h3>Advanced Software Engineering</h3><p class="xm">Certificate of completion. October 25, 2026</p></article><article class="xc"><p class="xi">BCG X</p><h3>GenAI</h3><p class="xm">Certificate of completion. October 23, 2026</p></article><article class="xc"><p class="xi">EAB</p><h3>GenAI for Proposal Generation</h3><p class="xm">Certificate of completion. October 22, 2026</p></article></div>
+<div class="xp"><article class="xc"><p class="xi">IBM SkillsBuild</p><h3>Artificial Intelligence Fundamentals</h3><p class="xm">Certificate. October 24, 2026</p><a class="xl" data-cert="cert-ibm" hidden>View certificate</a></article><article class="xc"><p class="xi">Walmart Global Tech</p><h3>Advanced Software Engineering</h3><p class="xm">Certificate of completion. October 25, 2026</p><a class="xl" data-cert="cert-walmart" hidden>View certificate</a></article><article class="xc"><p class="xi">BCG X</p><h3>GenAI</h3><p class="xm">Certificate of completion. October 23, 2026</p><a class="xl" data-cert="cert-bcg" hidden>View certificate</a></article><article class="xc"><p class="xi">EAB</p><h3>GenAI for Proposal Generation</h3><p class="xm">Certificate of completion. October 22, 2026</p><a class="xl" data-cert="cert-eab" hidden>View certificate</a></article></div>
 </div></section>
 
 
@@ -331,6 +332,9 @@ var $=function(s,c){return(c||document).querySelector(s)},$$=function(s,c){retur
 /* ===== CONFIG: paste your Google Calendar appointment booking link here ===== */
 var BOOKING_URL='https://calendar.app.google/EhjtborMw4p7fwhn6';
 /* ============================================================================ */
+/* ===== CONFIG: paste the public link for each certificate or program between the quotes ===== */
+var CERT_LINKS={'sim-walmart':'','sim-bcg':'','sim-eab':'','cert-ibm':'https://www.credly.com/badges/c8680fe7-b4f0-4f41-9a00-5de1ccea453b','cert-walmart':'','cert-bcg':'','cert-eab':''};
+/* ======================================================================================== */
 var r=document.documentElement,K='theme';
 function setT(t){r.setAttribute('data-theme',t);try{localStorage.setItem(K,t)}catch(e){}}
 var s=null;try{s=localStorage.getItem(K)}catch(e){}
@@ -368,6 +372,8 @@ tabs.forEach(function(t,i){t.onclick=function(){pick(t)};t.onkeydown=function(e)
 
 /* booking links go straight to Google Calendar when BOOKING_URL is set */
 if(BOOKING_URL){$$('a[data-topic="Free 1-to-1 consultation"]').forEach(function(a){a.href=BOOKING_URL;a.target='_blank';a.rel='noopener'})}
+/* certificate and program links: a card shows its link only when a URL is set above */
+Object.keys(CERT_LINKS).forEach(function(k){var u=CERT_LINKS[k];if(!u)return;var a=document.querySelector('a[data-cert="'+k+'"]');if(a){a.href=u;a.target='_blank';a.rel='noopener';a.hidden=false}});
 /* contact topic links */
 $$('[data-topic]').forEach(function(a){a.addEventListener('click',function(){$('#tp').value=a.getAttribute('data-topic')})});
 
