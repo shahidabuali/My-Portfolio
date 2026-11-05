@@ -56,8 +56,11 @@
     .badge{font-size:.72rem;font-weight:800;letter-spacing:.04em;padding:.15rem .6rem;border-radius:999px;background:var(--hi);color:#12302b;margin-left:.5rem}
     .topic{display:inline-block;font-size:.8rem;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:.1rem .7rem;margin-top:.35rem;color:var(--ink)}
     .empty{text-align:center;color:var(--mute);padding:2.5rem 1rem}
-    .lnk{background:none;border:0;color:var(--accent);font-weight:600;text-decoration:underline;cursor:pointer;padding:.5rem 0;min-height:44px;margin-top:.4rem}
-    .ok{color:var(--accent);font-weight:600;font-size:.92rem;margin-top:.9rem;min-height:1.2em}
+    .lnk{background:none;border:0;color:var(--accent);font-weight:600;text-decoration:none;cursor:pointer;padding:.5rem 0;min-height:44px;margin-top:.4rem}
+    .lnk:hover,.lnk:focus-visible{text-decoration:underline}
+    .lnk:disabled{color:var(--mute);cursor:default;text-decoration:none}
+    .ok{color:var(--ink);font-weight:600;font-size:.92rem;margin-top:.9rem}
+    .ok:not(:empty){background:var(--bg);border:1.5px solid var(--accent);border-radius:8px;padding:.65rem .85rem}
     .tm{font-weight:800;font-variant-numeric:tabular-nums}
     .tgl{position:fixed;top:14px;right:14px;z-index:5;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
     .tgl svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -238,12 +241,15 @@ $('list').addEventListener('click', async e => {
 
 /* ---- Forgot password: email code (valid 5 minutes), then set a new password ---- */
 let rsEmail = '', rsExpires = 0, rsTimer = null, rsResendAt = 0;
+function rsMask(e){ const i = e.indexOf('@'); return i > 1 ? e[0] + '***' + e.slice(i) : e; }
 function rsMsg(err, ok){ $('rs-err').textContent = err || ''; $('rs-ok').textContent = ok || ''; }
 function rsTick(){
   const left = Math.max(0, rsExpires - Date.now());
   const m = Math.floor(left / 60000), s = Math.floor((left % 60000) / 1000);
   $('tm').textContent = m + ':' + String(s).padStart(2, '0');
-  $('resend').disabled = Date.now() < rsResendAt;
+  const wait = Math.max(0, Math.ceil((rsResendAt - Date.now()) / 1000));
+  $('resend').disabled = wait > 0;
+  $('resend').textContent = wait > 0 ? 'Send a new code in ' + wait + 's' : 'Send a new code';
   if(left <= 0){ clearInterval(rsTimer); rsTimer = null; rsMsg('This code has expired. Send a new code.'); $('resend').disabled = false; }
 }
 function rsStart(){
@@ -273,11 +279,11 @@ $('rs1').addEventListener('submit', async e => {
   btn.disabled = false; btn.textContent = 'Send code';
   if(!ok) return;
   $('rs1').classList.add('hidden'); $('rs2').classList.remove('hidden');
-  rsStart(); rsMsg('', 'If this email belongs to the admin account, a code is on its way.'); $('rc').focus();
+  rsStart(); rsMsg('', 'Code request sent to ' + rsMask(rsEmail) + '. If that is the admin email, a 6-digit code arrives within a minute. Check your spam folder too.'); $('rc').focus();
 });
 $('resend').addEventListener('click', async () => {
   rsMsg('', ''); $('resend').disabled = true;
-  if(await rsSend()){ rsStart(); rsMsg('', 'A new code was sent. The old one no longer works.'); }
+  if(await rsSend()){ rsStart(); rsMsg('', 'New code requested for ' + rsMask(rsEmail) + '. The old code no longer works.'); } else { rsTick(); }
 });
 $('rs2').addEventListener('submit', async e => {
   e.preventDefault(); rsMsg('', '');
