@@ -56,6 +56,9 @@
     .badge{font-size:.72rem;font-weight:800;letter-spacing:.04em;padding:.15rem .6rem;border-radius:999px;background:var(--hi);color:#12302b;margin-left:.5rem}
     .topic{display:inline-block;font-size:.8rem;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:.1rem .7rem;margin-top:.35rem;color:var(--ink)}
     .empty{text-align:center;color:var(--mute);padding:2.5rem 1rem}
+    .lnk{background:none;border:0;color:var(--accent);font-weight:600;text-decoration:underline;cursor:pointer;padding:.5rem 0;min-height:44px;margin-top:.4rem}
+    .ok{color:var(--accent);font-weight:600;font-size:.92rem;margin-top:.9rem;min-height:1.2em}
+    .tm{font-weight:800;font-variant-numeric:tabular-nums}
     .tgl{position:fixed;top:14px;right:14px;z-index:5;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
     .tgl svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
     .i-sun{display:none}:root[data-theme="dark"] .i-sun{display:block}:root[data-theme="dark"] .i-moon{display:none}
@@ -74,8 +77,36 @@
     <label for="password">Password</label>
     <input id="password" type="password" autocomplete="current-password" required/>
     <button class="btn block" id="login-btn" type="submit">Sign in</button>
+    <button class="lnk" id="forgot" type="button">Forgot password?</button>
+    <div class="ok" id="login-ok" role="status"></div>
     <div class="err" id="login-err" role="alert"></div>
   </form>
+</div>
+
+<div id="reset-view" class="center hidden">
+  <div class="card">
+    <h1>Reset password</h1>
+    <form id="rs1">
+      <p class="sub">Enter the admin email. We will send a 6-digit code to it.</p>
+      <label for="re">Admin email</label>
+      <input id="re" type="email" autocomplete="username" required/>
+      <button class="btn block" id="rs1-btn" type="submit">Send code</button>
+    </form>
+    <form id="rs2" class="hidden" autocomplete="off">
+      <p class="sub">Enter the code from your email within <span class="tm" id="tm">5:00</span>. Then choose a new password.</p>
+      <label for="rc">Code</label>
+      <input id="rc" inputmode="numeric" autocomplete="one-time-code" maxlength="10" required/>
+      <label for="np">New password (at least 10 characters, with letters and numbers)</label>
+      <input id="np" type="password" autocomplete="new-password" required/>
+      <label for="np2">Repeat new password</label>
+      <input id="np2" type="password" autocomplete="new-password" required/>
+      <button class="btn block" id="rs2-btn" type="submit">Change password</button>
+      <button class="lnk" id="resend" type="button" disabled>Send a new code</button>
+    </form>
+    <div class="err" id="rs-err" role="alert"></div>
+    <div class="ok" id="rs-ok" role="status"></div>
+    <button class="lnk" id="back" type="button">Back to sign in</button>
+  </div>
 </div>
 
 <div id="app-view" class="hidden">
@@ -126,6 +157,7 @@ function fmt(iso){
 }
 
 function show(loggedIn, email){
+  $('reset-view').classList.add('hidden');
   $('login-view').classList.toggle('hidden', loggedIn);
   $('app-view').classList.toggle('hidden', !loggedIn);
   if(loggedIn) $('who').textContent = 'Signed in as ' + (email || '');
@@ -201,6 +233,67 @@ $('list').addEventListener('click', async e => {
     const { error } = await sb.from('messages').delete().eq('id', id);
     if(!error){ msgs = msgs.filter(m => String(m.id) !== id); render(); }
   }
+});
+
+
+/* ---- Forgot password: email code (valid 5 minutes), then set a new password ---- */
+let rsEmail = '', rsExpires = 0, rsTimer = null, rsResendAt = 0;
+function rsMsg(err, ok){ $('rs-err').textContent = err || ''; $('rs-ok').textContent = ok || ''; }
+function rsTick(){
+  const left = Math.max(0, rsExpires - Date.now());
+  const m = Math.floor(left / 60000), s = Math.floor((left % 60000) / 1000);
+  $('tm').textContent = m + ':' + String(s).padStart(2, '0');
+  $('resend').disabled = Date.now() < rsResendAt;
+  if(left <= 0){ clearInterval(rsTimer); rsTimer = null; rsMsg('This code has expired. Send a new code.'); $('resend').disabled = false; }
+}
+function rsStart(){
+  rsExpires = Date.now() + 5 * 60 * 1000; rsResendAt = Date.now() + 60 * 1000;
+  clearInterval(rsTimer); rsTimer = setInterval(rsTick, 500); rsTick();
+}
+function rsReset(){
+  clearInterval(rsTimer); rsTimer = null; rsEmail = '';
+  $('rs1').classList.remove('hidden'); $('rs2').classList.add('hidden');
+  $('rs1').reset(); $('rs2').reset(); rsMsg('', '');
+}
+async function rsSend(){
+  const { error } = await sb.auth.resetPasswordForEmail(rsEmail);
+  if(error){ rsMsg('Could not send the code. Wait a minute and try again. (' + error.message + ')'); return false; }
+  return true;
+}
+$('forgot').addEventListener('click', () => {
+  $('login-view').classList.add('hidden'); $('reset-view').classList.remove('hidden');
+  rsReset(); $('re').value = $('email').value.trim(); $('re').focus();
+});
+$('back').addEventListener('click', () => { rsReset(); $('reset-view').classList.add('hidden'); $('login-view').classList.remove('hidden'); });
+$('rs1').addEventListener('submit', async e => {
+  e.preventDefault(); rsMsg('', '');
+  const btn = $('rs1-btn'); rsEmail = $('re').value.trim();
+  btn.disabled = true; btn.textContent = 'Sending…';
+  const ok = await rsSend();
+  btn.disabled = false; btn.textContent = 'Send code';
+  if(!ok) return;
+  $('rs1').classList.add('hidden'); $('rs2').classList.remove('hidden');
+  rsStart(); rsMsg('', 'If this email belongs to the admin account, a code is on its way.'); $('rc').focus();
+});
+$('resend').addEventListener('click', async () => {
+  rsMsg('', ''); $('resend').disabled = true;
+  if(await rsSend()){ rsStart(); rsMsg('', 'A new code was sent. The old one no longer works.'); }
+});
+$('rs2').addEventListener('submit', async e => {
+  e.preventDefault(); rsMsg('', '');
+  const code = $('rc').value.trim().replace(/\s+/g, ''), p1 = $('np').value, p2 = $('np2').value;
+  if(Date.now() > rsExpires){ rsMsg('This code has expired. Send a new code.'); return; }
+  if(p1.length < 10 || !/[A-Za-z]/.test(p1) || !/[0-9]/.test(p1)){ rsMsg('Use at least 10 characters, with letters and numbers.'); return; }
+  if(p1 !== p2){ rsMsg('The two passwords do not match.'); return; }
+  const btn = $('rs2-btn'); btn.disabled = true; btn.textContent = 'Checking…';
+  const v = await sb.auth.verifyOtp({ email: rsEmail, token: code, type: 'recovery' });
+  if(v.error){ btn.disabled = false; btn.textContent = 'Change password'; rsMsg('That code is wrong or has expired.'); return; }
+  const u = await sb.auth.updateUser({ password: p1 });
+  btn.disabled = false; btn.textContent = 'Change password';
+  if(u.error){ rsMsg('Could not change the password: ' + u.error.message); return; }
+  await sb.auth.signOut();
+  rsReset(); $('reset-view').classList.add('hidden'); $('login-view').classList.remove('hidden');
+  $('login-ok').textContent = 'Password changed. Sign in with your new password.';
 });
 
 (async () => {
