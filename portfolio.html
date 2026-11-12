@@ -84,7 +84,7 @@ html.seen #splash{display:none}
 .mc[data-pose="think"] .arm,.mc[data-pose="phone"] .arm{transform:rotate(-30deg)}
 .mc[data-pose="idle"] .arm{transform:rotate(150deg)}
 .mc[data-pose="cheer"] .arm{transform:rotate(-8deg)}
-.ph{opacity:0}.mc[data-pose="phone"] .ph{opacity:1}
+.mph{opacity:0}.mc[data-pose="phone"] .mph{opacity:1}
 .bub{position:absolute;left:190px;top:calc(100% + 8px);max-width:270px;background:var(--ink);color:var(--bg);font-weight:600;font-size:14px;line-height:1.3;padding:9px 13px;border-radius:10px;opacity:0;pointer-events:none;z-index:25}
 .bub::before{content:'';position:absolute;top:-6px;left:16px;border:6px solid transparent;border-top:0;border-bottom-color:var(--ink)}
 .bub.show{opacity:1}
@@ -98,6 +98,38 @@ html.seen #splash{display:none}
 @keyframes hop{0%,100%{transform:translateY(0)}35%{transform:translateY(-7px)}65%{transform:translateY(0)}80%{transform:translateY(-3px)}}
 .bub{transform:translateY(-4px);transition:opacity .3s,transform .3s}.bub.show{transform:none}
 }
+/* scroll story: buddy on a progress rail, pinned process, gentle parallax */
+#pb{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:40}
+#rail{display:none}
+#buddy{position:fixed;z-index:22;left:78px;top:calc(var(--ah,42px) + 4px);margin:0!important;pointer-events:none}
+#buddy svg{height:68px}
+#buddy .bub{position:absolute;left:0;top:calc(100% + 6px);width:max-content;max-width:min(260px,calc(100vw - 100px));background:var(--card);color:var(--ink);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--accent);font:italic 400 1.02rem/1.3 'Newsreader',Georgia,serif;padding:9px 13px;border-radius:10px;opacity:0;transform:none;pointer-events:none}
+#buddy .bub::before{content:'';position:absolute;top:-8px;left:18px;border:6px solid transparent;border-top:0;border-bottom:7px solid var(--ink)}
+#buddy .bub::after{content:'';position:absolute;top:-5px;left:19px;border:5px solid transparent;border-top:0;border-bottom:6px solid var(--card)}
+#buddy .bub.show{opacity:1}
+#pb{display:block}
+@media(min-width:1280px){
+#pb{display:none}
+#buddy{left:6px;top:20vh}
+#buddy svg{height:104px;filter:drop-shadow(0 6px 0 rgba(0,0,0,.12))}
+#buddy .bub{left:0;top:auto;bottom:calc(100% + 8px);width:clamp(110px,calc((100vw - 1120px)/2 + 6px),240px);max-width:none;font-size:.95rem}
+#buddy .bub::before{top:auto;bottom:-8px;left:20px;border:6px solid transparent;border-bottom:0;border-top:7px solid var(--ink)}
+#buddy .bub::after{top:auto;bottom:-5px;left:21px;border:5px solid transparent;border-bottom:0;border-top:6px solid var(--card)}
+#rail{display:block;position:fixed;left:53px;top:30vh;height:56vh;width:2px;background:var(--line);z-index:21}
+#rail .rf{position:absolute;left:0;top:0;width:100%;height:var(--p,0%);background:var(--accent)}
+#rail a{position:absolute;left:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+#rail a:hover,#rail a:focus-visible{background:var(--accent)}
+}
+@media(prefers-reduced-motion:no-preference){
+#buddy svg{animation:breathe 3.4s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+.js .pin{height:250vh;padding:0}
+.js .pin-in{position:sticky;top:130px;padding:48px 0}
+.js .how div{opacity:.25;transform:scale(.97);transition:opacity .45s,transform .45s}
+.js .how div.on{opacity:1;transform:none}
+@media(min-width:821px){.js .proj figure img{transform:translateY(var(--py,0px))}}
+}
+@media(prefers-reduced-motion:no-preference) and (max-width:820px){.js .pin{height:235vh}}
 .skip{position:absolute;left:-999px}.skip:focus{left:16px;top:12px;background:var(--hi);color:#12302b;padding:8px 14px;z-index:30}
 header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
@@ -221,11 +253,13 @@ nav.open{display:flex}nav a{padding:14px 12px;font-size:18px}
 <a class="skip" href="#projects">Skip to projects</a>
 <header><div class="ann"><a href="Shahida-Bu-Ali-CV.pdf" download>Hiring? Download my CV</a><span class="sep"> | </span><a href="#contact" data-topic="Free 1-to-1 consultation">Need a website? Book a free 30-minute call</a></div>
 <div class="wrap bar">
-<a class="logo" href="#top" aria-label="Shahida Bu Ali, home"><svg class="lg" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 44 14v20L24 45 4 34V14z" fill="var(--ink)"/><path d="M24 3 44 14 24 25 4 14z" fill="var(--accent)"/><text x="24" y="37" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="15" fill="var(--bg)">SB</text></svg></a><span class="mc" data-pose="wave"><svg viewBox="0 0 64 112" role="img" aria-label="Cartoon of Shahida waving"><ellipse cx="32" cy="108.5" rx="17" ry="2.6" fill="#000" opacity=".18"/><path d="M17 24C16 3 48 3 47 24L49 62C49 69 43 70 41 66L23 66C21 70 15 69 15 62Z" fill="#1b1411"/><rect x="28" y="34" width="8" height="10" rx="3" fill="#e6ad88"/><path d="M20 45 Q32 41 44 45 L47 82 L17 82Z" fill="#1c6f60"/><path d="M28 43 L36 43 L32 57Z" fill="#f6ecd6"/><path d="M27 44 L32 59 L37 44" fill="none" stroke="#0f3d34" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="68" r="1.1" fill="#f6ecd6"/><circle cx="32" cy="75" r="1.1" fill="#f6ecd6"/><path d="M19 80 L31 80 L30 105 L21 105Z" fill="#2f4a45"/><path d="M33 80 L45 80 L43 105 L34 105Z" fill="#2f4a45"/><ellipse cx="25" cy="107" rx="6.5" ry="2.6" fill="#2a1c17"/><ellipse cx="39" cy="107" rx="6.5" ry="2.6" fill="#2a1c17"/><path d="M20 46 L14 49 L12 67 L20 68Z" fill="#1c6f60"/><ellipse cx="32" cy="24" rx="13" ry="14.5" fill="#e6ad88"/><path d="M18.5 25C17 7 47 7 45.5 25C43 17 37 14 32 13C27 14 21 17 18.5 25Z" fill="#1b1411"/><path d="M19 24L18 46C18 48 22 48 22 46L22.5 27Z" fill="#1b1411"/><path d="M45 24L46 46C46 48 42 48 42 46L41.5 27Z" fill="#1b1411"/><path d="M32 13 C31 16 31 18 31.5 20" stroke="#3a2a22" stroke-width=".8" fill="none"/><circle class="eye" cx="27" cy="26.5" r="1.7" fill="#2a1a14"/><circle class="eye" cx="37" cy="26.5" r="1.7" fill="#2a1a14"/><circle cx="27.5" cy="26" r=".5" fill="#fff"/><circle cx="37.5" cy="26" r=".5" fill="#fff"/><circle cx="24" cy="31" r="2.3" fill="#f08a7a" opacity=".55"/><circle cx="40" cy="31" r="2.3" fill="#f08a7a" opacity=".55"/><path d="M27.5 31.5Q32 36.5 36.5 31.5" stroke="#7a3b2e" stroke-width="1.5" fill="none" stroke-linecap="round"/><g><rect x="3" y="58" width="19" height="12.5" rx="1.6" fill="#d9dedb" stroke="#12302b" stroke-width="1"/><rect x="5" y="60" width="15" height="8.5" rx=".8" fill="#12302b"/><text x="12.5" y="66.6" font-family="monospace" font-weight="700" font-size="5.2" text-anchor="middle" fill="#7fd1bd">&lt;/&gt;</text><rect x="1.5" y="70.5" width="22" height="2.4" rx="1.1" fill="#9aa5a1"/></g><circle cx="14" cy="71.5" r="3.3" fill="#e6ad88"/><g class="arm"><g class="wv"><path d="M44 48 L52 39 L55 25" fill="none" stroke="#1c6f60" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="55.3" cy="21" r="3.9" fill="#e6ad88"/><rect class="ph" x="53.2" y="14" width="4.6" height="8.6" rx="1.2" fill="#12302b"/></g></g></svg></span>
+<a class="logo" href="#top" aria-label="Shahida Bu Ali, home"><svg class="lg" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 44 14v20L24 45 4 34V14z" fill="var(--ink)"/><path d="M24 3 44 14 24 25 4 14z" fill="var(--accent)"/><text x="24" y="37" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="15" fill="var(--bg)">SB</text></svg></a>
 <nav id="mnav" aria-label="Main"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
 <div class="tools"><a class="btn hc" href="#contact" data-topic="Free 1-to-1 consultation">Book a free call</a><button class="tgl" id="theme" type="button" aria-label="Switch between light and dark theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button class="mb" id="menu" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg class="i-bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-</div>
-<div id="bub" class="bub" role="status" aria-live="polite"></div></header>
+</div></header>
+<div id="pb" aria-hidden="true"></div>
+<div id="rail" role="navigation" aria-label="Page sections"><span class="rf"></span></div>
+<div id="buddy" class="mc" data-pose="wave"><svg viewBox="0 0 64 112" role="img" aria-label="Cartoon of Shahida waving"><ellipse cx="32" cy="108.5" rx="17" ry="2.6" fill="#000" opacity=".18"/><path d="M17 24C16 3 48 3 47 24L49 62C49 69 43 70 41 66L23 66C21 70 15 69 15 62Z" fill="#1b1411"/><rect x="28" y="34" width="8" height="10" rx="3" fill="#e6ad88"/><path d="M20 45 Q32 41 44 45 L47 82 L17 82Z" fill="#1c6f60"/><path d="M28 43 L36 43 L32 57Z" fill="#f6ecd6"/><path d="M27 44 L32 59 L37 44" fill="none" stroke="#0f3d34" stroke-width="1.6" stroke-linejoin="round"/><path d="M37 54l3 1.7v3.4l-3 1.7-3-1.7v-3.4z" fill="#f6ecd6"/><path d="M37 54l3 1.7-3 1.7-3-1.7z" fill="#7fd1bd"/><circle cx="32" cy="68" r="1.1" fill="#f6ecd6"/><circle cx="32" cy="75" r="1.1" fill="#f6ecd6"/><path d="M19 80 L31 80 L30 105 L21 105Z" fill="#2f4a45"/><path d="M33 80 L45 80 L43 105 L34 105Z" fill="#2f4a45"/><ellipse cx="25" cy="107" rx="6.5" ry="2.6" fill="#2a1c17"/><ellipse cx="39" cy="107" rx="6.5" ry="2.6" fill="#2a1c17"/><path d="M20 46 L14 49 L12 67 L20 68Z" fill="#1c6f60"/><ellipse cx="32" cy="24" rx="13" ry="14.5" fill="#e6ad88"/><path d="M18.5 25C17 7 47 7 45.5 25C43 17 37 14 32 13C27 14 21 17 18.5 25Z" fill="#1b1411"/><path d="M19 24L18 46C18 48 22 48 22 46L22.5 27Z" fill="#1b1411"/><path d="M45 24L46 46C46 48 42 48 42 46L41.5 27Z" fill="#1b1411"/><path d="M32 13 C31 16 31 18 31.5 20" stroke="#3a2a22" stroke-width=".8" fill="none"/><circle class="eye" cx="27" cy="26.5" r="1.7" fill="#2a1a14"/><circle class="eye" cx="37" cy="26.5" r="1.7" fill="#2a1a14"/><circle cx="27.5" cy="26" r=".5" fill="#fff"/><circle cx="37.5" cy="26" r=".5" fill="#fff"/><circle cx="24" cy="31" r="2.3" fill="#f08a7a" opacity=".55"/><circle cx="40" cy="31" r="2.3" fill="#f08a7a" opacity=".55"/><path d="M27.5 31.5Q32 36.5 36.5 31.5" stroke="#7a3b2e" stroke-width="1.5" fill="none" stroke-linecap="round"/><g><rect x="3" y="58" width="19" height="12.5" rx="1.6" fill="#d9dedb" stroke="#12302b" stroke-width="1"/><rect x="5" y="60" width="15" height="8.5" rx=".8" fill="#12302b"/><text x="12.5" y="66.6" font-family="monospace" font-weight="700" font-size="5.2" text-anchor="middle" fill="#7fd1bd">&lt;/&gt;</text><rect x="1.5" y="70.5" width="22" height="2.4" rx="1.1" fill="#9aa5a1"/></g><circle cx="14" cy="71.5" r="3.3" fill="#e6ad88"/><g class="arm"><g class="wv"><path d="M44 48 L52 39 L55 25" fill="none" stroke="#1c6f60" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="55.3" cy="21" r="3.9" fill="#e6ad88"/><rect class="mph" x="53.2" y="14" width="4.6" height="8.6" rx="1.2" fill="#12302b"/></g></g></svg><div id="bub" class="bub" role="status" aria-live="polite"></div></div>
 
 <main id="top">
 <div class="herobg" id="home"><i class="u u1"></i><i class="u u2"></i><i class="u u3"></i><i class="u u4"></i>
@@ -315,7 +349,7 @@ nav.open{display:flex}nav a{padding:14px 12px;font-size:18px}
 <div class="chips"><span class="chip plain">TypeScript</span><span class="chip plain">Node.js</span><span class="chip plain">Python</span><span class="chip plain">Figma</span><span class="chip plain">Git and GitHub</span><span class="chip plain">VS Code</span></div>
 </div></section>
 
-<section id="how"><div class="wrap">
+<section id="how" class="pin"><div class="pin-in"><div class="wrap">
 <h2>How I design.</h2>
 <p class="sub">The same four moves on every project, in this order.</p>
 <div class="how">
@@ -324,7 +358,7 @@ nav.open{display:flex}nav a{padding:14px 12px;font-size:18px}
 <div><h3>I build what I drew</h3><p>I write the code myself, so what you approve in the design is what ships.</p></div>
 <div><h3>I connect it and hand it over</h3><p>Sign-in, database and real-time features go in with the build. You talk to me directly and get a live site with organized files.</p></div>
 </div>
-</div></section>
+</div></div></section>
 
 <section id="services"><div class="wrap">
 <h2>Big project or small job, it gets the same care.</h2>
@@ -412,15 +446,30 @@ var pth=$('.pth');
 function tl(){if(!pth)return;var r=pth.getBoundingClientRect(),vh=innerHeight,p=Math.max(0,Math.min(1,(vh*.75-r.top)/r.height));pth.style.setProperty('--tl',p);[].forEach.call(pth.children,function(li){li.classList.toggle('on',li.getBoundingClientRect().top<vh*.75)})}
 addEventListener('scroll',tl,{passive:true});tl();
 /* mascot reactions */
-var mc=$('.mc'),bub=$('#bub'),bt=null,said={};
+var mc=$('#buddy'),bub=$('#bub'),bt=null,said={};
 function pose(p){if(!mc||mc.getAttribute('data-pose')===p)return;mc.setAttribute('data-pose',p);mc.classList.remove('hop');void mc.offsetWidth;mc.classList.add('hop')}
 function say(t){if(!bub)return;bub.textContent=t;bub.classList.add('show');clearTimeout(bt);bt=setTimeout(function(){bub.classList.remove('show')},3800)}
-var MAP={home:['wave',"Hi, I'm Shahida!"],projects:['point','Every project has a live demo and its code.'],experience:['cheer','Job simulations and certificates I completed.'],skills:['think','Tap a skill to see where I used it.'],how:['point','Figma first, then I build it.'],services:['point','Big project or small job, I take both.'],about:['idle','A short story of how I got here.'],contact:['phone','Say hello, or book a free call.']};
+var MAP={home:['wave',"Hi, I'm Shahida! Scroll, I'll show you around."],projects:['point','These are live. Open one.'],experience:['cheer','Job simulations and certificates.'],skills:['think','Tap a skill, see where I used it.'],how:['point','Four steps, in order. Keep scrolling.'],services:['point','Big project or small job.'],about:['idle','How I got here.'],contact:['phone','Say hello, or book a free call.']};
 function react(id){var m=MAP[id];if(!m)return;pose(m[0]);if(!said[id]){said[id]=1;say(m[1])}}
 var ready=false,cur=null;setTimeout(function(){ready=true;react(whichSec())},2300);
 var IDS=['home','projects','experience','skills','how','services','about','contact'];
 function whichSec(){if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)return 'contact';var y=innerHeight*.45,c='home';IDS.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=y)c=id});return c}
 var tk=false;addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){tk=false;var c=whichSec();if(c!==cur){cur=c;if(ready)react(c)}})},{passive:true});
+/* scroll story: progress rail, pinned process, parallax */
+var rail=$('#rail'),pb=$('#pb'),wide=matchMedia('(min-width:1280px)'),calm=matchMedia('(prefers-reduced-motion: reduce)'),pin=$('#how'),pinIn=pin?pin.querySelector('.pin-in'):null,steps=pin?$$('.how div',pin):[],STEP=['Step 1: a blank Figma frame.','Step 2: design for real use.','Step 3: I build what I drew.','Step 4: connect it, hand it over.'],THR=[.04,.28,.52,.76],stepN=0;
+function setAh(){var a=$('.ann');mc.style.setProperty('--ah',(a?a.offsetHeight:42)+'px')}
+function buildRail(){if(!rail)return;$$('a',rail).forEach(function(a){a.remove()});var max=Math.max(1,document.documentElement.scrollHeight-innerHeight);[['home','Top'],['projects','Projects'],['experience','Experience'],['skills','Skills'],['how','How I design'],['services','Services'],['about','About'],['contact','Contact']].forEach(function(t){var el=document.getElementById(t[0]);if(!el)return;var top=t[0]==='home'?0:el.getBoundingClientRect().top+scrollY-120;var a=document.createElement('a');a.href='#'+(t[0]==='home'?'top':t[0]);a.title=t[1];a.setAttribute('aria-label',t[1]);a.style.top=Math.min(100,Math.max(0,top/max*100))+'%';rail.appendChild(a)})}
+function frame(){
+ var max=document.documentElement.scrollHeight-innerHeight,p=max>0?Math.min(1,Math.max(0,scrollY/max)):0;
+ pb.style.width=(p*100)+'%';
+ if(wide.matches){var h=mc.offsetHeight;mc.style.top=Math.round(innerHeight*.3+p*innerHeight*.56-h+8)+'px';rail.style.setProperty('--p',(p*100)+'%')}else{mc.style.top=''}
+ if(!calm.matches&&pin&&pinIn){var r=pin.getBoundingClientRect(),range=Math.max(1,pin.offsetHeight-pinIn.offsetHeight),q=Math.min(1,Math.max(0,(130-r.top)/range)),n=0;THR.forEach(function(t,i){if(q>=t)n=i+1});steps.forEach(function(c,i){c.classList.toggle('on',i<n)});if(n>stepN&&r.top<innerHeight&&r.bottom>0){pose('point');say(STEP[n-1])}stepN=n}
+ if(!calm.matches&&innerWidth>820){$$('.proj figure').forEach(function(f){var r=f.getBoundingClientRect(),d=Math.max(-1,Math.min(1,(r.top+r.height/2-innerHeight/2)/innerHeight));f.style.setProperty('--py',(d*-16).toFixed(1)+'px')})}
+}
+if(calm.matches)steps.forEach(function(c){c.classList.add('on')});
+var fk=false;function ask(){if(fk)return;fk=true;requestAnimationFrame(function(){fk=false;frame()})}
+addEventListener('scroll',ask,{passive:true});addEventListener('resize',function(){setAh();buildRail();ask()});
+setAh();buildRail();frame();addEventListener('load',function(){setAh();buildRail();frame()});
 /* scroll progress, back to top, active link */
 var tb=$('#top2');
 addEventListener('scroll',function(){tb.classList.toggle('show',scrollY>600)},{passive:true});
